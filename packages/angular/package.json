@@ -1,0 +1,26 @@
+{
+  "name": "@heroicons-animated/angular",
+  "version": "0.1.0",
+  "description": "Beautifully crafted animated heroicons for Angular, built with pure CSS animations.",
+  "homepage": "https://github.com/heroicons-animated/heroicons-animated",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroicons-animated/heroicons-animated-angular.git"
+  },
+  "keywords": [
+    "angular",
+    "heroicons",
+    "icons",
+    "animated",
+    "svg",
+    "css-animations"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "peerDependencies": {
+    "@angular/core": "^19.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

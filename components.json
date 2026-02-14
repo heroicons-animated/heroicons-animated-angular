@@ -1,0 +1,16 @@
+{
+  "$schema": "https://zardui.com/schema.json",
+  "style": "css",
+  "appConfigFile": "src/app/app.config.ts",
+  "packageManager": "pnpm",
+  "tailwind": {
+    "css": "src/styles.css",
+    "baseColor": "neutral"
+  },
+  "aliases": {
+    "components": "@/ui",
+    "utils": "@/lib/utils",
+    "core": "@/core",
+    "services": "@/services"
+  }
+}
