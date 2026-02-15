@@ -1,23 +1,23 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
+  DestroyRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-adjustments-horizontal',
+  selector: "hi-adjustments-horizontal",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'adjustments-horizontal'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'adjustments-horizontal'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ import {
   ],
 })
 export class AdjustmentsHorizontalIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -102,18 +102,21 @@ export class AdjustmentsHorizontalIcon {
   private animationToken = 0;
   private readonly destroyRef = inject(DestroyRef);
 
-  private readonly signalMap: Record<string, ReturnType<typeof signal<number>>> = {};
+  private readonly signalMap: Record<
+    string,
+    ReturnType<typeof signal<number>>
+  > = {};
 
   constructor() {
-    this.signalMap['row1RightX1'] = this.row1RightX1;
-    this.signalMap['row1LeftX2'] = this.row1LeftX2;
-    this.signalMap['row1KnobCX'] = this.row1KnobCX;
-    this.signalMap['row2RightX1'] = this.row2RightX1;
-    this.signalMap['row2LeftX2'] = this.row2LeftX2;
-    this.signalMap['row2KnobCX'] = this.row2KnobCX;
-    this.signalMap['row3RightX1'] = this.row3RightX1;
-    this.signalMap['row3LeftX2'] = this.row3LeftX2;
-    this.signalMap['row3KnobCX'] = this.row3KnobCX;
+    this.signalMap["row1RightX1"] = this.row1RightX1;
+    this.signalMap["row1LeftX2"] = this.row1LeftX2;
+    this.signalMap["row1KnobCX"] = this.row1KnobCX;
+    this.signalMap["row2RightX1"] = this.row2RightX1;
+    this.signalMap["row2LeftX2"] = this.row2LeftX2;
+    this.signalMap["row2KnobCX"] = this.row2KnobCX;
+    this.signalMap["row3RightX1"] = this.row3RightX1;
+    this.signalMap["row3LeftX2"] = this.row3LeftX2;
+    this.signalMap["row3KnobCX"] = this.row3KnobCX;
 
     effect(() => {
       this.runStateAnimation(this.shouldAnimate());
@@ -128,7 +131,7 @@ export class AdjustmentsHorizontalIcon {
   }
 
   private easeOutBack(progress: number): number {
-    const c1 = 1.70158;
+    const c1 = 1.701_58;
     const c3 = c1 + 1;
     const p = progress - 1;
     return 1 + c3 * p * p * p + c1 * p * p;
@@ -153,12 +156,16 @@ export class AdjustmentsHorizontalIcon {
 
     const start = performance.now();
     const tick = (now: number) => {
-      if (currentToken !== this.animationToken) return;
+      if (currentToken !== this.animationToken) {
+        return;
+      }
       const rawProgress = Math.min((now - start) / this.DURATION_MS, 1);
       const easedProgress = this.easeOutBack(rawProgress);
 
       for (const key of Object.keys(target)) {
-        this.signalMap[key].set(this.lerp(startValues[key], target[key], easedProgress));
+        this.signalMap[key].set(
+          this.lerp(startValues[key], target[key], easedProgress)
+        );
       }
 
       if (rawProgress < 1) {

@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-building-library',
+  selector: "hi-building-library",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'building-library'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'building-library'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ import {
   ],
 })
 export class BuildingLibraryIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -62,14 +62,17 @@ export class BuildingLibraryIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly dotRef = viewChild<ElementRef<SVGPathElement>>('dotPath');
-  private readonly pillar1Ref = viewChild<ElementRef<SVGPathElement>>('pillarPath1');
-  private readonly pillar2Ref = viewChild<ElementRef<SVGPathElement>>('pillarPath2');
-  private readonly pillar3Ref = viewChild<ElementRef<SVGPathElement>>('pillarPath3');
+  private readonly dotRef = viewChild<ElementRef<SVGPathElement>>("dotPath");
+  private readonly pillar1Ref =
+    viewChild<ElementRef<SVGPathElement>>("pillarPath1");
+  private readonly pillar2Ref =
+    viewChild<ElementRef<SVGPathElement>>("pillarPath2");
+  private readonly pillar3Ref =
+    viewChild<ElementRef<SVGPathElement>>("pillarPath3");
   private readonly destroyRef = inject(DestroyRef);
 
   private dotAnimation: Animation | null = null;
-  private pillarAnimations: (Animation | null)[] = [null, null, null];
+  private readonly pillarAnimations: (Animation | null)[] = [null, null, null];
 
   constructor() {
     effect(() => {
@@ -85,22 +88,26 @@ export class BuildingLibraryIcon {
   private startAnimation() {
     const dotEl = this.dotRef()?.nativeElement;
     if (dotEl) {
-      dotEl.style.opacity = '0';
+      dotEl.style.opacity = "0";
       this.dotAnimation = dotEl.animate([{ opacity: 0 }, { opacity: 1 }], {
         duration: 100,
         delay: 100,
-        fill: 'forwards' as FillMode,
+        fill: "forwards" as FillMode,
       });
     }
 
-    const pillarRefs = [this.pillar1Ref(), this.pillar2Ref(), this.pillar3Ref()];
+    const pillarRefs = [
+      this.pillar1Ref(),
+      this.pillar2Ref(),
+      this.pillar3Ref(),
+    ];
     pillarRefs.forEach((ref, index) => {
       const el = ref?.nativeElement;
       if (el) {
         const pathLength = el.getTotalLength();
         el.style.strokeDasharray = `${pathLength}`;
         el.style.strokeDashoffset = `${pathLength}`;
-        el.style.opacity = '0';
+        el.style.opacity = "0";
         this.pillarAnimations[index] = el.animate(
           [
             { strokeDashoffset: pathLength, opacity: 0 },
@@ -109,9 +116,9 @@ export class BuildingLibraryIcon {
           {
             duration: 300,
             delay: 200 + index * 150,
-            easing: 'linear',
-            fill: 'forwards' as FillMode,
-          },
+            easing: "linear",
+            fill: "forwards" as FillMode,
+          }
         );
       }
     });
@@ -123,9 +130,15 @@ export class BuildingLibraryIcon {
       this.dotAnimation = null;
     }
     const dotEl = this.dotRef()?.nativeElement;
-    if (dotEl) dotEl.style.opacity = '';
+    if (dotEl) {
+      dotEl.style.opacity = "";
+    }
 
-    const pillarRefs = [this.pillar1Ref(), this.pillar2Ref(), this.pillar3Ref()];
+    const pillarRefs = [
+      this.pillar1Ref(),
+      this.pillar2Ref(),
+      this.pillar3Ref(),
+    ];
     this.pillarAnimations.forEach((anim, index) => {
       if (anim) {
         anim.cancel();
@@ -133,9 +146,9 @@ export class BuildingLibraryIcon {
       }
       const el = pillarRefs[index]?.nativeElement;
       if (el) {
-        el.style.strokeDasharray = '';
-        el.style.strokeDashoffset = '';
-        el.style.opacity = '';
+        el.style.strokeDasharray = "";
+        el.style.strokeDashoffset = "";
+        el.style.opacity = "";
       }
     });
   }

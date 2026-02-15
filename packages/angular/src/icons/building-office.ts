@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-building-office',
+  selector: "hi-building-office",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'building-office'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'building-office'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ import {
   ],
 })
 export class BuildingOfficeIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -64,16 +64,29 @@ export class BuildingOfficeIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly floor1Ref = viewChild<ElementRef<SVGPathElement>>('floorPath1');
-  private readonly floor2Ref = viewChild<ElementRef<SVGPathElement>>('floorPath2');
-  private readonly floor3Ref = viewChild<ElementRef<SVGPathElement>>('floorPath3');
-  private readonly floor4Ref = viewChild<ElementRef<SVGPathElement>>('floorPath4');
-  private readonly floor5Ref = viewChild<ElementRef<SVGPathElement>>('floorPath5');
-  private readonly floor6Ref = viewChild<ElementRef<SVGPathElement>>('floorPath6');
+  private readonly floor1Ref =
+    viewChild<ElementRef<SVGPathElement>>("floorPath1");
+  private readonly floor2Ref =
+    viewChild<ElementRef<SVGPathElement>>("floorPath2");
+  private readonly floor3Ref =
+    viewChild<ElementRef<SVGPathElement>>("floorPath3");
+  private readonly floor4Ref =
+    viewChild<ElementRef<SVGPathElement>>("floorPath4");
+  private readonly floor5Ref =
+    viewChild<ElementRef<SVGPathElement>>("floorPath5");
+  private readonly floor6Ref =
+    viewChild<ElementRef<SVGPathElement>>("floorPath6");
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly FLOOR_INDICES = [0, 0, 1, 1, 2, 2]; // stagger groups
-  private floorAnimations: (Animation | null)[] = [null, null, null, null, null, null];
+  private readonly floorAnimations: (Animation | null)[] = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
 
   constructor() {
     effect(() => {
@@ -102,12 +115,12 @@ export class BuildingOfficeIcon {
     refs.forEach((ref, i) => {
       const el = ref?.nativeElement;
       if (el) {
-        el.style.opacity = '0';
+        el.style.opacity = "0";
         this.floorAnimations[i] = el.animate([{ opacity: 0 }, { opacity: 1 }], {
           duration: 300,
           delay: 100 + this.FLOOR_INDICES[i] * 150,
-          easing: 'linear',
-          fill: 'forwards' as FillMode,
+          easing: "linear",
+          fill: "forwards" as FillMode,
         });
       }
     });
@@ -122,7 +135,7 @@ export class BuildingOfficeIcon {
       }
       const el = refs[index]?.nativeElement;
       if (el) {
-        el.style.opacity = '';
+        el.style.opacity = "";
       }
     });
   }

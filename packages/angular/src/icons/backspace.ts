@@ -1,14 +1,20 @@
-import { Component, ChangeDetectionStrategy, input, signal, computed } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  signal,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-backspace',
+  selector: "hi-backspace",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'backspace'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'backspace'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     #svgElement
@@ -59,7 +65,7 @@ import { Component, ChangeDetectionStrategy, input, signal, computed } from '@an
   ],
 })
 export class BackspaceIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);

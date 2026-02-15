@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-bold',
+  selector: "hi-bold",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'bold'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'bold'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ import {
   ],
 })
 export class BoldIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -60,7 +60,8 @@ export class BoldIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  protected readonly pathElement = viewChild<ElementRef<SVGPathElement>>('pathElement');
+  protected readonly pathElement =
+    viewChild<ElementRef<SVGPathElement>>("pathElement");
 
   private pathAnimation: Animation | null = null;
   private readonly destroyRef = inject(DestroyRef);
@@ -77,14 +78,13 @@ export class BoldIcon {
   }
 
   private startAnimation() {
-    if (this.pathElement()?.nativeElement) {
-      this.pathAnimation = this.pathElement()!.nativeElement.animate(
-        [{ strokeWidth: 2 }, { strokeWidth: 3.5 }],
-        {
+    const el = this.pathElement()?.nativeElement;
+    if (el) {
+      this.pathAnimation =
+        el.animate([{ strokeWidth: 2 }, { strokeWidth: 3.5 }], {
           duration: 300,
-          fill: 'forwards',
-        },
-      );
+          fill: "forwards",
+        }) ?? null;
     }
   }
 
@@ -94,8 +94,9 @@ export class BoldIcon {
       this.pathAnimation = null;
     }
 
-    if (this.pathElement()?.nativeElement) {
-      this.pathElement()!.nativeElement.style.strokeWidth = '';
+    const el = this.pathElement()?.nativeElement;
+    if (el) {
+      el.style.strokeWidth = "";
     }
   }
   onMouseEnter() {

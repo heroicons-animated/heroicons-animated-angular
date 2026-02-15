@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-arrow-up',
+  selector: "hi-arrow-up",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'arrow-up'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'arrow-up'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ import {
   ],
 })
 export class ArrowUpIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -76,32 +76,39 @@ export class ArrowUpIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly linePathRef = viewChild<ElementRef<SVGPathElement>>('linePath');
+  private readonly linePathRef =
+    viewChild<ElementRef<SVGPathElement>>("linePath");
   private readonly destroyRef = inject(DestroyRef);
 
-  private readonly LINE_PATH_KEYFRAMES = ['M12 3v18', 'M12 6v15', 'M12 3v18'] as const;
+  private readonly LINE_PATH_KEYFRAMES = [
+    "M12 3v18",
+    "M12 6v15",
+    "M12 3v18",
+  ] as const;
   private readonly LINE_PATH_TIMES = [0, 0.5, 1] as const;
   private readonly lineAnimationDuration = 400;
   private readonly NUMBER_PATTERN = /-?\d*\.?\d+(?:e[-+]?\d+)?/gi;
   private lineAnimationFrame: number | null = null;
-  private parsedLinePaths: { template: string; numbers: number[] }[];
-  private lineTemplate: string;
-  private lineNumberCount: number;
-  private canMorphLine: boolean;
+  private readonly parsedLinePaths: { template: string; numbers: number[] }[];
+  private readonly lineTemplate: string;
+  private readonly lineNumberCount: number;
+  private readonly canMorphLine: boolean;
 
   constructor() {
     this.parsedLinePaths = this.LINE_PATH_KEYFRAMES.map((path) => {
       const numbers: number[] = [];
       const template = path.replace(this.NUMBER_PATTERN, (value) => {
         numbers.push(Number.parseFloat(value));
-        return '__N__';
+        return "__N__";
       });
       return { template, numbers };
     });
     this.lineTemplate = this.parsedLinePaths[0].template;
     this.lineNumberCount = this.parsedLinePaths[0].numbers.length;
     this.canMorphLine = this.parsedLinePaths.every(
-      (p) => p.template === this.lineTemplate && p.numbers.length === this.lineNumberCount,
+      (p) =>
+        p.template === this.lineTemplate &&
+        p.numbers.length === this.lineNumberCount
     );
     effect(() => {
       if (this.shouldAnimate()) {
@@ -129,7 +136,7 @@ export class ArrowUpIcon {
     template: string,
     from: number[],
     to: number[],
-    progress: number,
+    progress: number
   ): string {
     let numberIndex = 0;
     return template.replace(/__N__/g, () => {
@@ -141,9 +148,11 @@ export class ArrowUpIcon {
   }
   private setLinePath(progress: number) {
     const el = this.linePathRef()?.nativeElement;
-    if (!el) return;
+    if (!el) {
+      return;
+    }
     if (!this.canMorphLine) {
-      el.setAttribute('d', this.LINE_PATH_KEYFRAMES[0]);
+      el.setAttribute("d", this.LINE_PATH_KEYFRAMES[0]);
       return;
     }
     const cp = Math.max(0, Math.min(progress, 1));
@@ -158,13 +167,13 @@ export class ArrowUpIcon {
     const se = this.LINE_PATH_TIMES[si + 1];
     const lp = se === ss ? 0 : (cp - ss) / (se - ss);
     el.setAttribute(
-      'd',
+      "d",
       this.interpolatePath(
         this.lineTemplate,
         this.parsedLinePaths[si].numbers,
         this.parsedLinePaths[si + 1].numbers,
-        this.getEaseInOut(lp),
-      ),
+        this.getEaseInOut(lp)
+      )
     );
   }
   private startAnimation() {
@@ -185,7 +194,7 @@ export class ArrowUpIcon {
     this.clearLineAnimation();
     const el = this.linePathRef()?.nativeElement;
     if (el) {
-      el.setAttribute('d', this.LINE_PATH_KEYFRAMES[0]);
+      el.setAttribute("d", this.LINE_PATH_KEYFRAMES[0]);
     }
   }
   onMouseEnter() {

@@ -2,32 +2,32 @@ import {
   booleanAttribute,
   computed,
   Directive,
-  effect,
   ElementRef,
+  effect,
   forwardRef,
   inject,
   input,
   linkedSignal,
   model,
-} from '@angular/core';
-import { NG_VALUE_ACCESSOR, type ControlValueAccessor } from '@angular/forms';
+} from "@angular/core";
+import { type ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import type { ClassValue } from 'clsx';
+import type { ClassValue } from "clsx";
 
-import { mergeClasses, noopFn } from '@/shared/utils/merge-classes';
+import { mergeClasses, noopFn } from "@/shared/utils/merge-classes";
 
 import {
   inputVariants,
   type ZardInputSizeVariants,
   type ZardInputStatusVariants,
   type ZardInputTypeVariants,
-} from './input.variants';
+} from "./input.variants";
 
 type OnTouchedType = () => void;
 type OnChangeType = (value: string) => void;
 
 @Directive({
-  selector: 'input[z-input], textarea[z-input]',
+  selector: "input[z-input], textarea[z-input]",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -36,22 +36,22 @@ type OnChangeType = (value: string) => void;
     },
   ],
   host: {
-    '[class]': 'classes()',
-    '(input)': 'updateValue($event.target)',
-    '(blur)': 'onBlur()',
+    "[class]": "classes()",
+    "(input)": "updateValue($event.target)",
+    "(blur)": "onBlur()",
   },
-  exportAs: 'zInput',
+  exportAs: "zInput",
 })
 export class ZardInputDirective implements ControlValueAccessor {
   private readonly elementRef = inject(ElementRef);
   private onTouched: OnTouchedType = noopFn;
   private onChangeFn: OnChangeType = noopFn;
 
-  readonly class = input<ClassValue>('');
+  readonly class = input<ClassValue>("");
   readonly zBorderless = input(false, { transform: booleanAttribute });
-  readonly zSize = input<ZardInputSizeVariants>('default');
+  readonly zSize = input<ZardInputSizeVariants>("default");
   readonly zStatus = input<ZardInputStatusVariants>();
-  readonly value = model<string>('');
+  readonly value = model<string>("");
 
   readonly size = linkedSignal<ZardInputSizeVariants>(() => this.zSize());
 
@@ -63,8 +63,8 @@ export class ZardInputDirective implements ControlValueAccessor {
         zStatus: this.zStatus(),
         zBorderless: this.zBorderless(),
       }),
-      this.class(),
-    ),
+      this.class()
+    )
   );
 
   constructor() {
@@ -89,7 +89,7 @@ export class ZardInputDirective implements ControlValueAccessor {
 
   protected updateValue(target: EventTarget | null): void {
     const el = target as HTMLInputElement | HTMLTextAreaElement | null;
-    this.value.set(el?.value ?? '');
+    this.value.set(el?.value ?? "");
     this.onChangeFn(this.value());
   }
 
@@ -98,8 +98,9 @@ export class ZardInputDirective implements ControlValueAccessor {
   }
 
   getType(): ZardInputTypeVariants {
-    const isTextarea = this.elementRef.nativeElement.tagName.toLowerCase() === 'textarea';
-    return isTextarea ? 'textarea' : 'default';
+    const isTextarea =
+      this.elementRef.nativeElement.tagName.toLowerCase() === "textarea";
+    return isTextarea ? "textarea" : "default";
   }
 
   registerOnChange(fn: OnChangeType): void {
@@ -115,7 +116,7 @@ export class ZardInputDirective implements ControlValueAccessor {
   }
 
   writeValue(value?: string): void {
-    const newValue = value ?? '';
+    const newValue = value ?? "";
     this.value.set(newValue);
     this.elementRef.nativeElement.value = newValue;
   }

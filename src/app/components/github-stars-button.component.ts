@@ -1,8 +1,23 @@
-import { CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
-import 'number-flow';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  type ElementRef,
+  effect,
+  type OnInit,
+  signal,
+  viewChild,
+} from "@angular/core";
+import "number-flow";
+
+type NumberFlowElement = HTMLElement & {
+  format?: Intl.NumberFormatOptions;
+  locales?: Intl.LocalesArgument;
+  update: (value?: number) => void;
+};
 
 @Component({
-  selector: 'app-github-stars-button',
+  selector: "app-github-stars-button",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -23,9 +38,9 @@ import 'number-flow';
 
       @if (hydrated()) {
         <number-flow
+          #starsFlow
           aria-hidden="true"
           class="hidden font-sans text-black text-sm tabular-nums tracking-normal sm:inline-flex dark:text-white"
-          [value]="stars()"
         ></number-flow>
       } @else {
         <span
@@ -57,13 +72,27 @@ import 'number-flow';
 export class GithubStarsButtonComponent implements OnInit {
   readonly stars = signal(0);
   readonly hydrated = signal(false);
+  readonly starsFlowRef = viewChild<ElementRef<NumberFlowElement>>("starsFlow");
+
+  constructor() {
+    effect(() => {
+      const starsFlow = this.starsFlowRef()?.nativeElement;
+      if (!starsFlow) {
+        return;
+      }
+
+      // Keep the count formatting consistent with GitHub's default locale rendering.
+      starsFlow.locales = "en-US";
+      starsFlow.update(this.stars());
+    });
+  }
 
   async ngOnInit() {
     this.hydrated.set(true);
 
     try {
       const response = await fetch(
-        'https://api.github.com/repos/heroicons-animated/heroicons-animated-angular',
+        "https://api.github.com/repos/heroicons-animated/heroicons-animated-angular"
       );
       if (!response.ok) {
         throw new Error(`GitHub API error: ${response.status}`);
@@ -73,7 +102,7 @@ export class GithubStarsButtonComponent implements OnInit {
       const targetStars = data.stargazers_count ?? 0;
       this.stars.set(targetStars);
     } catch (error) {
-      console.error('Failed to fetch GitHub stars:', error);
+      console.error("Failed to fetch GitHub stars:", error);
       this.stars.set(0);
     }
   }

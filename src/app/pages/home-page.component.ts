@@ -1,12 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
-import { CliBlockComponent } from '../components/cli-block.component';
-import { CommentBlockComponent } from '../components/comment-block.component';
-import { IconsListComponent } from '../components/icons-list.component';
-import { LINK } from '../site.constants';
-import { SeoService } from '../seo.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  type OnInit,
+} from "@angular/core";
+import { CliBlockComponent } from "../components/cli-block.component";
+import { CommentBlockComponent } from "../components/comment-block.component";
+import { IconsListComponent } from "../components/icons-list.component";
+import { SeoService } from "../seo.service";
+import { LINK } from "../site.constants";
 
 @Component({
-  selector: 'app-home-page',
+  selector: "app-home-page",
   standalone: true,
   imports: [CliBlockComponent, CommentBlockComponent, IconsListComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,

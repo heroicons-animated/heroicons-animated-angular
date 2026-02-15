@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-arrow-trending-up',
+  selector: "hi-arrow-trending-up",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'arrow-trending-up'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'arrow-trending-up'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ import {
   ],
 })
 export class ArrowTrendingUpIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -76,8 +76,10 @@ export class ArrowTrendingUpIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly pathRef = viewChild<ElementRef<SVGPathElement>>('pathElement');
-  private readonly arrowRef = viewChild<ElementRef<SVGPathElement>>('arrowElement');
+  private readonly pathRef =
+    viewChild<ElementRef<SVGPathElement>>("pathElement");
+  private readonly arrowRef =
+    viewChild<ElementRef<SVGPathElement>>("arrowElement");
   private readonly destroyRef = inject(DestroyRef);
 
   private pathAnimation: Animation | null = null;
@@ -103,13 +105,13 @@ export class ArrowTrendingUpIcon {
       const pathLength = pathEl.getTotalLength();
       pathEl.style.strokeDasharray = `${pathLength}`;
       pathEl.style.strokeDashoffset = `${pathLength}`;
-      pathEl.style.opacity = '0';
+      pathEl.style.opacity = "0";
       this.pathAnimation = pathEl.animate(
         [
           { strokeDashoffset: pathLength, opacity: 0 },
           { strokeDashoffset: 0, opacity: 1 },
         ],
-        { duration: 400, easing: 'ease-in-out', fill: 'forwards' as FillMode },
+        { duration: 400, easing: "ease-in-out", fill: "forwards" as FillMode }
       );
     }
 
@@ -117,7 +119,7 @@ export class ArrowTrendingUpIcon {
       const arrowLength = arrowEl.getTotalLength();
       arrowEl.style.strokeDasharray = `${arrowLength}`;
       arrowEl.style.strokeDashoffset = `${arrowLength * 0.5}`;
-      arrowEl.style.opacity = '0';
+      arrowEl.style.opacity = "0";
       this.arrowTimeout = setTimeout(() => {
         if (arrowEl) {
           this.arrowAnimation = arrowEl.animate(
@@ -125,7 +127,11 @@ export class ArrowTrendingUpIcon {
               { strokeDashoffset: arrowLength * 0.5, opacity: 0 },
               { strokeDashoffset: 0, opacity: 1 },
             ],
-            { duration: 300, easing: 'ease-in-out', fill: 'forwards' as FillMode },
+            {
+              duration: 300,
+              easing: "ease-in-out",
+              fill: "forwards" as FillMode,
+            }
           );
         }
       }, 300);
@@ -148,14 +154,14 @@ export class ArrowTrendingUpIcon {
     const pathEl = this.pathRef()?.nativeElement;
     const arrowEl = this.arrowRef()?.nativeElement;
     if (pathEl) {
-      pathEl.style.strokeDasharray = '';
-      pathEl.style.strokeDashoffset = '';
-      pathEl.style.opacity = '1';
+      pathEl.style.strokeDasharray = "";
+      pathEl.style.strokeDashoffset = "";
+      pathEl.style.opacity = "1";
     }
     if (arrowEl) {
-      arrowEl.style.strokeDasharray = '';
-      arrowEl.style.strokeDashoffset = '';
-      arrowEl.style.opacity = '1';
+      arrowEl.style.strokeDasharray = "";
+      arrowEl.style.strokeDashoffset = "";
+      arrowEl.style.opacity = "1";
     }
   }
 

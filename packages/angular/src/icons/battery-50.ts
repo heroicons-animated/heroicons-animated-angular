@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-battery-50',
+  selector: "hi-battery-50",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'battery-50'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'battery-50'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@ import {
   ],
 })
 export class Battery50Icon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -71,9 +71,11 @@ export class Battery50Icon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  protected readonly clipId = `battery-clip-${Math.random().toString(36).substr(2, 9)}`;
+  protected readonly clipId =
+    `battery-clip-${Math.random().toString(36).substr(2, 9)}`;
 
-  private readonly clipRectRef = viewChild<ElementRef<SVGRectElement>>('clipRect');
+  private readonly clipRectRef =
+    viewChild<ElementRef<SVGRectElement>>("clipRect");
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly clipWidthMin = 0;
@@ -107,10 +109,12 @@ export class Battery50Icon {
 
   private animateClipWidth(targetWidth: number) {
     const el = this.clipRectRef()?.nativeElement;
-    if (!el) return;
+    if (!el) {
+      return;
+    }
     this.cancelClipAnimation();
 
-    const parsedWidth = Number.parseFloat(el.getAttribute('width') ?? '0');
+    const parsedWidth = Number.parseFloat(el.getAttribute("width") ?? "0");
     const startWidth = Number.isFinite(parsedWidth)
       ? this.clampClipWidth(parsedWidth)
       : this.clipWidthMin;
@@ -118,23 +122,28 @@ export class Battery50Icon {
     const delta = boundedTargetWidth - startWidth;
 
     if (delta === 0) {
-      el.setAttribute('width', boundedTargetWidth.toFixed(3));
+      el.setAttribute("width", boundedTargetWidth.toFixed(3));
       return;
     }
 
     const animationToken = this.clipAnimationToken;
     const startTime = performance.now();
     const step = (time: number) => {
-      if (animationToken !== this.clipAnimationToken) return;
+      if (animationToken !== this.clipAnimationToken) {
+        return;
+      }
       const elapsed = time - startTime;
-      const progress = Math.max(0, Math.min(elapsed / this.clipAnimationDuration, 1));
+      const progress = Math.max(
+        0,
+        Math.min(elapsed / this.clipAnimationDuration, 1)
+      );
       const easedProgress = 1 - (1 - progress) ** 3;
       const nextWidth = startWidth + delta * easedProgress;
-      el.setAttribute('width', this.clampClipWidth(nextWidth).toFixed(3));
+      el.setAttribute("width", this.clampClipWidth(nextWidth).toFixed(3));
       if (progress < 1) {
         this.clipAnimationFrame = requestAnimationFrame(step);
       } else {
-        el.setAttribute('width', boundedTargetWidth.toFixed(3));
+        el.setAttribute("width", boundedTargetWidth.toFixed(3));
         this.clipAnimationFrame = null;
       }
     };
@@ -148,7 +157,7 @@ export class Battery50Icon {
     this.cancelClipAnimation();
     const el = this.clipRectRef()?.nativeElement;
     if (el) {
-      el.setAttribute('width', this.clipWidthMin.toFixed(3));
+      el.setAttribute("width", this.clipWidthMin.toFixed(3));
     }
   }
 

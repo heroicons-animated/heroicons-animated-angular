@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-bolt',
+  selector: "hi-bolt",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'bolt'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'bolt'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ import {
   ],
 })
 export class BoltIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -57,7 +57,8 @@ export class BoltIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  protected readonly pathElement = viewChild<ElementRef<SVGPathElement>>('pathElement');
+  protected readonly pathElement =
+    viewChild<ElementRef<SVGPathElement>>("pathElement");
 
   private pathAnimation: Animation | null = null;
   private readonly destroyRef = inject(DestroyRef);
@@ -74,29 +75,21 @@ export class BoltIcon {
   }
 
   private startAnimation() {
-    if (this.pathElement()?.nativeElement) {
-      const pathLength = this.pathElement()!.nativeElement.getTotalLength();
-      this.pathElement()!.nativeElement.style.strokeDasharray = `${pathLength}`;
-      this.pathElement()!.nativeElement.style.strokeDashoffset = `${pathLength}`;
-      this.pathElement()!.nativeElement.style.opacity = '0';
+    const el = this.pathElement()?.nativeElement;
+    if (el) {
+      const pathLength = el.getTotalLength();
+      el.style.strokeDasharray = `${pathLength}`;
+      el.style.strokeDashoffset = `${pathLength}`;
+      el.style.opacity = "0";
 
-      this.pathAnimation = this.pathElement()!.nativeElement.animate(
-        [
-          {
-            strokeDashoffset: pathLength,
-            opacity: 0,
-          },
-          {
-            strokeDashoffset: 0,
-            opacity: 1,
-          },
-        ],
-        {
-          duration: 600,
-          easing: 'linear',
-          fill: 'forwards',
-        },
-      );
+      this.pathAnimation =
+        el.animate(
+          [
+            { strokeDashoffset: pathLength, opacity: 0 },
+            { strokeDashoffset: 0, opacity: 1 },
+          ],
+          { duration: 600, easing: "linear", fill: "forwards" }
+        ) ?? null;
     }
   }
 
@@ -106,10 +99,11 @@ export class BoltIcon {
       this.pathAnimation = null;
     }
 
-    if (this.pathElement()?.nativeElement) {
-      this.pathElement()!.nativeElement.style.strokeDasharray = '';
-      this.pathElement()!.nativeElement.style.strokeDashoffset = '';
-      this.pathElement()!.nativeElement.style.opacity = '';
+    const el = this.pathElement()?.nativeElement;
+    if (el) {
+      el.style.strokeDasharray = "";
+      el.style.strokeDashoffset = "";
+      el.style.opacity = "";
     }
   }
   onMouseEnter() {

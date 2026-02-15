@@ -1,12 +1,16 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { AngularLogoComponent } from './angular-logo.component';
-import { GithubStarsButtonComponent } from './github-stars-button.component';
-import { ThemeToggleComponent } from './theme-toggle.component';
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { AngularLogoComponent } from "./angular-logo.component";
+import { GithubStarsButtonComponent } from "./github-stars-button.component";
+import { ThemeToggleComponent } from "./theme-toggle.component";
 
 @Component({
-  selector: 'app-header',
+  selector: "app-header",
   standalone: true,
-  imports: [ThemeToggleComponent, GithubStarsButtonComponent, AngularLogoComponent],
+  imports: [
+    ThemeToggleComponent,
+    GithubStarsButtonComponent,
+    AngularLogoComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <header class="h-(--header-height) border-neutral-200 xl:border-b dark:border-neutral-800">

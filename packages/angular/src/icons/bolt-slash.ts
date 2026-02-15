@@ -1,14 +1,20 @@
-import { Component, ChangeDetectionStrategy, input, signal, computed } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  signal,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-bolt-slash',
+  selector: "hi-bolt-slash",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'bolt-slash'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'bolt-slash'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     #svgElement
@@ -68,7 +74,7 @@ import { Component, ChangeDetectionStrategy, input, signal, computed } from '@an
   ],
 })
 export class BoltSlashIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);

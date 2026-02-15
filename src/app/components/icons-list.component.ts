@@ -1,12 +1,18 @@
-import { ChangeDetectionStrategy, Component, computed, effect, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import Fuse from 'fuse.js';
-import { ICON_MANIFEST, type IconManifest } from '../icon-manifest';
-import { SearchInputComponent } from './search-input.component';
-import { IconCardComponent } from './icon-card.component';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  signal,
+} from "@angular/core";
+import { RouterLink } from "@angular/router";
+import Fuse from "fuse.js";
+import { ICON_MANIFEST, type IconManifest } from "../icon-manifest";
+import { IconCardComponent } from "./icon-card.component";
+import { SearchInputComponent } from "./search-input.component";
 
 @Component({
-  selector: 'app-icons-list',
+  selector: "app-icons-list",
   standalone: true,
   imports: [SearchInputComponent, IconCardComponent, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -40,12 +46,12 @@ import { IconCardComponent } from './icon-card.component';
 })
 export class IconsListComponent {
   readonly totalCount = ICON_MANIFEST.length;
-  readonly query = signal('');
+  readonly query = signal("");
 
   private readonly fuse = new Fuse<IconManifest>(ICON_MANIFEST, {
     keys: [
-      { name: 'name', weight: 3 },
-      { name: 'keywords', weight: 2 },
+      { name: "name", weight: 3 },
+      { name: "keywords", weight: 2 },
     ],
     threshold: 0.3,
     ignoreLocation: true,
@@ -56,30 +62,36 @@ export class IconsListComponent {
 
   readonly filteredIcons = computed(() => {
     const q = this.query().trim();
-    if (!q) return ICON_MANIFEST;
+    if (!q) {
+      return ICON_MANIFEST;
+    }
     return this.fuse.search(q).map((result) => result.item);
   });
 
   constructor() {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
-      this.query.set(params.get('search') ?? '');
+      this.query.set(params.get("search") ?? "");
     }
 
     effect(() => {
-      if (typeof window === 'undefined') {
+      if (typeof window === "undefined") {
         return;
       }
 
       const value = this.query().trim();
       const url = new URL(window.location.href);
       if (value) {
-        url.searchParams.set('search', value);
+        url.searchParams.set("search", value);
       } else {
-        url.searchParams.delete('search');
+        url.searchParams.delete("search");
       }
 
-      window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+      window.history.replaceState(
+        {},
+        "",
+        `${url.pathname}${url.search}${url.hash}`
+      );
     });
   }
 }

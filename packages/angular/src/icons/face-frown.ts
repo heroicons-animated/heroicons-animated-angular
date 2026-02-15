@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-face-frown',
+  selector: "hi-face-frown",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'face-frown'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'face-frown'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@ import {
   ],
 })
 export class FaceFrownIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -146,23 +146,24 @@ export class FaceFrownIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly mouthPathRef = viewChild<ElementRef<SVGPathElement>>('mouthPath');
+  private readonly mouthPathRef =
+    viewChild<ElementRef<SVGPathElement>>("mouthPath");
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly MOUTH_PATHS = [
-    'M15.1823 16.3179C14.3075 15.4432 13.1623 15.0038 12.0158 14.9999C10.859 14.996 9.70095 15.4353 8.81834 16.3179',
-    'M15.5 17C14.5 16 13 15.5 12 15.5C11 15.5 9.5 16 8.5 17',
-    'M15.1823 16.3179C14.3075 15.4432 13.1623 15.0038 12.0158 14.9999C10.859 14.996 9.70095 15.4353 8.81834 16.3179',
+    "M15.1823 16.3179C14.3075 15.4432 13.1623 15.0038 12.0158 14.9999C10.859 14.996 9.70095 15.4353 8.81834 16.3179",
+    "M15.5 17C14.5 16 13 15.5 12 15.5C11 15.5 9.5 16 8.5 17",
+    "M15.1823 16.3179C14.3075 15.4432 13.1623 15.0038 12.0158 14.9999C10.859 14.996 9.70095 15.4353 8.81834 16.3179",
   ] as const;
   private readonly MOUTH_TIMES = [0, 0.5, 1] as const;
   private readonly MOUTH_MORPH_DURATION = 500;
   private readonly MOUTH_MORPH_DELAY = 100;
   private readonly NUMBER_PATTERN = /-?\d*\.?\d+(?:e[-+]?\d+)?/gi;
 
-  private parsedMouthPaths: { template: string; numbers: number[] }[];
-  private mouthTemplate: string;
-  private mouthNumberCount: number;
-  private canMorphMouth: boolean;
+  private readonly parsedMouthPaths: { template: string; numbers: number[] }[];
+  private readonly mouthTemplate: string;
+  private readonly mouthNumberCount: number;
+  private readonly canMorphMouth: boolean;
   private mouthAnimationFrame: number | null = null;
   private mouthDelayTimeout: number | null = null;
 
@@ -171,14 +172,16 @@ export class FaceFrownIcon {
       const numbers: number[] = [];
       const template = path.replace(this.NUMBER_PATTERN, (value) => {
         numbers.push(Number.parseFloat(value));
-        return '__N__';
+        return "__N__";
       });
       return { template, numbers };
     });
     this.mouthTemplate = this.parsedMouthPaths[0].template;
     this.mouthNumberCount = this.parsedMouthPaths[0].numbers.length;
     this.canMorphMouth = this.parsedMouthPaths.every(
-      (p) => p.template === this.mouthTemplate && p.numbers.length === this.mouthNumberCount,
+      (p) =>
+        p.template === this.mouthTemplate &&
+        p.numbers.length === this.mouthNumberCount
     );
 
     effect(() => {
@@ -199,7 +202,7 @@ export class FaceFrownIcon {
     template: string,
     from: number[],
     to: number[],
-    progress: number,
+    progress: number
   ): string {
     let numberIndex = 0;
     return template.replace(/__N__/g, () => {
@@ -223,9 +226,11 @@ export class FaceFrownIcon {
 
   private setMouthPathAt(progress: number) {
     const el = this.mouthPathRef()?.nativeElement;
-    if (!el) return;
+    if (!el) {
+      return;
+    }
     if (!this.canMorphMouth) {
-      el.setAttribute('d', this.MOUTH_PATHS[0]);
+      el.setAttribute("d", this.MOUTH_PATHS[0]);
       return;
     }
 
@@ -241,13 +246,13 @@ export class FaceFrownIcon {
     const se = this.MOUTH_TIMES[si + 1];
     const lp = se === ss ? 0 : (cp - ss) / (se - ss);
     el.setAttribute(
-      'd',
+      "d",
       this.interpolatePath(
         this.mouthTemplate,
         this.parsedMouthPaths[si].numbers,
         this.parsedMouthPaths[si + 1].numbers,
-        lp,
-      ),
+        lp
+      )
     );
   }
 
@@ -256,7 +261,10 @@ export class FaceFrownIcon {
     this.mouthDelayTimeout = window.setTimeout(() => {
       const startTime = performance.now();
       const step = (time: number) => {
-        const progress = Math.min((time - startTime) / this.MOUTH_MORPH_DURATION, 1);
+        const progress = Math.min(
+          (time - startTime) / this.MOUTH_MORPH_DURATION,
+          1
+        );
         this.setMouthPathAt(progress);
         if (progress < 1) {
           this.mouthAnimationFrame = requestAnimationFrame(step);
@@ -273,7 +281,7 @@ export class FaceFrownIcon {
     this.cancelMouthMorph();
     const el = this.mouthPathRef()?.nativeElement;
     if (el) {
-      el.setAttribute('d', this.MOUTH_PATHS[0]);
+      el.setAttribute("d", this.MOUTH_PATHS[0]);
     }
   }
 

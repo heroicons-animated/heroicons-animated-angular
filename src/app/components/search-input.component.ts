@@ -1,19 +1,19 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  input,
-  output,
   computed,
+  type ElementRef,
+  input,
+  type OnDestroy,
+  type OnInit,
+  output,
   viewChild,
-} from '@angular/core';
-import { MagnifyingGlassIcon } from '@heroicons-animated/angular';
-import { KbdComponent } from './kbd.component';
+} from "@angular/core";
+import { MagnifyingGlassIcon } from "@heroicons-animated/angular";
+import { KbdComponent } from "./kbd.component";
 
 @Component({
-  selector: 'app-search-input',
+  selector: "app-search-input",
   standalone: true,
   imports: [MagnifyingGlassIcon, KbdComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -59,36 +59,41 @@ import { KbdComponent } from './kbd.component';
   `,
 })
 export class SearchInputComponent implements OnInit, OnDestroy {
-  readonly value = input('');
+  readonly value = input("");
   readonly resultCount = input<number | undefined>(undefined);
   readonly totalCount = input<number | undefined>(undefined);
   readonly valueChange = output<string>();
 
-  readonly searchInputRef = viewChild<ElementRef<HTMLInputElement>>('searchInput');
+  readonly searchInputRef =
+    viewChild<ElementRef<HTMLInputElement>>("searchInput");
 
   readonly showResultCount = computed(() => {
     const v = this.value();
-    return v.length > 0 && this.resultCount() !== undefined && this.totalCount() !== undefined;
+    return (
+      v.length > 0 &&
+      this.resultCount() !== undefined &&
+      this.totalCount() !== undefined
+    );
   });
 
-  private keydownHandler = (event: KeyboardEvent) => {
+  private readonly keydownHandler = (event: KeyboardEvent) => {
     const key = event.key.toLowerCase();
-    if ((event.metaKey || event.ctrlKey) && key === 'k') {
+    if ((event.metaKey || event.ctrlKey) && key === "k") {
       event.preventDefault();
       this.searchInputRef()?.nativeElement.focus();
     }
-    if (event.key === 'Escape') {
-      this.valueChange.emit('');
+    if (event.key === "Escape") {
+      this.valueChange.emit("");
       this.searchInputRef()?.nativeElement.blur();
     }
   };
 
   ngOnInit() {
-    window.addEventListener('keydown', this.keydownHandler);
+    window.addEventListener("keydown", this.keydownHandler);
   }
 
   ngOnDestroy() {
-    window.removeEventListener('keydown', this.keydownHandler);
+    window.removeEventListener("keydown", this.keydownHandler);
   }
 
   onInput(event: Event) {

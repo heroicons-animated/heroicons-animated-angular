@@ -1,81 +1,87 @@
-import { cva, type VariantProps } from 'class-variance-authority';
+import { cva, type VariantProps } from "class-variance-authority";
 
-import type { zAlign } from './tabs.component';
+import type { zAlign } from "./tabs.component";
 
-export const tabContainerVariants = cva('flex', {
+export const tabContainerVariants = cva("flex", {
   variants: {
     zPosition: {
-      top: 'flex-col',
-      bottom: 'flex-col',
-      left: 'flex-row',
-      right: 'flex-row',
+      top: "flex-col",
+      bottom: "flex-col",
+      left: "flex-row",
+      right: "flex-row",
     },
   },
   defaultVariants: {
-    zPosition: 'top',
+    zPosition: "top",
   },
 });
 
-export const tabNavVariants = cva('flex gap-4 overflow-auto scroll nav-tab-scroll', {
-  variants: {
-    zPosition: {
-      top: 'flex-row border-b mb-4',
-      bottom: 'flex-row border-t mt-4',
-      left: 'flex-col border-r mr-4 min-h-0',
-      right: 'flex-col border-l ml-4 min-h-0',
+export const tabNavVariants = cva(
+  "scroll nav-tab-scroll flex gap-4 overflow-auto",
+  {
+    variants: {
+      zPosition: {
+        top: "mb-4 flex-row border-b",
+        bottom: "mt-4 flex-row border-t",
+        left: "mr-4 min-h-0 flex-col border-r",
+        right: "ml-4 min-h-0 flex-col border-l",
+      },
+      zAlignTabs: {
+        start: "justify-start",
+        center: "justify-center",
+        end: "justify-end",
+      },
     },
-    zAlignTabs: {
-      start: 'justify-start',
-      center: 'justify-center',
-      end: 'justify-end',
+    defaultVariants: {
+      zPosition: "top",
+      zAlignTabs: "start",
     },
-  },
-  defaultVariants: {
-    zPosition: 'top',
-    zAlignTabs: 'start',
-  },
-});
+  }
+);
 
-export const tabButtonVariants = cva('hover:bg-transparent rounded-none flex-shrink-0', {
-  variants: {
-    zActivePosition: {
-      top: '',
-      bottom: '',
-      left: '',
-      right: '',
+export const tabButtonVariants = cva(
+  "flex-shrink-0 rounded-none hover:bg-transparent",
+  {
+    variants: {
+      zActivePosition: {
+        top: "",
+        bottom: "",
+        left: "",
+        right: "",
+      },
+      isActive: {
+        true: "",
+        false: "",
+      },
     },
-    isActive: {
-      true: '',
-      false: '',
+    compoundVariants: [
+      {
+        zActivePosition: "top",
+        isActive: true,
+        class: "border-t-2 border-t-primary",
+      },
+      {
+        zActivePosition: "bottom",
+        isActive: true,
+        class: "border-b-2 border-b-primary",
+      },
+      {
+        zActivePosition: "left",
+        isActive: true,
+        class: "border-l-2 border-l-primary",
+      },
+      {
+        zActivePosition: "right",
+        isActive: true,
+        class: "border-r-2 border-r-primary",
+      },
+    ],
+    defaultVariants: {
+      zActivePosition: "bottom",
+      isActive: false,
     },
-  },
-  compoundVariants: [
-    {
-      zActivePosition: 'top',
-      isActive: true,
-      class: 'border-t-2 border-t-primary',
-    },
-    {
-      zActivePosition: 'bottom',
-      isActive: true,
-      class: 'border-b-2 border-b-primary',
-    },
-    {
-      zActivePosition: 'left',
-      isActive: true,
-      class: 'border-l-2 border-l-primary',
-    },
-    {
-      zActivePosition: 'right',
-      isActive: true,
-      class: 'border-r-2 border-r-primary',
-    },
-  ],
-  defaultVariants: {
-    zActivePosition: 'bottom',
-    isActive: false,
-  },
-});
+  }
+);
 
 export type ZardTabVariants = VariantProps<typeof tabContainerVariants> &
   VariantProps<typeof tabNavVariants> &

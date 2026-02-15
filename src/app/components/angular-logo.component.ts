@@ -1,7 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, input } from "@angular/core";
 
 @Component({
-  selector: 'svg-angular',
+  selector: "svg-angular",
   standalone: true,
   template: `
     <svg

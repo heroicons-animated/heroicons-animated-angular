@@ -1,23 +1,23 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
+  DestroyRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-adjustments-vertical',
+  selector: "hi-adjustments-vertical",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'adjustments-vertical'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'adjustments-vertical'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ import {
   ],
 })
 export class AdjustmentsVerticalIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -102,18 +102,21 @@ export class AdjustmentsVerticalIcon {
   private animationToken = 0;
   private readonly destroyRef = inject(DestroyRef);
 
-  private readonly signalMap: Record<string, ReturnType<typeof signal<number>>> = {};
+  private readonly signalMap: Record<
+    string,
+    ReturnType<typeof signal<number>>
+  > = {};
 
   constructor() {
-    this.signalMap['col1TopY2'] = this.col1TopY2;
-    this.signalMap['col1BottomY1'] = this.col1BottomY1;
-    this.signalMap['col1KnobCY'] = this.col1KnobCY;
-    this.signalMap['col2TopY2'] = this.col2TopY2;
-    this.signalMap['col2BottomY1'] = this.col2BottomY1;
-    this.signalMap['col2KnobCY'] = this.col2KnobCY;
-    this.signalMap['col3TopY2'] = this.col3TopY2;
-    this.signalMap['col3BottomY1'] = this.col3BottomY1;
-    this.signalMap['col3KnobCY'] = this.col3KnobCY;
+    this.signalMap["col1TopY2"] = this.col1TopY2;
+    this.signalMap["col1BottomY1"] = this.col1BottomY1;
+    this.signalMap["col1KnobCY"] = this.col1KnobCY;
+    this.signalMap["col2TopY2"] = this.col2TopY2;
+    this.signalMap["col2BottomY1"] = this.col2BottomY1;
+    this.signalMap["col2KnobCY"] = this.col2KnobCY;
+    this.signalMap["col3TopY2"] = this.col3TopY2;
+    this.signalMap["col3BottomY1"] = this.col3BottomY1;
+    this.signalMap["col3KnobCY"] = this.col3KnobCY;
 
     effect(() => {
       this.runStateAnimation(this.shouldAnimate());
@@ -128,7 +131,7 @@ export class AdjustmentsVerticalIcon {
   }
 
   private easeOutBack(progress: number): number {
-    const c1 = 1.70158;
+    const c1 = 1.701_58;
     const c3 = c1 + 1;
     const p = progress - 1;
     return 1 + c3 * p * p * p + c1 * p * p;
@@ -153,12 +156,16 @@ export class AdjustmentsVerticalIcon {
 
     const start = performance.now();
     const tick = (now: number) => {
-      if (currentToken !== this.animationToken) return;
+      if (currentToken !== this.animationToken) {
+        return;
+      }
       const rawProgress = Math.min((now - start) / this.DURATION_MS, 1);
       const easedProgress = this.easeOutBack(rawProgress);
 
       for (const key of Object.keys(target)) {
-        this.signalMap[key].set(this.lerp(startValues[key], target[key], easedProgress));
+        this.signalMap[key].set(
+          this.lerp(startValues[key], target[key], easedProgress)
+        );
       }
 
       if (rawProgress < 1) {

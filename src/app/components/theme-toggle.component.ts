@@ -1,8 +1,13 @@
-import { Component, signal, effect, ChangeDetectionStrategy } from '@angular/core';
-import { SunIcon, MoonIcon } from '@heroicons-animated/angular';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  signal,
+} from "@angular/core";
+import { MoonIcon, SunIcon } from "@heroicons-animated/angular";
 
 @Component({
-  selector: 'app-theme-toggle',
+  selector: "app-theme-toggle",
   standalone: true,
   imports: [SunIcon, MoonIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -32,28 +37,31 @@ export class ThemeToggleComponent {
 
   constructor() {
     // Initialize from localStorage or system preference
-    const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
-    if (stored === 'dark') {
+    const stored =
+      typeof localStorage !== "undefined"
+        ? localStorage.getItem("theme")
+        : null;
+    if (stored === "dark") {
       this.isDark.set(true);
-    } else if (stored === 'light') {
+    } else if (stored === "light") {
       this.isDark.set(false);
     } else if (
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
       this.isDark.set(true);
     }
 
     effect(() => {
       const dark = this.isDark();
-      if (typeof document !== 'undefined') {
-        document.documentElement.classList.toggle('dark', dark);
+      if (typeof document !== "undefined") {
+        document.documentElement.classList.toggle("dark", dark);
       }
     });
   }
 
   toggle() {
     this.isDark.update((v) => !v);
-    localStorage.setItem('theme', this.isDark() ? 'dark' : 'light');
+    localStorage.setItem("theme", this.isDark() ? "dark" : "light");
   }
 }

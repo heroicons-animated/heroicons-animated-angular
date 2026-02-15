@@ -1,18 +1,18 @@
-import { Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page.component';
-import { IconPageComponent } from './pages/icon-page.component';
+import type { Routes } from "@angular/router";
+import { HomePageComponent } from "./pages/home-page.component";
+import { IconPageComponent } from "./pages/icon-page.component";
 
 export const appRoutes: Routes = [
   {
-    path: '',
+    path: "",
     component: HomePageComponent,
   },
   {
-    path: 'icons/:slug',
+    path: "icons/:slug",
     component: IconPageComponent,
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: "**",
+    redirectTo: "",
   },
 ];

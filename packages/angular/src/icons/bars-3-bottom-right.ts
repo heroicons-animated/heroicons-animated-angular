@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-bars-3-bottom-right',
+  selector: "hi-bars-3-bottom-right",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'bars-3-bottom-right'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'bars-3-bottom-right'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ import {
   ],
 })
 export class Bars3BottomRightIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -96,7 +96,8 @@ export class Bars3BottomRightIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly bottomBarRef = viewChild<ElementRef<SVGPathElement>>('bottomBarPath');
+  private readonly bottomBarRef =
+    viewChild<ElementRef<SVGPathElement>>("bottomBarPath");
   private readonly destroyRef = inject(DestroyRef);
 
   private bottomBarAnimation: Animation | null = null;
@@ -117,10 +118,19 @@ export class Bars3BottomRightIcon {
     if (el) {
       const pathLength = el.getTotalLength();
       el.style.strokeDasharray = `${pathLength}`;
-      el.style.strokeDashoffset = '0';
+      el.style.strokeDashoffset = "0";
       this.bottomBarAnimation = el.animate(
-        [{ strokeDashoffset: 0 }, { strokeDashoffset: pathLength * 0.5 }, { strokeDashoffset: 0 }],
-        { duration: 500, easing: 'ease-in-out', delay: 150, fill: 'forwards' as FillMode },
+        [
+          { strokeDashoffset: 0 },
+          { strokeDashoffset: pathLength * 0.5 },
+          { strokeDashoffset: 0 },
+        ],
+        {
+          duration: 500,
+          easing: "ease-in-out",
+          delay: 150,
+          fill: "forwards" as FillMode,
+        }
       );
     }
   }
@@ -132,8 +142,8 @@ export class Bars3BottomRightIcon {
     }
     const el = this.bottomBarRef()?.nativeElement;
     if (el) {
-      el.style.strokeDasharray = '';
-      el.style.strokeDashoffset = '';
+      el.style.strokeDasharray = "";
+      el.style.strokeDashoffset = "";
     }
   }
 

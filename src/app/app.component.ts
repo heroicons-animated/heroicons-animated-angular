@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NgxSonnerToaster } from 'ngx-sonner';
-import { HeaderComponent } from './components/header.component';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { NgxSonnerToaster } from "ngx-sonner";
+import { HeaderComponent } from "./components/header.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [NgxSonnerToaster, HeaderComponent, RouterOutlet],
   template: `

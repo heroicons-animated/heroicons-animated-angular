@@ -1,25 +1,25 @@
 import {
-  Component,
   ChangeDetectionStrategy,
-  input,
-  signal,
+  Component,
   computed,
-  viewChild,
-  ElementRef,
+  DestroyRef,
+  type ElementRef,
   effect,
   inject,
-  DestroyRef,
-} from '@angular/core';
+  input,
+  signal,
+  viewChild,
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-wifi',
+  selector: "hi-wifi",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'wifi'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'wifi'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ import {
   ],
 })
 export class WifiIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);
@@ -65,9 +65,12 @@ export class WifiIcon {
   protected isHovered = signal(false);
   protected shouldAnimate = computed(() => this.animate() || this.isHovered());
 
-  private readonly arcOneRef = viewChild<ElementRef<SVGPathElement>>('arcOnePath');
-  private readonly arcTwoRef = viewChild<ElementRef<SVGPathElement>>('arcTwoPath');
-  private readonly arcThreeRef = viewChild<ElementRef<SVGPathElement>>('arcThreePath');
+  private readonly arcOneRef =
+    viewChild<ElementRef<SVGPathElement>>("arcOnePath");
+  private readonly arcTwoRef =
+    viewChild<ElementRef<SVGPathElement>>("arcTwoPath");
+  private readonly arcThreeRef =
+    viewChild<ElementRef<SVGPathElement>>("arcThreePath");
   private readonly destroyRef = inject(DestroyRef);
 
   private arcAnimations: Animation[] = [];
@@ -86,7 +89,9 @@ export class WifiIcon {
   }
 
   private clearArcAnimations() {
-    for (const animation of this.arcAnimations) animation.cancel();
+    for (const animation of this.arcAnimations) {
+      animation.cancel();
+    }
     this.arcAnimations = [];
   }
 
@@ -94,9 +99,11 @@ export class WifiIcon {
     const refs = [this.arcOneRef(), this.arcTwoRef(), this.arcThreeRef()];
     for (const ref of refs) {
       const el = ref?.nativeElement;
-      if (!el) continue;
-      el.style.opacity = '1';
-      el.style.transform = 'scale(1)';
+      if (!el) {
+        continue;
+      }
+      el.style.opacity = "1";
+      el.style.transform = "scale(1)";
     }
   }
 
@@ -106,20 +113,37 @@ export class WifiIcon {
 
     refs.forEach((ref, index) => {
       const el = ref?.nativeElement;
-      if (!el) return;
+      if (!el) {
+        return;
+      }
 
       const animation = el.animate(
         [
-          { opacity: '1', transform: 'scale(1)', offset: 0, easing: 'ease-in-out' },
-          { opacity: '0', transform: 'scale(0)', offset: 1 / 3, easing: 'ease-in-out' },
-          { opacity: '0', transform: 'scale(0)', offset: 2 / 3 },
-          { opacity: '1', transform: 'scale(1)', offset: 1, easing: 'ease-in-out' },
+          {
+            opacity: "1",
+            transform: "scale(1)",
+            offset: 0,
+            easing: "ease-in-out",
+          },
+          {
+            opacity: "0",
+            transform: "scale(0)",
+            offset: 1 / 3,
+            easing: "ease-in-out",
+          },
+          { opacity: "0", transform: "scale(0)", offset: 2 / 3 },
+          {
+            opacity: "1",
+            transform: "scale(1)",
+            offset: 1,
+            easing: "ease-in-out",
+          },
         ],
         {
           duration: this.arcAnimationDurationMs,
           delay: this.arcAnimationDelayStepMs * index,
-          fill: 'both' as FillMode,
-        },
+          fill: "both" as FillMode,
+        }
       );
 
       this.arcAnimations.push(animation);

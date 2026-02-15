@@ -1,6 +1,10 @@
-import { Overlay, OverlayPositionBuilder, type OverlayRef } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
-import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import {
+  Overlay,
+  OverlayPositionBuilder,
+  type OverlayRef,
+} from "@angular/cdk/overlay";
+import { ComponentPortal } from "@angular/cdk/portal";
+import { DOCUMENT, isPlatformBrowser } from "@angular/common";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,10 +12,10 @@ import {
   computed,
   DestroyRef,
   Directive,
-  effect,
   ElementRef,
-  inject,
+  effect,
   Injector,
+  inject,
   input,
   numberAttribute,
   type OnDestroy,
@@ -23,22 +27,21 @@ import {
   signal,
   type TemplateRef,
   viewChild,
-} from '@angular/core';
-import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
+} from "@angular/core";
+import { takeUntilDestroyed, toObservable } from "@angular/core/rxjs-interop";
 
-import { filter, map, of, Subject, switchMap, tap, timer } from 'rxjs';
-
-import { TOOLTIP_POSITIONS_MAP } from '@/shared/components/tooltip/tooltip-positions';
+import { filter, map, of, Subject, switchMap, tap, timer } from "rxjs";
 import {
   tooltipPositionVariants,
   tooltipVariants,
   type ZardTooltipPositionVariants,
-} from '@/shared/components/tooltip/tooltip.variants';
-import { ZardIdDirective } from '@/shared/core';
-import { ZardStringTemplateOutletDirective } from '@/shared/core/directives/string-template-outlet/string-template-outlet.directive';
-import { mergeClasses } from '@/shared/utils/merge-classes';
+} from "@/shared/components/tooltip/tooltip.variants";
+import { TOOLTIP_POSITIONS_MAP } from "@/shared/components/tooltip/tooltip-positions";
+import { ZardIdDirective } from "@/shared/core";
+import { ZardStringTemplateOutletDirective } from "@/shared/core/directives/string-template-outlet/string-template-outlet.directive";
+import { mergeClasses } from "@/shared/utils/merge-classes";
 
-export type ZardTooltipTriggers = 'click' | 'hover';
+export type ZardTooltipTriggers = "click" | "hover";
 export type ZardTooltipType = string | TemplateRef<void> | null;
 
 interface DelayConfig {
@@ -48,7 +51,7 @@ interface DelayConfig {
 
 const throttle = (callback: () => void, wait: number) => {
   let time = Date.now();
-  return function () {
+  return () => {
     if (time + wait - Date.now() < 0) {
       callback();
       time = Date.now();
@@ -57,11 +60,11 @@ const throttle = (callback: () => void, wait: number) => {
 };
 
 @Directive({
-  selector: '[zTooltip]',
+  selector: "[zTooltip]",
   host: {
-    style: 'cursor: pointer',
+    style: "cursor: pointer",
   },
-  exportAs: 'zTooltip',
+  exportAs: "zTooltip",
 })
 export class ZardTooltipDirective implements OnInit, OnDestroy {
   private readonly destroyRef = inject(DestroyRef);
@@ -79,8 +82,8 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
   private overlayRef?: OverlayRef;
   private ariaEffectRef?: ReturnType<typeof effect>;
 
-  readonly zPosition = input<ZardTooltipPositionVariants>('top');
-  readonly zTrigger = input<ZardTooltipTriggers>('hover');
+  readonly zPosition = input<ZardTooltipPositionVariants>("top");
+  readonly zTrigger = input<ZardTooltipTriggers>("hover");
   readonly zTooltip = input<ZardTooltipType>(null);
   readonly zShowDelay = input(150, { transform: numberAttribute });
   readonly zHideDelay = input(100, { transform: numberAttribute });
@@ -91,8 +94,9 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
   private readonly tooltipText = computed<string | TemplateRef<void>>(() => {
     let tooltipText = this.zTooltip();
     if (!tooltipText) {
-      return '';
-    } else if (typeof tooltipText === 'string') {
+      return "";
+    }
+    if (typeof tooltipText === "string") {
       tooltipText = tooltipText.trim();
     }
     return tooltipText;
@@ -114,9 +118,13 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
               this.initTriggers();
             }),
             filter(() => !!this.overlayRef),
-            switchMap(() => (this.overlayRef as OverlayRef).outsidePointerEvents()),
-            filter((event) => !this.elementRef.nativeElement.contains(event.target)),
-            takeUntilDestroyed(this.destroyRef),
+            switchMap(() =>
+              (this.overlayRef as OverlayRef).outsidePointerEvents()
+            ),
+            filter(
+              (event) => !this.elementRef.nativeElement.contains(event.target)
+            ),
+            takeUntilDestroyed(this.destroyRef)
           )
           .subscribe(() => this.delay(false, 0));
       });
@@ -142,13 +150,13 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
   }
 
   private initClickListeners(): void {
-    if (this.zTrigger() !== 'click') {
+    if (this.zTrigger() !== "click") {
       return;
     }
 
     this.listenersRefs = [
       ...this.listenersRefs,
-      this.renderer.listen(this.elementRef.nativeElement, 'click', () => {
+      this.renderer.listen(this.elementRef.nativeElement, "click", () => {
         const shouldShowTooltip = !this.overlayRef?.hasAttached();
         const delay = shouldShowTooltip ? this.zShowDelay() : this.zHideDelay();
         this.delay(shouldShowTooltip, delay);
@@ -157,23 +165,23 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
   }
 
   private initHoverListeners(): void {
-    if (this.zTrigger() !== 'hover') {
+    if (this.zTrigger() !== "hover") {
       return;
     }
 
     this.listenersRefs = [
       ...this.listenersRefs,
-      this.renderer.listen(this.elementRef.nativeElement, 'mouseenter', () =>
-        this.delay(true, this.zShowDelay()),
+      this.renderer.listen(this.elementRef.nativeElement, "mouseenter", () =>
+        this.delay(true, this.zShowDelay())
       ),
-      this.renderer.listen(this.elementRef.nativeElement, 'mouseleave', () =>
-        this.delay(false, this.zHideDelay()),
+      this.renderer.listen(this.elementRef.nativeElement, "mouseleave", () =>
+        this.delay(false, this.zHideDelay())
       ),
-      this.renderer.listen(this.elementRef.nativeElement, 'focus', () =>
-        this.delay(true, this.zShowDelay()),
+      this.renderer.listen(this.elementRef.nativeElement, "focus", () =>
+        this.delay(true, this.zShowDelay())
       ),
-      this.renderer.listen(this.elementRef.nativeElement, 'blur', () =>
-        this.delay(false, this.zHideDelay()),
+      this.renderer.listen(this.elementRef.nativeElement, "blur", () =>
+        this.delay(false, this.zHideDelay())
       ),
     ];
   }
@@ -183,8 +191,8 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
       ...this.listenersRefs,
       this.renderer.listen(
         this.document.defaultView,
-        'scroll',
-        throttle(() => this.delay(false, 0), 100),
+        "scroll",
+        throttle(() => this.delay(false, 0), 100)
       ),
     ];
   }
@@ -207,9 +215,11 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
     this.delaySubject
       .pipe(
         switchMap((config) =>
-          config.delay < 0 ? of(config) : timer(config.delay).pipe(map(() => config)),
+          config.delay < 0
+            ? of(config)
+            : timer(config.delay).pipe(map(() => config))
         ),
-        takeUntilDestroyed(this.destroyRef),
+        takeUntilDestroyed(this.destroyRef)
       )
       .subscribe((config) => {
         if (config.isShow) {
@@ -230,13 +240,17 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
     this.componentRef?.onDestroy(() => {
       this.componentRef = undefined;
     });
-    this.componentRef?.instance.state.set('opened');
+    this.componentRef?.instance.state.set("opened");
     this.componentRef?.instance.setProps(this.tooltipText(), this.zPosition());
     runInInjectionContext(this.injector, () => {
       this.ariaEffectRef = effect(() => {
         const tooltipId = this.componentRef?.instance.uniqueId()?.id();
         if (tooltipId) {
-          this.renderer.setAttribute(this.elementRef.nativeElement, 'aria-describedby', tooltipId);
+          this.renderer.setAttribute(
+            this.elementRef.nativeElement,
+            "aria-describedby",
+            tooltipId
+          );
           this.ariaEffectRef?.destroy();
           this.ariaEffectRef = undefined;
         }
@@ -256,15 +270,18 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
       this.ariaEffectRef = undefined;
     }
 
-    this.renderer.removeAttribute(this.elementRef.nativeElement, 'aria-describedby');
-    this.componentRef.instance.state.set('closed');
+    this.renderer.removeAttribute(
+      this.elementRef.nativeElement,
+      "aria-describedby"
+    );
+    this.componentRef.instance.state.set("closed");
     this.zHide.emit();
     this.overlayRef?.detach();
   }
 }
 
 @Component({
-  selector: 'z-tooltip',
+  selector: "z-tooltip",
   imports: [ZardStringTemplateOutletDirective, ZardIdDirective],
   template: `
     <ng-container *zStringTemplateOutlet="tooltipText()" zardId="tooltip" #z="zardId">{{
@@ -285,26 +302,31 @@ export class ZardTooltipDirective implements OnInit, OnDestroy {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[class]': 'classes()',
-    '[attr.id]': 'tooltipId()',
-    '[attr.data-side]': 'position()',
-    '[attr.data-state]': 'state()',
-    role: 'tooltip',
+    "[class]": "classes()",
+    "[attr.id]": "tooltipId()",
+    "[attr.data-side]": "position()",
+    "[attr.data-state]": "state()",
+    role: "tooltip",
   },
 })
 export class ZardTooltipComponent {
   protected readonly arrowClasses = computed(() =>
-    mergeClasses(tooltipPositionVariants({ position: this.position() })),
+    mergeClasses(tooltipPositionVariants({ position: this.position() }))
   );
 
   protected readonly classes = computed(() => mergeClasses(tooltipVariants()));
-  protected readonly position = signal<ZardTooltipPositionVariants>('top');
-  readonly state = signal<'closed' | 'opened'>('closed');
-  readonly uniqueId = viewChild<ZardIdDirective>('z');
+  protected readonly position = signal<ZardTooltipPositionVariants>("top");
+  readonly state = signal<"closed" | "opened">("closed");
+  readonly uniqueId = viewChild<ZardIdDirective>("z");
   protected readonly tooltipText = signal<ZardTooltipType>(null);
-  protected readonly tooltipId = computed(() => this.uniqueId()?.id() ?? 'tooltip');
+  protected readonly tooltipId = computed(
+    () => this.uniqueId()?.id() ?? "tooltip"
+  );
 
-  setProps(tooltipText: ZardTooltipType, position: ZardTooltipPositionVariants) {
+  setProps(
+    tooltipText: ZardTooltipType,
+    position: ZardTooltipPositionVariants
+  ) {
     if (tooltipText) {
       this.tooltipText.set(tooltipText);
     }

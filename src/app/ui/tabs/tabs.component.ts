@@ -1,7 +1,7 @@
-import { NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from "@angular/common";
 import {
-  afterNextRender,
   type AfterViewInit,
+  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -9,36 +9,42 @@ import {
   DestroyRef,
   DOCUMENT,
   type ElementRef,
-  inject,
   Injector,
+  inject,
   input,
   output,
   runInInjectionContext,
   signal,
   type TemplateRef,
-  viewChild,
   ViewEncapsulation,
-} from '@angular/core';
-import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
+  viewChild,
+} from "@angular/core";
+import { takeUntilDestroyed, toObservable } from "@angular/core/rxjs-interop";
 
-import clsx from 'clsx';
-import { debounceTime, fromEvent, merge, map, distinctUntilChanged } from 'rxjs';
-import { twMerge } from 'tailwind-merge';
+import clsx from "clsx";
+import {
+  debounceTime,
+  distinctUntilChanged,
+  fromEvent,
+  map,
+  merge,
+} from "rxjs";
+import { twMerge } from "tailwind-merge";
 
-import { ZardButtonComponent } from '@/shared/components/button';
-import { ZardIconComponent } from '@/shared/components/icon';
+import { ZardButtonComponent } from "@/shared/components/button";
+import { ZardIconComponent } from "@/shared/components/icon";
 import {
   tabButtonVariants,
   tabContainerVariants,
   tabNavVariants,
   type ZardTabVariants,
-} from '@/shared/components/tabs/tabs.variants';
+} from "@/shared/components/tabs/tabs.variants";
 
-export type zPosition = 'top' | 'bottom' | 'left' | 'right';
-export type zAlign = 'center' | 'start' | 'end';
+export type zPosition = "top" | "bottom" | "left" | "right";
+export type zAlign = "center" | "start" | "end";
 
 @Component({
-  selector: 'z-tab',
+  selector: "z-tab",
   imports: [],
   template: `
     <ng-template #content>
@@ -50,11 +56,12 @@ export type zAlign = 'center' | 'start' | 'end';
 })
 export class ZardTabComponent {
   readonly label = input.required<string>();
-  readonly contentTemplate = viewChild.required<TemplateRef<unknown>>('content');
+  readonly contentTemplate =
+    viewChild.required<TemplateRef<unknown>>("content");
 }
 
 @Component({
-  selector: 'z-tab-group',
+  selector: "z-tab-group",
   imports: [NgTemplateOutlet, ZardButtonComponent, ZardIconComponent],
   template: `
     @if (navBeforeContent()) {
@@ -181,11 +188,13 @@ export class ZardTabComponent {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  host: { '[class]': 'containerClasses()' },
+  host: { "[class]": "containerClasses()" },
 })
 export class ZardTabGroupComponent implements AfterViewInit {
-  private readonly tabComponents = contentChildren(ZardTabComponent, { descendants: true });
-  private readonly tabsContainer = viewChild.required<ElementRef>('tabNav');
+  private readonly tabComponents = contentChildren(ZardTabComponent, {
+    descendants: true,
+  });
+  private readonly tabsContainer = viewChild.required<ElementRef>("tabNav");
   private readonly destroyRef = inject(DestroyRef);
   private readonly injector = inject(Injector);
   private readonly window = inject(DOCUMENT).defaultView;
@@ -206,15 +215,18 @@ export class ZardTabGroupComponent implements AfterViewInit {
     tab: ZardTabComponent;
   }>();
 
-  readonly zTabsPosition = input<ZardTabVariants['zPosition']>('top');
-  readonly zActivePosition = input<ZardTabVariants['zActivePosition']>('bottom');
+  readonly zTabsPosition = input<ZardTabVariants["zPosition"]>("top");
+  readonly zActivePosition =
+    input<ZardTabVariants["zActivePosition"]>("bottom");
   readonly zShowArrow = input(true);
   readonly zScrollAmount = input(100);
-  readonly zAlignTabs = input<zAlign>('start');
+  readonly zAlignTabs = input<zAlign>("start");
   // Preserve consumer classes on host
-  readonly class = input<string>('');
+  readonly class = input<string>("");
 
-  protected readonly showArrow = computed(() => this.zShowArrow() && this.scrollPresent());
+  protected readonly showArrow = computed(
+    () => this.zShowArrow() && this.scrollPresent()
+  );
 
   ngAfterViewInit(): void {
     // default tab selection
@@ -226,19 +238,19 @@ export class ZardTabGroupComponent implements AfterViewInit {
       const observeInputs$ = merge(
         toObservable(this.zShowArrow),
         toObservable(this.tabs),
-        toObservable(this.zTabsPosition),
+        toObservable(this.zTabsPosition)
       );
 
       // Re-observe whenever #tabNav reference changes (e.g., when placement toggles)
       let observedEl: HTMLElement | null = null;
       const tabNavEl$ = toObservable(this.tabsContainer).pipe(
         map((ref) => ref.nativeElement as HTMLElement),
-        distinctUntilChanged(),
+        distinctUntilChanged()
       );
 
       afterNextRender(() => {
         // SSR/browser guard
-        if (!this.window || typeof ResizeObserver === 'undefined') {
+        if (!this.window || typeof ResizeObserver === "undefined") {
           return;
         }
 
@@ -253,7 +265,7 @@ export class ZardTabGroupComponent implements AfterViewInit {
           this.setScrollState();
         });
 
-        merge(observeInputs$, fromEvent(this.window, 'resize'))
+        merge(observeInputs$, fromEvent(this.window, "resize"))
           .pipe(debounceTime(10), takeUntilDestroyed(this.destroyRef))
           .subscribe(() => this.setScrollState());
 
@@ -302,33 +314,36 @@ export class ZardTabGroupComponent implements AfterViewInit {
 
   protected readonly navBeforeContent = computed(() => {
     const position = this.zTabsPosition();
-    return position === 'top' || position === 'left';
+    return position === "top" || position === "left";
   });
 
   protected readonly isHorizontal = computed(() => {
     const position = this.zTabsPosition();
-    return position === 'top' || position === 'bottom';
+    return position === "top" || position === "bottom";
   });
 
   protected readonly navGridClasses = computed(() => {
     const gridLayout = this.isHorizontal()
-      ? 'grid-cols-[25px_1fr_25px]'
-      : 'grid-rows-[25px_1fr_25px]';
+      ? "grid-cols-[25px_1fr_25px]"
+      : "grid-rows-[25px_1fr_25px]";
     if (this.showArrow()) {
-      return twMerge(clsx('grid', gridLayout));
+      return twMerge(clsx("grid", gridLayout));
     }
-    return 'grid';
+    return "grid";
   });
 
   protected readonly containerClasses = computed(() =>
-    twMerge(tabContainerVariants({ zPosition: this.zTabsPosition() }), this.class()),
+    twMerge(
+      tabContainerVariants({ zPosition: this.zTabsPosition() }),
+      this.class()
+    )
   );
 
   protected readonly navClasses = computed(() =>
     tabNavVariants({
       zPosition: this.zTabsPosition(),
-      zAlignTabs: this.showArrow() ? 'start' : this.zAlignTabs(),
-    }),
+      zAlignTabs: this.showArrow() ? "start" : this.zAlignTabs(),
+    })
   );
 
   protected readonly buttonClassesSignal = computed(() => {
@@ -340,16 +355,16 @@ export class ZardTabGroupComponent implements AfterViewInit {
     });
   });
 
-  protected scrollNav(direction: 'left' | 'right' | 'up' | 'down') {
+  protected scrollNav(direction: "left" | "right" | "up" | "down") {
     const container = this.tabsContainer().nativeElement;
     const scrollAmount = this.zScrollAmount();
-    if (direction === 'left') {
+    if (direction === "left") {
       container.scrollLeft -= scrollAmount;
-    } else if (direction === 'right') {
+    } else if (direction === "right") {
       container.scrollLeft += scrollAmount;
-    } else if (direction === 'up') {
+    } else if (direction === "up") {
       container.scrollTop -= scrollAmount;
-    } else if (direction === 'down') {
+    } else if (direction === "down") {
       container.scrollTop += scrollAmount;
     }
   }

@@ -1,16 +1,23 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ArrowLeftIcon } from '@heroicons-animated/angular';
-import { map } from 'rxjs';
-import { CliBlockComponent } from '../components/cli-block.component';
-import { IconCardComponent } from '../components/icon-card.component';
-import { ICON_MANIFEST } from '../icon-manifest';
-import type { IconManifest } from '../icon-manifest';
-import { SeoService } from '../seo.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  signal,
+} from "@angular/core";
+import { toSignal } from "@angular/core/rxjs-interop";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import { ArrowLeftIcon } from "@heroicons-animated/angular";
+import { map } from "rxjs";
+import { CliBlockComponent } from "../components/cli-block.component";
+import { IconCardComponent } from "../components/icon-card.component";
+import type { IconManifest } from "../icon-manifest";
+import { ICON_MANIFEST } from "../icon-manifest";
+import { SeoService } from "../seo.service";
 
 @Component({
-  selector: 'app-icon-page',
+  selector: "app-icon-page",
   standalone: true,
   imports: [RouterLink, ArrowLeftIcon, IconCardComponent, CliBlockComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -121,8 +128,8 @@ export class IconPageComponent {
   readonly isBackLinkHovered = signal(false);
 
   private readonly slug = toSignal(
-    this.route.paramMap.pipe(map((params) => params.get('slug') ?? '')),
-    { initialValue: '' },
+    this.route.paramMap.pipe(map((params) => params.get("slug") ?? "")),
+    { initialValue: "" }
   );
 
   readonly icon = computed<IconManifest | null>(() => {
@@ -131,11 +138,11 @@ export class IconPageComponent {
   });
 
   readonly pascalName = computed(() => {
-    const name = this.icon()?.name ?? '';
+    const name = this.icon()?.name ?? "";
     return name
-      .split('-')
+      .split("-")
       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join('');
+      .join("");
   });
 
   readonly similarIcons = computed(() => {
@@ -149,7 +156,8 @@ export class IconPageComponent {
     return ICON_MANIFEST.filter((item) => item.name !== currentIcon.name)
       .map((item) => ({
         icon: item,
-        score: item.keywords.filter((keyword) => currentKeywords.has(keyword)).length,
+        score: item.keywords.filter((keyword) => currentKeywords.has(keyword))
+          .length,
       }))
       .filter((item) => item.score > 0)
       .sort((a, b) => b.score - a.score)

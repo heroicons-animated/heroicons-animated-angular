@@ -1,20 +1,24 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnDestroy,
-  OnInit,
   computed,
   input,
+  type OnDestroy,
+  type OnInit,
   signal,
-} from '@angular/core';
-import { CheckIcon, ClipboardDocumentIcon, XMarkIcon } from '@heroicons-animated/angular';
-import { toast } from 'ngx-sonner';
-import { ICON_MANIFEST } from '../icon-manifest';
+} from "@angular/core";
+import {
+  CheckIcon,
+  ClipboardDocumentIcon,
+  XMarkIcon,
+} from "@heroicons-animated/angular";
+import { toast } from "ngx-sonner";
+import { ICON_MANIFEST } from "../icon-manifest";
 
-type PackageManager = 'pnpm' | 'npm' | 'yarn' | 'bun';
+type PackageManager = "pnpm" | "npm" | "yarn" | "bun";
 
 @Component({
-  selector: 'app-cli-block',
+  selector: "app-cli-block",
   standalone: true,
   imports: [CheckIcon, ClipboardDocumentIcon, XMarkIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -113,54 +117,59 @@ type PackageManager = 'pnpm' | 'npm' | 'yarn' | 'bun';
   `,
 })
 export class CliBlockComponent implements OnInit, OnDestroy {
-  readonly staticIconName = input('');
-  readonly className = input('');
+  readonly staticIconName = input("");
+  readonly className = input("");
 
-  readonly packageManagers: PackageManager[] = ['pnpm', 'npm', 'yarn', 'bun'];
-  readonly selectedPm = signal<PackageManager>('pnpm');
+  readonly packageManagers: PackageManager[] = ["pnpm", "npm", "yarn", "bun"];
+  readonly selectedPm = signal<PackageManager>("pnpm");
   readonly isHovered = signal(false);
   readonly loopIndex = signal(0);
-  readonly copyStatus = signal<'idle' | 'done' | 'error'>('idle');
-  readonly animationName = signal<'text-loop-a' | 'text-loop-b'>('text-loop-a');
+  readonly copyStatus = signal<"idle" | "done" | "error">("idle");
+  readonly animationName = signal<"text-loop-a" | "text-loop-b">("text-loop-a");
 
-  private readonly iconList = ICON_MANIFEST.filter((icon) => icon.name.length <= 20);
+  private readonly iconList = ICON_MANIFEST.filter(
+    (icon) => icon.name.length <= 20
+  );
   private intervalId: ReturnType<typeof setInterval> | null = null;
 
   readonly currentIconName = computed(() => {
     if (this.staticIconName()) {
       return this.staticIconName();
     }
-    return this.iconList[this.loopIndex()]?.name ?? '';
+    return this.iconList[this.loopIndex()]?.name ?? "";
   });
 
   readonly cliPrefix = computed(() => {
     switch (this.selectedPm()) {
-      case 'pnpm':
-        return 'pnpm dlx';
-      case 'npm':
-        return 'npx';
-      case 'yarn':
-        return 'yarn dlx';
-      case 'bun':
-        return 'bunx';
+      case "pnpm":
+        return "pnpm dlx";
+      case "npm":
+        return "npx";
+      case "yarn":
+        return "yarn dlx";
+      case "bun":
+        return "bunx";
+      default:
+        return "pnpm dlx";
     }
   });
 
   readonly fullCommand = computed(
-    () => `${this.cliPrefix()} @heroicons-animated/angular add ${this.currentIconName()}`,
+    () =>
+      `${this.cliPrefix()} @heroicons-animated/angular add ${this.currentIconName()}`
   );
 
-  readonly containerClasses = computed(
-    () => `relative mt-[40px] w-full max-w-[642px] px-4 ${this.className()}`.trim(),
+  readonly containerClasses = computed(() =>
+    `relative mt-[40px] w-full max-w-[642px] px-4 ${this.className()}`.trim()
   );
 
   tabClasses(pm: PackageManager) {
     return [
-      'z-50 inline-flex cursor-pointer items-center justify-center whitespace-nowrap px-4 py-1 font-mono text-sm tracking-tight first:rounded-tl-[6px] last:rounded-tr-[6px] transition-colors duration-50 focus-within:outline-offset-0 focus-visible:outline-1 focus-visible:outline-primary',
+      "z-50 inline-flex cursor-pointer items-center justify-center whitespace-nowrap px-4 py-1 font-mono text-sm tracking-tight first:rounded-tl-[6px] last:rounded-tr-[6px] transition-colors duration-50 focus-within:outline-offset-0 focus-visible:outline-1 focus-visible:outline-primary",
       pm === this.selectedPm()
-        ? 'bg-primary text-white'
-        : 'bg-white text-black hover:bg-neutral-50 dark:bg-white/10 dark:text-white dark:hover:bg-white/5',
-    ].join(' ');
+        ? "bg-primary text-white"
+        : "bg-white text-black hover:bg-neutral-50 dark:bg-white/10 dark:text-white dark:hover:bg-white/5",
+    ].join(" ");
   }
 
   ngOnInit() {
@@ -174,7 +183,9 @@ export class CliBlockComponent implements OnInit, OnDestroy {
       }
 
       this.loopIndex.update((value) => (value + 1) % this.iconList.length);
-      this.animationName.update((value) => (value === 'text-loop-a' ? 'text-loop-b' : 'text-loop-a'));
+      this.animationName.update((value) =>
+        value === "text-loop-a" ? "text-loop-b" : "text-loop-a"
+      );
     }, 1500);
   }
 
@@ -186,18 +197,18 @@ export class CliBlockComponent implements OnInit, OnDestroy {
   }
 
   async handleCopy() {
-    if (this.copyStatus() !== 'idle') {
+    if (this.copyStatus() !== "idle") {
       return;
     }
 
     try {
       await navigator.clipboard.writeText(this.fullCommand());
-      this.copyStatus.set('done');
+      this.copyStatus.set("done");
     } catch {
-      toast.error('Failed to copy to clipboard');
-      this.copyStatus.set('error');
+      toast.error("Failed to copy to clipboard");
+      this.copyStatus.set("error");
     } finally {
-      setTimeout(() => this.copyStatus.set('idle'), 2000);
+      setTimeout(() => this.copyStatus.set("idle"), 2000);
     }
   }
 }

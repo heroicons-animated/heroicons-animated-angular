@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { ArrowTopRightOnSquareIcon } from '@heroicons-animated/angular';
+import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { ArrowTopRightOnSquareIcon } from "@heroicons-animated/angular";
 
 @Component({
-  selector: 'app-comment-block',
+  selector: "app-comment-block",
   standalone: true,
   imports: [ArrowTopRightOnSquareIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,

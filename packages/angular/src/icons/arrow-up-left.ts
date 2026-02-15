@@ -1,23 +1,20 @@
 import {
-  Component,
   ChangeDetectionStrategy,
+  Component,
+  computed,
   input,
   signal,
-  computed,
-  viewChild,
-  ElementRef,
-  effect,
-} from '@angular/core';
+} from "@angular/core";
 
 @Component({
-  selector: 'hi-arrow-up-left',
+  selector: "hi-arrow-up-left",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-label]': "'arrow-up-left'",
-    role: 'img',
-    '(mouseenter)': 'onMouseEnter()',
-    '(mouseleave)': 'onMouseLeave()',
+    "[attr.aria-label]": "'arrow-up-left'",
+    role: "img",
+    "(mouseenter)": "onMouseEnter()",
+    "(mouseleave)": "onMouseLeave()",
   },
   template: `<svg
     xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +71,7 @@ import {
   ],
 })
 export class ArrowUpLeftIcon {
-  readonly color = input('currentColor');
+  readonly color = input("currentColor");
   readonly size = input(28);
   readonly strokeWidth = input(1.5);
   readonly animate = input(false);

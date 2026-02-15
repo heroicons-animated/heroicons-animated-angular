@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 
 @Component({
-  selector: 'app-kbd',
+  selector: "app-kbd",
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
@@ -16,5 +16,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   `,
 })
 export class KbdComponent {
-  readonly className = input('bg-neutral-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-500');
+  readonly className = input(
+    "bg-neutral-100 text-neutral-400 dark:bg-neutral-800 dark:text-neutral-500"
+  );
 }

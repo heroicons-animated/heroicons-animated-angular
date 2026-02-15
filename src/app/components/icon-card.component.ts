@@ -1,13 +1,13 @@
-import { NgComponentOutlet } from '@angular/common';
+import { NgComponentOutlet } from "@angular/common";
 import {
   ChangeDetectionStrategy,
   Component,
-  OnDestroy,
-  Type,
   computed,
   input,
+  type OnDestroy,
   signal,
-} from '@angular/core';
+  type Type,
+} from "@angular/core";
 import {
   ArrowPathIcon,
   CheckIcon,
@@ -16,12 +16,12 @@ import {
   PauseIcon,
   PlayIcon,
   XMarkIcon,
-} from '@heroicons-animated/angular';
-import { toast } from 'ngx-sonner';
-import { ICON_COMPONENTS } from '../icon-components';
+} from "@heroicons-animated/angular";
+import { toast } from "ngx-sonner";
+import { ICON_COMPONENTS } from "../icon-components";
 
 @Component({
-  selector: 'app-icon-card',
+  selector: "app-icon-card",
   standalone: true,
   imports: [
     NgComponentOutlet,
@@ -186,27 +186,28 @@ export class IconCardComponent implements OnDestroy {
   readonly showActions = input(true);
   readonly showTitle = input(true);
   readonly actionsAlwaysVisible = input(false);
-  readonly cardClassName = input('');
-  readonly iconClassName = input('');
+  readonly cardClassName = input("");
+  readonly iconClassName = input("");
 
   readonly iconAnimate = signal(false);
   readonly isAnimating = signal(false);
   readonly isCodeActionHovered = signal(false);
   readonly isCLIActionHovered = signal(false);
-  readonly cliState = signal<'idle' | 'done' | 'error'>('idle');
-  readonly codeState = signal<'idle' | 'loading' | 'done' | 'error'>('idle');
+  readonly cliState = signal<"idle" | "done" | "error">("idle");
+  readonly codeState = signal<"idle" | "loading" | "done" | "error">("idle");
 
   private playTimeout: ReturnType<typeof setTimeout> | null = null;
 
-  readonly iconComponent = computed((): Type<unknown> | null => ICON_COMPONENTS[this.name()] ?? null);
-
-  readonly cardClasses = computed(
-    () =>
-      `icon-card-root group relative flex flex-col items-center justify-center rounded-[16px] bg-white px-[28px] pt-[50px] dark:bg-[#0A0A0A] ${this.cardClassName()}`.trim(),
+  readonly iconComponent = computed(
+    (): Type<unknown> | null => ICON_COMPONENTS[this.name()] ?? null
   );
 
-  readonly iconWrapperClasses = computed(
-    () => `flex items-center justify-center text-neutral-800 dark:text-neutral-100 ${this.iconClassName()}`.trim(),
+  readonly cardClasses = computed(() =>
+    `icon-card-root group relative flex flex-col items-center justify-center rounded-[16px] bg-white px-[28px] pt-[50px] dark:bg-[#0A0A0A] ${this.cardClassName()}`.trim()
+  );
+
+  readonly iconWrapperClasses = computed(() =>
+    `flex items-center justify-center text-neutral-800 dark:text-neutral-100 ${this.iconClassName()}`.trim()
   );
 
   readonly iconInputs = computed(() => ({
@@ -215,7 +216,8 @@ export class IconCardComponent implements OnDestroy {
   }));
 
   readonly actionsClasses = computed(() => {
-    const base = 'actions-row my-6 flex items-center justify-center gap-2 transition-opacity duration-100';
+    const base =
+      "actions-row my-6 flex items-center justify-center gap-2 transition-opacity duration-100";
     if (this.actionsAlwaysVisible()) {
       return `${base} opacity-100`;
     }
@@ -259,20 +261,20 @@ export class IconCardComponent implements OnDestroy {
     event.preventDefault();
     event.stopPropagation();
 
-    if (this.codeState() !== 'idle') {
+    if (this.codeState() !== "idle") {
       return;
     }
 
     try {
-      this.codeState.set('loading');
+      this.codeState.set("loading");
       const code = `<hi-${this.name()} [size]="28" />`;
       await navigator.clipboard.writeText(code);
-      this.codeState.set('done');
+      this.codeState.set("done");
     } catch {
-      toast.error('Failed to copy to clipboard');
-      this.codeState.set('error');
+      toast.error("Failed to copy to clipboard");
+      this.codeState.set("error");
     } finally {
-      setTimeout(() => this.codeState.set('idle'), 2000);
+      setTimeout(() => this.codeState.set("idle"), 2000);
     }
   }
 
@@ -280,19 +282,19 @@ export class IconCardComponent implements OnDestroy {
     event.preventDefault();
     event.stopPropagation();
 
-    if (this.cliState() !== 'idle') {
+    if (this.cliState() !== "idle") {
       return;
     }
 
     try {
-      const command = 'pnpm add @heroicons-animated/angular';
+      const command = "pnpm add @heroicons-animated/angular";
       await navigator.clipboard.writeText(command);
-      this.cliState.set('done');
+      this.cliState.set("done");
     } catch {
-      toast.error('Failed to copy to clipboard');
-      this.cliState.set('error');
+      toast.error("Failed to copy to clipboard");
+      this.cliState.set("error");
     } finally {
-      setTimeout(() => this.cliState.set('idle'), 2000);
+      setTimeout(() => this.cliState.set("idle"), 2000);
     }
   }
 
