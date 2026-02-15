@@ -1,4 +1,4 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ArrowTopRightOnSquareIcon } from '@heroicons-animated/angular';
 
 @Component({
@@ -7,68 +7,72 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons-animated/angular';
   imports: [ArrowTopRightOnSquareIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <div class="view-container py-6">
-      <div class="rounded-xl border border-foreground/10 bg-background p-6">
-        <!-- Quote text -->
-        <p class="font-mono text-sm leading-relaxed text-foreground/60">
-          these icons were heavily inspired from the work of
-          <a
-            href="https://github.com/pqoqubbw/icons"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-primary underline underline-offset-2 hover:text-primary/80"
-          >
-            lucide-animated by dmytro
-          </a>
-          and what i learned from the
-          <a
-            href="https://animations.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-primary underline underline-offset-2 hover:text-primary/80"
-          >
-            animations.dev
-          </a>
-          course.
-        </p>
+    <div
+      class="relative my-[40px] flex w-full max-w-[610px] flex-col items-center justify-center pl-4 after:absolute after:left-0 after:h-full after:w-[4px] after:bg-neutral-400/50 max-[655px]:px-4 max-[655px]:after:left-4"
+    >
+      <blockquote
+        class="font-sans text-neutral-700 text-sm leading-[150%] tracking-normal max-[655px]:pl-4 dark:text-neutral-200"
+      >
+        these icons were heavily inspired from the work of
+        <a
+          class="inline-block underline underline-offset-3 transition-colors duration-100 focus-within:outline-offset-0 hover:text-primary hover:decoration-primary focus-visible:text-primary focus-visible:outline-1 focus-visible:outline-primary"
+          href="https://lucide-animated.com/"
+          rel="noopener external"
+          tabindex="0"
+          target="_blank"
+        >
+          lucide-animated by dmytro
+        </a>
+        and what i learned from the
+        <a
+          class="inline-block underline underline-offset-3 transition-colors duration-100 focus-within:outline-offset-0 hover:text-primary hover:decoration-primary focus-visible:text-primary focus-visible:outline-1 focus-visible:outline-primary"
+          href="https://animations.dev/"
+          rel="noopener external"
+          tabindex="0"
+          target="_blank"
+        >
+          animations.dev
+        </a>
+        course.
+      </blockquote>
 
-        <!-- Author row -->
-        <div class="mt-4 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <!-- Avatar -->
-            <div
-              class="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-medium text-primary"
-            >
-              AP
-            </div>
+      <div
+        class="mt-4 flex w-full flex-wrap items-center justify-between gap-4 border-neutral-200 border-t pt-4 max-[655px]:pl-4 dark:border-neutral-800"
+      >
+        <div class="flex items-center gap-2">
+          <img
+            alt="Aniket Pawar, the author of the heroicons-animated"
+            class="size-7 rounded-full object-cover"
+            src="https://ik.imagekit.io/2oajjadqkz/profile.jpg?updatedAt=1770631384305"
+          />
+          <p class="text-[13px] text-neutral-600 tracking-normal dark:text-neutral-400">
             <a
-              href="https://x.com/alaymanguy"
+              class="inline-block underline underline-offset-3 transition-colors duration-100 focus-within:outline-offset-0 hover:text-primary hover:decoration-primary focus-visible:text-primary focus-visible:outline-1 focus-visible:outline-primary"
+              href="https://aniketpawar.com/"
+              rel="noopener external"
+              tabindex="0"
               target="_blank"
-              rel="noopener noreferrer"
-              class="font-mono text-xs text-foreground/50 hover:text-foreground/70 no-underline"
             >
-              <span class="font-medium text-foreground/70">aniket</span>, creator of
-              heroicons-animated
-            </a>
-          </div>
-
-          <!-- Take the course button -->
-          <a
-            href="https://animations.dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 rounded-lg border border-foreground/10 px-3 py-1.5 text-xs text-foreground/60 no-underline transition-colors hover:bg-foreground/5 hover:text-foreground"
-            (mouseenter)="isArrowHovered.set(true)"
-            (mouseleave)="isArrowHovered.set(false)"
-          >
-            Take the course
-            <hi-arrow-top-right-on-square [size]="14" [animate]="isArrowHovered()" />
-          </a>
+              aniket
+            </a>, creator of heroicons-animated
+          </p>
         </div>
+        <a
+          class="flex w-fit cursor-pointer items-center justify-center gap-1 rounded-[8px] bg-primary px-[12px] py-[4px] font-sans text-sm text-white transition-colors duration-100 hover:bg-primary/90 focus-visible:outline-1 focus-visible:outline-primary focus-visible:outline-offset-1 max-[445px]:w-full"
+          href="https://animations.dev/"
+          rel="noopener external"
+          tabindex="0"
+          target="_blank"
+          (mouseenter)="isArrowHovered.set(true)"
+          (mouseleave)="isArrowHovered.set(false)"
+        >
+          Take the course
+          <hi-arrow-top-right-on-square [size]="14" [animate]="isArrowHovered()" />
+        </a>
       </div>
     </div>
   `,
 })
 export class CommentBlockComponent {
-  isArrowHovered = signal(false);
+  readonly isArrowHovered = signal(false);
 }

@@ -1,14 +1,13 @@
 import {
+  ChangeDetectionStrategy,
   Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
   input,
   output,
-  signal,
   computed,
-  ChangeDetectionStrategy,
-  ElementRef,
   viewChild,
-  OnInit,
-  OnDestroy,
 } from '@angular/core';
 import { MagnifyingGlassIcon } from '@heroicons-animated/angular';
 import { KbdComponent } from './kbd.component';
@@ -20,31 +19,42 @@ import { KbdComponent } from './kbd.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div
-      class="flex items-center gap-2 rounded-xl border border-foreground/10 bg-background px-3 h-10 transition-all focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/10"
+      class="sticky top-0 z-50 border-neutral-200 border-y bg-background/80 backdrop-blur-md dark:border-neutral-800 dark:bg-background/80"
     >
-      <hi-magnifying-glass class="text-foreground/30 shrink-0" [size]="18" />
-      <input
-        #searchInput
-        type="text"
-        placeholder="Search icons..."
-        class="flex-1 border-none bg-transparent text-sm text-foreground outline-none placeholder:text-foreground/30 font-sans"
-        [value]="value()"
-        (input)="onInput($event)"
-        autocomplete="off"
-        autocapitalize="off"
-        autocorrect="off"
-        spellcheck="false"
-      />
-      @if (showResultCount()) {
-        <span class="shrink-0 font-mono text-xs text-foreground/40">
-          {{ resultCount() }}/{{ totalCount() }}
-        </span>
-      } @else {
-        <app-kbd>
-          <span class="text-[10px]">&#8984;</span>
-          <span class="text-[10px]">K</span>
-        </app-kbd>
-      }
+      <div
+        class="view-container flex items-center gap-2 border-neutral-200 py-2 xl:border-x dark:border-neutral-800"
+      >
+        <div class="group relative w-full">
+          <span class="pointer-events-none absolute top-1/2 left-3 inline-flex shrink-0 -translate-y-1/2">
+            <hi-magnifying-glass class="text-neutral-500" [size]="20" />
+          </span>
+          <input
+            #searchInput
+            aria-label="Search icons"
+            autocomplete="off"
+            autocorrect="off"
+            class="flex h-10 w-full min-w-0 rounded-[10px] px-3 py-1 pl-10 pr-12 font-sans text-sm outline-none ring-1 bg-white text-neutral-800 ring-neutral-200 selection:bg-primary selection:text-white placeholder:text-neutral-400/70 transition-colors focus-visible:ring-primary dark:bg-[#0A0A0A] dark:text-neutral-100 dark:ring-neutral-800 dark:focus-visible:ring-primary"
+            inputmode="search"
+            placeholder="Search icons..."
+            role="search"
+            spellcheck="false"
+            type="text"
+            [value]="value()"
+            (input)="onInput($event)"
+          />
+          <span class="pointer-events-none absolute top-1/2 right-3 inline-flex shrink-0 -translate-y-1/2">
+            @if (showResultCount()) {
+              <span class="font-mono text-neutral-400 text-sm">
+                {{ resultCount() }}/{{ totalCount() }}
+              </span>
+            } @else {
+              <app-kbd className="border-neutral-200 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
+                ⌘ K
+              </app-kbd>
+            }
+          </span>
+        </div>
+      </div>
     </div>
   `,
 })

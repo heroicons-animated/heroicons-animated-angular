@@ -9,20 +9,26 @@ import { SunIcon, MoonIcon } from '@heroicons-animated/angular';
   template: `
     <button
       (click)="toggle()"
-      class="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 transition-colors hover:bg-foreground/10 hover:text-foreground"
+      (mouseenter)="isIconHovered.set(true)"
+      (mouseleave)="isIconHovered.set(false)"
+      class="flex size-9 cursor-pointer items-center justify-center rounded-[10px] bg-white focus-within:outline-offset-2 focus-visible:outline-1 focus-visible:outline-primary dark:bg-white/10"
       [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+      [attr.aria-pressed]="isDark()"
+      type="button"
     >
-      @if (isDark()) {
-        <hi-moon [size]="20" [animate]="animating()" />
-      } @else {
-        <hi-sun [size]="20" [animate]="animating()" />
-      }
+      <span class="flex items-center justify-center">
+        @if (isDark()) {
+          <hi-moon aria-hidden="true" [size]="16" [animate]="isIconHovered()" />
+        } @else {
+          <hi-sun aria-hidden="true" [size]="16" [animate]="isIconHovered()" />
+        }
+      </span>
     </button>
   `,
 })
 export class ThemeToggleComponent {
   isDark = signal(false);
-  animating = signal(false);
+  isIconHovered = signal(false);
 
   constructor() {
     // Initialize from localStorage or system preference
@@ -49,7 +55,5 @@ export class ThemeToggleComponent {
   toggle() {
     this.isDark.update((v) => !v);
     localStorage.setItem('theme', this.isDark() ? 'dark' : 'light');
-    this.animating.set(true);
-    setTimeout(() => this.animating.set(false), 600);
   }
 }

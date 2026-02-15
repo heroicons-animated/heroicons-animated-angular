@@ -1,24 +1,31 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { AngularLogoComponent } from './angular-logo.component';
+import { GithubStarsButtonComponent } from './github-stars-button.component';
 import { ThemeToggleComponent } from './theme-toggle.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ThemeToggleComponent],
+  imports: [ThemeToggleComponent, GithubStarsButtonComponent, AngularLogoComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <header
-      class="sticky top-0 z-50 h-(--header-height) border-b border-foreground/10 bg-background/80 backdrop-blur-sm"
-    >
-      <div class="view-container flex h-full items-center justify-between">
-        <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 text-foreground no-underline">
+    <header class="h-(--header-height) border-neutral-200 xl:border-b dark:border-neutral-800">
+      <div
+        class="view-container flex h-full w-full justify-between gap-4 border-neutral-200 xl:border-x dark:border-neutral-800"
+      >
+        <a
+          aria-label="Heroicons Animated - Home"
+          class="mr-auto flex items-center gap-2 font-sans text-base focus-within:outline-offset-4 focus-visible:outline-1 focus-visible:outline-primary max-[524px]:translate-y-[-2px] min-[395px]:text-xl"
+          href="/"
+          tabindex="0"
+        >
           <svg
-            class="h-7 w-7 text-primary"
-            viewBox="0 0 156 166"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
+            class="w-6 text-primary min-[395px]:w-8"
+            data-type="default"
+            fill="none"
+            viewBox="0 0 156 166"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               clip-rule="evenodd"
@@ -31,34 +38,74 @@ import { ThemeToggleComponent } from './theme-toggle.component';
             <circle cx="61" cy="82" fill="black" r="5.5" />
             <circle cx="95" cy="82" fill="black" r="5.5" />
           </svg>
-          <span class="text-lg font-normal tracking-tight">heroicons-animated</span>
-          <span
-            class="ml-1 inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-2 py-0.5 font-mono text-xs text-foreground/60"
-          >
-            for Angular
+          <span class="relative inline-flex flex-col">
+            <span>heroicons-animated</span>
+            <span
+              class="absolute -bottom-[14px] right-0 flex items-center gap-1 font-mono text-[10px] text-secondary"
+            >
+              - for
+              <svg-angular [size]="{ width: 14, height: 14 }" />
+            </span>
           </span>
         </a>
 
-        <!-- Right actions -->
-        <div class="flex items-center gap-2">
+        <div class="ml-auto flex w-full flex-1 flex-wrap-reverse items-center justify-end gap-2">
           <a
-            href="https://github.com/heroicons-animated/heroicons-animated-angular"
+            aria-label="Sponsor Project"
+            class="group flex size-9 items-center justify-center gap-1 rounded-[10px] bg-white font-sans text-[#3F3F47] text-sm underline-offset-4 focus-within:outline-offset-2 hover:underline focus-visible:outline-1 focus-visible:outline-primary sm:size-auto sm:bg-transparent sm:pr-1 dark:bg-white/10 dark:text-[#FAFAFA] sm:dark:bg-transparent"
+            href="https://github.com/sponsors/Aniket-508"
+            tabindex="0"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 rounded-full border border-foreground/10 bg-background px-3 py-1.5 text-sm text-foreground/70 no-underline transition-colors hover:bg-foreground/5 hover:text-foreground"
+            (mouseenter)="isSponsorIconAnimating.set(true)"
+            (mouseleave)="isSponsorIconAnimating.set(false)"
+            (focus)="isSponsorIconAnimating.set(true)"
+            (blur)="isSponsorIconAnimating.set(false)"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4">
+            <svg
+              aria-hidden="true"
+              class="icon-svg text-primary"
+              [class.heart-animate]="isSponsorIconAnimating()"
+              fill="currentColor"
+              height="16"
+              viewBox="0 0 24 24"
+              width="16"
+            >
               <path
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"
               />
             </svg>
-            <span class="hidden sm:inline text-xs">Star on GitHub</span>
+            <span class="hidden sm:inline">Sponsor Project</span>
           </a>
 
           <app-theme-toggle />
+          <app-github-stars-button />
         </div>
       </div>
     </header>
   `,
+  styles: `
+    .icon-svg {
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .icon-svg.heart-animate {
+      animation: heart-pulse 0.45s ease-in-out 3;
+    }
+
+    @keyframes heart-pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
+    }
+  `,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  readonly isSponsorIconAnimating = signal(false);
+}
