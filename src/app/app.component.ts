@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, inject, type OnInit } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { NgxSonnerToaster } from "ngx-sonner";
 import { HeaderComponent } from "./components/header.component";
+import { SeoService } from "./seo.service";
 
 @Component({
   selector: "app-root",
@@ -22,4 +23,10 @@ import { HeaderComponent } from "./components/header.component";
     }
   `,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  private readonly seo = inject(SeoService);
+
+  ngOnInit() {
+    this.seo.setGlobalStructuredData();
+  }
+}

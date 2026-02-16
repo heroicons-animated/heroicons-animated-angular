@@ -67,7 +67,7 @@ import { LINK } from "../site.constants";
     </section>
   `,
 })
-export class HomePageComponent implements OnInit {
+export default class HomePageComponent implements OnInit {
   readonly link = LINK;
   private readonly seo = inject(SeoService);
 

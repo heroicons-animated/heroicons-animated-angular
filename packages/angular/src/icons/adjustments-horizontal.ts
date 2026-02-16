@@ -9,6 +9,19 @@ import {
   signal,
 } from "@angular/core";
 
+type HorizontalStateKey =
+  | "row1RightX1"
+  | "row1LeftX2"
+  | "row1KnobCX"
+  | "row2RightX1"
+  | "row2LeftX2"
+  | "row2KnobCX"
+  | "row3RightX1"
+  | "row3LeftX2"
+  | "row3KnobCX";
+
+type HorizontalState = Record<HorizontalStateKey, number>;
+
 @Component({
   selector: "hi-adjustments-horizontal",
   standalone: true,
@@ -75,7 +88,7 @@ export class AdjustmentsHorizontalIcon {
   protected row3KnobCX = signal(9);
 
   private readonly DURATION_MS = 450;
-  private readonly NORMAL_STATE: Record<string, number> = {
+  private readonly NORMAL_STATE: HorizontalState = {
     row1RightX1: 10.5,
     row1LeftX2: 7.5,
     row1KnobCX: 9,
@@ -86,7 +99,7 @@ export class AdjustmentsHorizontalIcon {
     row3LeftX2: 7.5,
     row3KnobCX: 9,
   };
-  private readonly ANIMATE_STATE: Record<string, number> = {
+  private readonly ANIMATE_STATE: HorizontalState = {
     row1RightX1: 13.5,
     row1LeftX2: 10.5,
     row1KnobCX: 12,
@@ -103,20 +116,20 @@ export class AdjustmentsHorizontalIcon {
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly signalMap: Record<
-    string,
+    HorizontalStateKey,
     ReturnType<typeof signal<number>>
-  > = {};
+  > = {} as Record<HorizontalStateKey, ReturnType<typeof signal<number>>>;
 
   constructor() {
-    this.signalMap["row1RightX1"] = this.row1RightX1;
-    this.signalMap["row1LeftX2"] = this.row1LeftX2;
-    this.signalMap["row1KnobCX"] = this.row1KnobCX;
-    this.signalMap["row2RightX1"] = this.row2RightX1;
-    this.signalMap["row2LeftX2"] = this.row2LeftX2;
-    this.signalMap["row2KnobCX"] = this.row2KnobCX;
-    this.signalMap["row3RightX1"] = this.row3RightX1;
-    this.signalMap["row3LeftX2"] = this.row3LeftX2;
-    this.signalMap["row3KnobCX"] = this.row3KnobCX;
+    this.signalMap.row1RightX1 = this.row1RightX1;
+    this.signalMap.row1LeftX2 = this.row1LeftX2;
+    this.signalMap.row1KnobCX = this.row1KnobCX;
+    this.signalMap.row2RightX1 = this.row2RightX1;
+    this.signalMap.row2LeftX2 = this.row2LeftX2;
+    this.signalMap.row2KnobCX = this.row2KnobCX;
+    this.signalMap.row3RightX1 = this.row3RightX1;
+    this.signalMap.row3LeftX2 = this.row3LeftX2;
+    this.signalMap.row3KnobCX = this.row3KnobCX;
 
     effect(() => {
       this.runStateAnimation(this.shouldAnimate());
@@ -143,8 +156,9 @@ export class AdjustmentsHorizontalIcon {
 
   private runStateAnimation(active: boolean) {
     const target = active ? this.ANIMATE_STATE : this.NORMAL_STATE;
-    const startValues: Record<string, number> = {};
-    for (const key of Object.keys(this.NORMAL_STATE)) {
+    const stateKeys = Object.keys(this.NORMAL_STATE) as HorizontalStateKey[];
+    const startValues = {} as HorizontalState;
+    for (const key of stateKeys) {
       startValues[key] = this.signalMap[key]();
     }
 
@@ -162,7 +176,7 @@ export class AdjustmentsHorizontalIcon {
       const rawProgress = Math.min((now - start) / this.DURATION_MS, 1);
       const easedProgress = this.easeOutBack(rawProgress);
 
-      for (const key of Object.keys(target)) {
+      for (const key of stateKeys) {
         this.signalMap[key].set(
           this.lerp(startValues[key], target[key], easedProgress)
         );

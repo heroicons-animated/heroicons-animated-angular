@@ -1,10 +1,13 @@
+import { isPlatformBrowser } from "@angular/common";
 import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   type OnDestroy,
   type OnInit,
+  PLATFORM_ID,
   signal,
 } from "@angular/core";
 import {
@@ -117,6 +120,8 @@ type PackageManager = "pnpm" | "npm" | "yarn" | "bun";
   `,
 })
 export class CliBlockComponent implements OnInit, OnDestroy {
+  private readonly platformId = inject(PLATFORM_ID);
+
   readonly staticIconName = input("");
   readonly className = input("");
 
@@ -173,7 +178,7 @@ export class CliBlockComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    if (this.staticIconName()) {
+    if (!isPlatformBrowser(this.platformId) || this.staticIconName()) {
       return;
     }
 

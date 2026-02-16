@@ -1,7 +1,9 @@
+import { REQUEST } from "@analogjs/router/tokens";
 import { DOCUMENT } from "@angular/common";
 import { Injectable, inject } from "@angular/core";
 import { Meta, Title } from "@angular/platform-browser";
-import { SITE } from "./site.constants";
+import { ICON_MANIFEST } from "./icon-manifest";
+import { LINK, SITE } from "./site.constants";
 
 interface IconMeta {
   name: string;
@@ -12,7 +14,115 @@ interface IconMeta {
 export class SeoService {
   private readonly document = inject(DOCUMENT);
   private readonly meta = inject(Meta);
+  private readonly request = inject(REQUEST, { optional: true });
   private readonly title = inject(Title);
+
+  setGlobalStructuredData() {
+    const siteUrl = this.getOrigin();
+    const dateModified = new Date().toISOString().split("T")[0];
+
+    this.setJsonLd("website-schema", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: SITE.name,
+      url: siteUrl,
+      description: SITE.description.long,
+      inLanguage: "en-US",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteUrl}?search={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    });
+
+    this.setJsonLd("library-schema", {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      name: SITE.name,
+      description: SITE.description.long,
+      url: siteUrl,
+      codeRepository: LINK.github,
+      programmingLanguage: ["TypeScript", "Angular", "JavaScript"],
+      runtimePlatform: "Node.js",
+      license: LINK.license,
+      author: {
+        "@type": "Person",
+        name: SITE.author.name,
+        url: LINK.twitter,
+      },
+      maintainer: {
+        "@type": "Person",
+        name: SITE.author.name,
+        url: LINK.twitter,
+      },
+      keywords: SITE.keywords.join(", "),
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+      isAccessibleForFree: true,
+      dateModified,
+      numberOfItems: ICON_MANIFEST.length,
+    });
+
+    this.setJsonLd("organization-schema", {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: SITE.name,
+      url: siteUrl,
+      logo: `${siteUrl}${SITE.ogImagePath}`,
+      sameAs: [LINK.github, LINK.twitter],
+      founder: {
+        "@type": "Person",
+        name: SITE.author.name,
+        url: LINK.twitter,
+      },
+    });
+
+    this.setJsonLd("faq-schema", {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: `What is ${SITE.name}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `${SITE.name} is a free, open-source library of beautifully crafted animated Angular icons built with CSS animations and based on Heroicons.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: `How do I install ${SITE.name} icons?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You can install the package with your preferred package manager and import icons directly in your Angular components.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: `Is ${SITE.name} free to use?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `Yes. ${SITE.name} is open-source under the MIT license and can be used for personal and commercial projects.`,
+          },
+        },
+        {
+          "@type": "Question",
+          name: `What technologies are used in ${SITE.name}?`,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `${SITE.name} icons are Angular components written in TypeScript. Animations are powered by CSS, and the icons are based on Heroicons.`,
+          },
+        },
+      ],
+    });
+  }
 
   setHomeMeta() {
     const siteUrl = this.getOrigin();
@@ -40,22 +150,6 @@ export class SeoService {
       imageAlt: `${SITE.name} - Animated Heroicons Library for Angular`,
     });
     this.setThemeColor("#f5f5f5");
-    this.setJsonLd("website-schema", {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: SITE.name,
-      url: canonical,
-      description: SITE.description.long,
-      inLanguage: "en-US",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${canonical}?search={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
-    });
     this.removeJsonLd("icon-schema");
     this.removeJsonLd("breadcrumb-schema");
   }
@@ -82,7 +176,9 @@ export class SeoService {
         ...icon.keywords,
         "animated icon",
         "angular icon",
+        "css animation icon",
         `${icon.name} animation`,
+        `${icon.name} angular`,
       ].join(", ")
     );
     this.setRobots("index,follow");
@@ -105,9 +201,14 @@ export class SeoService {
       "@type": "SoftwareSourceCode",
       name: pascalName,
       description: `Animated ${icon.name} icon component for Angular`,
-      codeRepository:
-        "https://github.com/heroicons-animated/heroicons-animated-angular",
+      codeRepository: LINK.github,
       programmingLanguage: ["TypeScript", "Angular"],
+      license: LINK.license,
+      isPartOf: {
+        "@type": "SoftwareSourceCode",
+        name: SITE.name,
+        url: siteUrl,
+      },
       keywords: icon.keywords.join(", "),
     });
     this.setJsonLd("breadcrumb-schema", {
@@ -141,6 +242,17 @@ export class SeoService {
     if (typeof window !== "undefined" && window.location.origin) {
       return window.location.origin;
     }
+
+    const host = this.request?.headers.host;
+    if (host) {
+      const forwardedProto = this.request?.headers["x-forwarded-proto"];
+      const protocolHeader = Array.isArray(forwardedProto)
+        ? (forwardedProto[0] ?? "http")
+        : (forwardedProto ?? "http");
+      const protocol = protocolHeader.split(",")[0]?.trim() || "http";
+      return `${protocol}://${host}`;
+    }
+
     return SITE.fallbackUrl;
   }
 

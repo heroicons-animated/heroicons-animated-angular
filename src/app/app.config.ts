@@ -1,8 +1,30 @@
-import type { ApplicationConfig } from "@angular/core";
-import { provideRouter } from "@angular/router";
+import { provideFileRouter, requestContextInterceptor } from "@analogjs/router";
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from "@angular/common/http";
+import {
+  type ApplicationConfig,
+  provideZoneChangeDetection,
+} from "@angular/core";
+import {
+  withComponentInputBinding,
+  withEnabledBlockingInitialNavigation,
+} from "@angular/router";
 import { provideHeroiconsAnimated } from "@heroicons-animated/angular";
-import { appRoutes } from "./app.routes";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideHeroiconsAnimated({}), provideRouter(appRoutes)],
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHeroiconsAnimated({}),
+    provideFileRouter(
+      withComponentInputBinding(),
+      withEnabledBlockingInitialNavigation()
+    ),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([requestContextInterceptor])
+    ),
+  ],
 };

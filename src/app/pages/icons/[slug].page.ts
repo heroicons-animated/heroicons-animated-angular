@@ -10,11 +10,11 @@ import { toSignal } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, RouterLink } from "@angular/router";
 import { ArrowLeftIcon } from "@heroicons-animated/angular";
 import { map } from "rxjs";
-import { CliBlockComponent } from "../components/cli-block.component";
-import { IconCardComponent } from "../components/icon-card.component";
-import type { IconManifest } from "../icon-manifest";
-import { ICON_MANIFEST } from "../icon-manifest";
-import { SeoService } from "../seo.service";
+import { CliBlockComponent } from "../../components/cli-block.component";
+import { IconCardComponent } from "../../components/icon-card.component";
+import type { IconManifest } from "../../icon-manifest";
+import { ICON_MANIFEST } from "../../icon-manifest";
+import { SeoService } from "../../seo.service";
 
 @Component({
   selector: "app-icon-page",
@@ -121,7 +121,7 @@ import { SeoService } from "../seo.service";
     }
   `,
 })
-export class IconPageComponent {
+export default class IconPageComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly seo = inject(SeoService);
 

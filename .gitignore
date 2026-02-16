@@ -41,6 +41,11 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Analog / Nitro
+.analog/
+.nitro/
+.output/
+
 # Agents
 AGENTS.md
 .cursor/

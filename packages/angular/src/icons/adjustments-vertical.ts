@@ -9,6 +9,19 @@ import {
   signal,
 } from "@angular/core";
 
+type VerticalStateKey =
+  | "col1TopY2"
+  | "col1BottomY1"
+  | "col1KnobCY"
+  | "col2TopY2"
+  | "col2BottomY1"
+  | "col2KnobCY"
+  | "col3TopY2"
+  | "col3BottomY1"
+  | "col3KnobCY";
+
+type VerticalState = Record<VerticalStateKey, number>;
+
 @Component({
   selector: "hi-adjustments-vertical",
   standalone: true,
@@ -75,7 +88,7 @@ export class AdjustmentsVerticalIcon {
   protected col3KnobCY = signal(15);
 
   private readonly DURATION_MS = 450;
-  private readonly NORMAL_STATE: Record<string, number> = {
+  private readonly NORMAL_STATE: VerticalState = {
     col1TopY2: 13.5,
     col1BottomY1: 16.5,
     col1KnobCY: 15,
@@ -86,7 +99,7 @@ export class AdjustmentsVerticalIcon {
     col3BottomY1: 16.5,
     col3KnobCY: 15,
   };
-  private readonly ANIMATE_STATE: Record<string, number> = {
+  private readonly ANIMATE_STATE: VerticalState = {
     col1TopY2: 10.5,
     col1BottomY1: 13.5,
     col1KnobCY: 12,
@@ -103,20 +116,20 @@ export class AdjustmentsVerticalIcon {
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly signalMap: Record<
-    string,
+    VerticalStateKey,
     ReturnType<typeof signal<number>>
-  > = {};
+  > = {} as Record<VerticalStateKey, ReturnType<typeof signal<number>>>;
 
   constructor() {
-    this.signalMap["col1TopY2"] = this.col1TopY2;
-    this.signalMap["col1BottomY1"] = this.col1BottomY1;
-    this.signalMap["col1KnobCY"] = this.col1KnobCY;
-    this.signalMap["col2TopY2"] = this.col2TopY2;
-    this.signalMap["col2BottomY1"] = this.col2BottomY1;
-    this.signalMap["col2KnobCY"] = this.col2KnobCY;
-    this.signalMap["col3TopY2"] = this.col3TopY2;
-    this.signalMap["col3BottomY1"] = this.col3BottomY1;
-    this.signalMap["col3KnobCY"] = this.col3KnobCY;
+    this.signalMap.col1TopY2 = this.col1TopY2;
+    this.signalMap.col1BottomY1 = this.col1BottomY1;
+    this.signalMap.col1KnobCY = this.col1KnobCY;
+    this.signalMap.col2TopY2 = this.col2TopY2;
+    this.signalMap.col2BottomY1 = this.col2BottomY1;
+    this.signalMap.col2KnobCY = this.col2KnobCY;
+    this.signalMap.col3TopY2 = this.col3TopY2;
+    this.signalMap.col3BottomY1 = this.col3BottomY1;
+    this.signalMap.col3KnobCY = this.col3KnobCY;
 
     effect(() => {
       this.runStateAnimation(this.shouldAnimate());
@@ -143,8 +156,9 @@ export class AdjustmentsVerticalIcon {
 
   private runStateAnimation(active: boolean) {
     const target = active ? this.ANIMATE_STATE : this.NORMAL_STATE;
-    const startValues: Record<string, number> = {};
-    for (const key of Object.keys(this.NORMAL_STATE)) {
+    const stateKeys = Object.keys(this.NORMAL_STATE) as VerticalStateKey[];
+    const startValues = {} as VerticalState;
+    for (const key of stateKeys) {
       startValues[key] = this.signalMap[key]();
     }
 
@@ -162,7 +176,7 @@ export class AdjustmentsVerticalIcon {
       const rawProgress = Math.min((now - start) / this.DURATION_MS, 1);
       const easedProgress = this.easeOutBack(rawProgress);
 
-      for (const key of Object.keys(target)) {
+      for (const key of stateKeys) {
         this.signalMap[key].set(
           this.lerp(startValues[key], target[key], easedProgress)
         );

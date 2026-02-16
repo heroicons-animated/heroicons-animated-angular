@@ -1,12 +1,15 @@
+import { isPlatformBrowser } from "@angular/common";
 import {
   ChangeDetectionStrategy,
   Component,
   computed,
   type ElementRef,
+  inject,
   input,
   type OnDestroy,
   type OnInit,
   output,
+  PLATFORM_ID,
   viewChild,
 } from "@angular/core";
 import { MagnifyingGlassIcon } from "@heroicons-animated/angular";
@@ -59,6 +62,8 @@ import { KbdComponent } from "./kbd.component";
   `,
 })
 export class SearchInputComponent implements OnInit, OnDestroy {
+  private readonly platformId = inject(PLATFORM_ID);
+
   readonly value = input("");
   readonly resultCount = input<number | undefined>(undefined);
   readonly totalCount = input<number | undefined>(undefined);
@@ -89,11 +94,15 @@ export class SearchInputComponent implements OnInit, OnDestroy {
   };
 
   ngOnInit() {
-    window.addEventListener("keydown", this.keydownHandler);
+    if (isPlatformBrowser(this.platformId)) {
+      window.addEventListener("keydown", this.keydownHandler);
+    }
   }
 
   ngOnDestroy() {
-    window.removeEventListener("keydown", this.keydownHandler);
+    if (isPlatformBrowser(this.platformId)) {
+      window.removeEventListener("keydown", this.keydownHandler);
+    }
   }
 
   onInput(event: Event) {

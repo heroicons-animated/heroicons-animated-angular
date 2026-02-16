@@ -1,14 +1,13 @@
 import {
+  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   type ElementRef,
   effect,
-  type OnInit,
   signal,
   viewChild,
 } from "@angular/core";
-import "number-flow";
 
 type NumberFlowElement = HTMLElement & {
   format?: Intl.NumberFormatOptions;
@@ -69,12 +68,18 @@ type NumberFlowElement = HTMLElement & {
     </a>
   `,
 })
-export class GithubStarsButtonComponent implements OnInit {
+export class GithubStarsButtonComponent {
   readonly stars = signal(0);
   readonly hydrated = signal(false);
   readonly starsFlowRef = viewChild<ElementRef<NumberFlowElement>>("starsFlow");
 
   constructor() {
+    afterNextRender(async () => {
+      await import("number-flow");
+      this.hydrated.set(true);
+      this.fetchStars();
+    });
+
     effect(() => {
       const starsFlow = this.starsFlowRef()?.nativeElement;
       if (!starsFlow) {
@@ -87,9 +92,7 @@ export class GithubStarsButtonComponent implements OnInit {
     });
   }
 
-  async ngOnInit() {
-    this.hydrated.set(true);
-
+  private async fetchStars() {
     try {
       const response = await fetch(
         "https://api.github.com/repos/heroicons-animated/heroicons-animated-angular"
@@ -101,8 +104,7 @@ export class GithubStarsButtonComponent implements OnInit {
       const data = (await response.json()) as { stargazers_count?: number };
       const targetStars = data.stargazers_count ?? 0;
       this.stars.set(targetStars);
-    } catch (error) {
-      console.error("Failed to fetch GitHub stars:", error);
+    } catch {
       this.stars.set(0);
     }
   }
