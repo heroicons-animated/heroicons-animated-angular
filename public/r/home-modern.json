@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "home-modern",
+  "type": "registry:component",
+  "title": "home-modern",
+  "description": "Animated home-modern icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/home-modern.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/home-modern.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-home-modern\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'home-modern'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n    [class.homemodern-animate]=\"shouldAnimate()\"\n  >\n    <path\n      d=\"M8.25 21V16.125C8.25 15.5037 8.75368 15 9.375 15H11.625C12.2463 15 12.75 15.5037 12.75 16.125V21M12.75 21H17.25V3.54545M12.75 21H20.25V10.75M2.25 21H3.75M21.75 21H3.75M2.25 9L6.75 7.36364M18.75 3L17.25 3.54545M17.25 9.75L20.25 10.75M21.75 11.25L20.25 10.75M6.75 7.36364V3H3.75V21M6.75 7.36364L17.25 3.54545\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.3s ease;\n      }\n\n      .icon-svg.homemodern-animate {\n        animation: homemodern-animate 0.6s ease-in-out;\n      }\n\n      @keyframes homemodern-animate {\n        0% {\n          transform: scale(1);\n        }\n        50% {\n          transform: scale(1.1);\n        }\n        100% {\n          transform: scale(1);\n        }\n      }\n    `,\n  ],\n})\nexport class HomeModernIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

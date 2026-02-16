@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "check-badge",
+  "type": "registry:component",
+  "title": "check-badge",
+  "description": "Animated check-badge icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/check-badge.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/check-badge.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-check-badge\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'check-badge'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z\"\n    />\n    <path\n      class=\"checkbadge-check\"\n      [class.checkbadge-draw]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      d=\"M9 12.75 11.25 15 15 9.75\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .checkbadge-check {\n        stroke-dasharray: 1;\n        stroke-dashoffset: 0;\n        opacity: 1;\n      }\n\n      .checkbadge-check.checkbadge-draw {\n        animation: checkbadge-draw 0.4s ease-in-out forwards;\n      }\n\n      @keyframes checkbadge-draw {\n        0% {\n          stroke-dashoffset: 1;\n          opacity: 0;\n        }\n        100% {\n          stroke-dashoffset: 0;\n          opacity: 1;\n        }\n      }\n    `,\n  ],\n})\nexport class CheckBadgeIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "magnifying-glass-plus",
+  "type": "registry:component",
+  "title": "magnifying-glass-plus",
+  "description": "Animated magnifying-glass-plus icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/magnifying-glass-plus.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/magnifying-glass-plus.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-magnifying-glass-plus\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'magnifying-glass-plus'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path d=\"m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z\" />\n    <path\n      class=\"magnifyingglassplus-vertical\"\n      [class.magnifyingglassplus-draw]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      d=\"M10.5 7.5v6\"\n    />\n    <path\n      class=\"magnifyingglassplus-horizontal\"\n      [class.magnifyingglassplus-draw]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      d=\"M7.5 10.5h6\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.3s ease;\n      }\n\n      .magnifyingglassplus-vertical,\n      .magnifyingglassplus-horizontal {\n        stroke-dasharray: 1;\n        stroke-dashoffset: 0;\n        opacity: 1;\n      }\n\n      .magnifyingglassplus-vertical.magnifyingglassplus-draw {\n        animation: magnifyingglassplus-draw 0.2s ease-in-out 0.3s both;\n      }\n\n      .magnifyingglassplus-horizontal.magnifyingglassplus-draw {\n        animation: magnifyingglassplus-draw 0.2s ease-in-out 0.6s both;\n      }\n\n      @keyframes magnifyingglassplus-draw {\n        0% {\n          stroke-dashoffset: 1;\n          opacity: 0;\n        }\n        100% {\n          stroke-dashoffset: 0;\n          opacity: 1;\n        }\n      }\n    `,\n  ],\n})\nexport class MagnifyingGlassPlusIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

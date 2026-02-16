@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bars-arrow-up",
+  "type": "registry:component",
+  "title": "bars-arrow-up",
+  "description": "Animated bars-arrow-up icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/bars-arrow-up.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/bars-arrow-up.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-bars-arrow-up\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'bars-arrow-up'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path d=\"M3 4.5h14.25M3 9h9.75M3 13.5h5.25\" />\n    <path\n      #arrowPath\n      class=\"arrow-path\"\n      [class.animate]=\"shouldAnimate()\"\n      d=\"M13.5 12.75L17.25 9L21 12.75M17.25 9v12\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .arrow-path {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.5s ease-in-out;\n      }\n\n      .arrow-path.animate {\n        animation: arrow-translate 0.5s ease-in-out forwards;\n      }\n\n      @keyframes arrow-translate {\n        0% {\n          transform: translateY(0);\n        }\n        40% {\n          transform: translateY(-2px);\n        }\n        100% {\n          transform: translateY(0);\n        }\n      }\n    `,\n  ],\n})\nexport class BarsArrowUpIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

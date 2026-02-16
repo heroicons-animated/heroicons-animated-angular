@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "signal",
+  "type": "registry:component",
+  "title": "signal",
+  "description": "Animated signal icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/signal.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/signal.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-signal\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'signal'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path d=\"M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z\" />\n    <path\n      class=\"signal-wave signal-wave-1\"\n      [class.signal-wave-pulse]=\"shouldAnimate()\"\n      d=\"M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304\"\n    />\n    <path\n      class=\"signal-wave signal-wave-2\"\n      [class.signal-wave-pulse]=\"shouldAnimate()\"\n      d=\"M7.227 16.773a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546\"\n    />\n    <path\n      class=\"signal-wave signal-wave-3\"\n      [class.signal-wave-pulse]=\"shouldAnimate()\"\n      d=\"M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .signal-wave {\n        transform-origin: 12px 12px;\n        opacity: 1;\n        transform: scale(1);\n      }\n\n      .signal-wave.signal-wave-pulse {\n        animation: signal-wave-pulse 0.4s ease-in-out forwards;\n      }\n\n      .signal-wave-1.signal-wave-pulse {\n        animation-delay: 0s;\n      }\n      .signal-wave-2.signal-wave-pulse {\n        animation-delay: 0.2s;\n      }\n      .signal-wave-3.signal-wave-pulse {\n        animation-delay: 0.4s;\n      }\n\n      @keyframes signal-wave-pulse {\n        0% {\n          opacity: 1;\n          transform: scale(1);\n        }\n        50% {\n          opacity: 0;\n          transform: scale(0);\n        }\n        100% {\n          opacity: 1;\n          transform: scale(1);\n        }\n      }\n    `,\n  ],\n})\nexport class SignalIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

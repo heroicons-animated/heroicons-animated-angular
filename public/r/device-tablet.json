@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "device-tablet",
+  "type": "registry:component",
+  "title": "device-tablet",
+  "description": "Animated device-tablet icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/device-tablet.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/device-tablet.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-device-tablet\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'device-tablet'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n    [class.devicetablet-shake]=\"shouldAnimate()\"\n  >\n    <path\n      d=\"M10.5 19.5H13.5M6.75 21.75H17.25C18.4926 21.75 19.5 20.7426 19.5 19.5V4.5C19.5 3.25736 18.4926 2.25 17.25 2.25H6.75C5.50736 2.25 4.5 3.25736 4.5 4.5V19.5C4.5 20.7426 5.50736 21.75 6.75 21.75Z\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: 50% 50%;\n      }\n\n      .icon-svg.devicetablet-shake {\n        animation: devicetablet-shake 0.5s ease-in-out;\n      }\n\n      @keyframes devicetablet-shake {\n        0%,\n        100% {\n          transform: rotate(0deg);\n        }\n        14% {\n          transform: rotate(-3deg);\n        }\n        28% {\n          transform: rotate(3deg);\n        }\n        42% {\n          transform: rotate(-3deg);\n        }\n        57% {\n          transform: rotate(3deg);\n        }\n        71% {\n          transform: rotate(-2deg);\n        }\n        85% {\n          transform: rotate(2deg);\n        }\n      }\n    `,\n  ],\n})\nexport class DeviceTabletIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

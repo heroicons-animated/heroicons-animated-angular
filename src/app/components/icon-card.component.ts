@@ -17,14 +17,17 @@ import {
   PlayIcon,
   XMarkIcon,
 } from "@heroicons-animated/angular";
+import { BrnTooltipImports } from "@spartan-ng/brain/tooltip";
 import { toast } from "ngx-sonner";
 import { ICON_COMPONENTS } from "../icon-components";
+import { SITE } from "../site.constants";
 
 @Component({
   selector: "app-icon-card",
   standalone: true,
   imports: [
     NgComponentOutlet,
+    ...BrnTooltipImports,
     ArrowPathIcon,
     CheckIcon,
     ClipboardDocumentIcon,
@@ -83,8 +86,11 @@ import { ICON_COMPONENTS } from "../icon-components";
           <button
             [attr.aria-disabled]="codeState() !== 'idle'"
             [attr.data-busy]="codeState() !== 'idle' ? '' : null"
+            [brnTooltipTrigger]="'Copy .ts code'"
+            [tooltipContentClasses]="tooltipContentClasses"
             aria-label="Copy code"
             class="flex size-10 cursor-pointer items-center justify-center rounded-[10px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 focus-visible:outline-1 focus-visible:outline-offset-1 focus-visible:outline-primary dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+            position="above"
             type="button"
             (blur)="isCodeActionHovered.set(false)"
             (focus)="isCodeActionHovered.set(true)"
@@ -123,8 +129,11 @@ import { ICON_COMPONENTS } from "../icon-components";
           <button
             [attr.aria-disabled]="cliState() !== 'idle'"
             [attr.data-busy]="cliState() !== 'idle' ? '' : null"
+            [brnTooltipTrigger]="'Copy registry URL'"
+            [tooltipContentClasses]="tooltipContentClasses"
             aria-label="Copy CLI command"
             class="flex size-10 cursor-pointer items-center justify-center rounded-[10px] bg-neutral-200/20 transition-colors duration-100 hover:bg-neutral-200 focus-visible:outline-1 focus-visible:outline-offset-1 focus-visible:outline-primary dark:bg-neutral-800/20 dark:hover:bg-neutral-700"
+            position="above"
             type="button"
             (blur)="isCLIActionHovered.set(false)"
             (focus)="isCLIActionHovered.set(true)"
@@ -181,6 +190,9 @@ import { ICON_COMPONENTS } from "../icon-components";
   `,
 })
 export class IconCardComponent implements OnDestroy {
+  readonly tooltipContentClasses =
+    "rounded-[8px] bg-neutral-900 px-2 py-1 font-sans text-[11px] text-white shadow-sm dark:bg-neutral-100 dark:text-neutral-900";
+
   readonly name = input.required<string>();
   readonly size = input(40);
   readonly showActions = input(true);
@@ -287,7 +299,7 @@ export class IconCardComponent implements OnDestroy {
     }
 
     try {
-      const command = "pnpm add @heroicons-animated/angular";
+      const command = `${SITE.url}/r/${this.name()}`;
       await navigator.clipboard.writeText(command);
       this.cliState.set("done");
     } catch {

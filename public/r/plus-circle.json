@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "plus-circle",
+  "type": "registry:component",
+  "title": "plus-circle",
+  "description": "Animated plus-circle icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/plus-circle.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/plus-circle.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-plus-circle\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'plus-circle'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path d=\"M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Z\" />\n    <path\n      d=\"M12 9v6\"\n      pathLength=\"1\"\n      class=\"pluscircle-vertical\"\n      [class.pluscircle-vertical-animate]=\"shouldAnimate()\"\n    />\n    <path\n      d=\"M9 12h6\"\n      pathLength=\"1\"\n      class=\"pluscircle-horizontal\"\n      [class.pluscircle-horizontal-animate]=\"shouldAnimate()\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .pluscircle-vertical,\n      .pluscircle-horizontal {\n        stroke-dasharray: 1;\n        stroke-dashoffset: 0;\n        opacity: 1;\n      }\n\n      .pluscircle-vertical.pluscircle-vertical-animate {\n        animation: pluscircle-line-draw 0.2s ease-in-out 0.3s both;\n      }\n\n      .pluscircle-horizontal.pluscircle-horizontal-animate {\n        animation: pluscircle-line-draw 0.2s ease-in-out 0.6s both;\n      }\n\n      @keyframes pluscircle-line-draw {\n        0% {\n          stroke-dashoffset: 1;\n          opacity: 0;\n        }\n        100% {\n          stroke-dashoffset: 0;\n          opacity: 1;\n        }\n      }\n    `,\n  ],\n})\nexport class PlusCircleIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

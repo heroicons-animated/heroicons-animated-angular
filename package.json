@@ -5,6 +5,7 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
+    "build:registry": "node scripts/registry-build.mjs",
     "serve:ssr": "node dist/analog/server/index.mjs",
     "build:lib": "ng build @heroicons-animated/angular",
     "lint": "ultracite check",

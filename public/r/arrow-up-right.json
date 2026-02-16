@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-up-right",
+  "type": "registry:component",
+  "title": "arrow-up-right",
+  "description": "Animated arrow-up-right icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/arrow-up-right.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/arrow-up-right.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-arrow-up-right\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'arrow-up-right'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      #arrowPath\n      class=\"arrow-path\"\n      [class.animate]=\"shouldAnimate()\"\n      d=\"m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .arrow-path {\n        transform-box: fill-box;\n        transform-origin: 100% 0%;\n        transition: transform 0.5s ease-in-out;\n      }\n\n      .arrow-path.animate {\n        animation: arrow-move 0.5s ease-in-out forwards;\n      }\n\n      @keyframes arrow-move {\n        0% {\n          transform: translate(0, 0) scale(1);\n        }\n        50% {\n          transform: translate(-4px, 4px) scale(0.85);\n        }\n        100% {\n          transform: translate(0, 0) scale(1);\n        }\n      }\n    `,\n  ],\n})\nexport class ArrowUpRightIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

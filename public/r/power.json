@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "power",
+  "type": "registry:component",
+  "title": "power",
+  "description": "Animated power icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/power.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/power.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-power\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'power'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M5.636 5.636a9 9 0 1 0 12.728 0\"\n      class=\"power-circle\"\n      [class.power-circle-animate]=\"shouldAnimate()\"\n    />\n    <path d=\"M12 3v9\" class=\"power-line\" [class.power-line-animate]=\"shouldAnimate()\" />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .power-circle {\n        transform-box: fill-box;\n        transform-origin: center center;\n      }\n\n      .power-circle.power-circle-animate {\n        animation: power-circle-pulse 0.5s ease-in-out forwards;\n      }\n\n      @keyframes power-circle-pulse {\n        0% {\n          opacity: 0.5;\n          transform: scale(1);\n        }\n        33% {\n          opacity: 1;\n          transform: scale(1.05);\n        }\n        66% {\n          opacity: 0.5;\n          transform: scale(1);\n        }\n        100% {\n          opacity: 1;\n          transform: scale(1);\n        }\n      }\n\n      .power-line {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .power-line.power-line-animate {\n        animation: power-line-bounce 0.3s ease-in-out forwards;\n      }\n\n      @keyframes power-line-bounce {\n        0%,\n        100% {\n          transform: translateY(0);\n        }\n        50% {\n          transform: translateY(-2px);\n        }\n      }\n    `,\n  ],\n})\nexport class PowerIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

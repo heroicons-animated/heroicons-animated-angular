@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "presentation-chart-bar",
+  "type": "registry:component",
+  "title": "presentation-chart-bar",
+  "description": "Animated presentation-chart-bar icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/presentation-chart-bar.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/presentation-chart-bar.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-presentation-chart-bar\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'presentation-chart-bar'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5\"\n    />\n    <path\n      d=\"M9 12.75v-1.5\"\n      pathLength=\"1\"\n      class=\"presentationchartbar-bar\"\n      [class.presentationchartbar-bar1-animate]=\"shouldAnimate()\"\n    />\n    <path\n      d=\"M12 12.75v-3.75\"\n      pathLength=\"1\"\n      class=\"presentationchartbar-bar\"\n      [class.presentationchartbar-bar2-animate]=\"shouldAnimate()\"\n    />\n    <path\n      d=\"M15 12.75v-6\"\n      pathLength=\"1\"\n      class=\"presentationchartbar-bar\"\n      [class.presentationchartbar-bar3-animate]=\"shouldAnimate()\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .presentationchartbar-bar {\n        stroke-dasharray: 1;\n        stroke-dashoffset: 0;\n        opacity: 1;\n      }\n\n      .presentationchartbar-bar.presentationchartbar-bar1-animate {\n        animation: presentationchartbar-bar-draw 0.4s ease-out 0s forwards;\n      }\n\n      .presentationchartbar-bar.presentationchartbar-bar2-animate {\n        animation: presentationchartbar-bar-draw 0.4s ease-out 0.15s forwards;\n      }\n\n      .presentationchartbar-bar.presentationchartbar-bar3-animate {\n        animation: presentationchartbar-bar-draw 0.4s ease-out 0.3s forwards;\n      }\n\n      @keyframes presentationchartbar-bar-draw {\n        0% {\n          stroke-dashoffset: 1;\n          opacity: 0;\n        }\n        25% {\n          opacity: 1;\n        }\n        100% {\n          stroke-dashoffset: 0;\n          opacity: 1;\n        }\n      }\n    `,\n  ],\n})\nexport class PresentationChartBarIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

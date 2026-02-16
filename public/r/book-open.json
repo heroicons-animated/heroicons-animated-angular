@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "book-open",
+  "type": "registry:component",
+  "title": "book-open",
+  "description": "Animated book-open icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/book-open.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/book-open.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-book-open\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'book-open'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <g #leftPageGroup class=\"left-page\" [class.animate]=\"shouldAnimate()\">\n      <path\n        d=\"M12 6.04168C10.4077 4.61656 8.30506 3.75 6 3.75C4.94809 3.75 3.93834 3.93046 3 4.26212V18.5121C3.93834 18.1805 4.94809 18 6 18C8.30506 18 10.4077 18.8666 12 20.2917\"\n      />\n    </g>\n    <g #rightPageGroup class=\"right-page\" [class.animate]=\"shouldAnimate()\">\n      <path\n        d=\"M12 6.04168C13.5923 4.61656 15.6949 3.75 18 3.75C19.0519 3.75 20.0617 3.93046 21 4.26212V18.5121C20.0617 18.1805 19.0519 18 18 18C15.6949 18 13.5923 18.8666 12 20.2917\"\n      />\n    </g>\n    <path d=\"M12 6.04168V20.2917\" />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .left-page {\n        transform-box: fill-box;\n        transform-origin: 100% 50%;\n        transition: transform 0.5s ease-in-out;\n      }\n\n      .right-page {\n        transform-box: fill-box;\n        transform-origin: 0% 50%;\n        transition: transform 0.5s ease-in-out;\n      }\n\n      .left-page.animate {\n        animation: left-page-rotate 0.5s ease-in-out forwards;\n      }\n\n      .right-page.animate {\n        animation: right-page-rotate 0.5s ease-in-out forwards;\n      }\n\n      @keyframes left-page-rotate {\n        0% {\n          transform: rotateY(0deg);\n        }\n        50% {\n          transform: rotateY(15deg);\n        }\n        100% {\n          transform: rotateY(0deg);\n        }\n      }\n\n      @keyframes right-page-rotate {\n        0% {\n          transform: rotateY(0deg);\n        }\n        50% {\n          transform: rotateY(-15deg);\n        }\n        100% {\n          transform: rotateY(0deg);\n        }\n      }\n    `,\n  ],\n})\nexport class BookOpenIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

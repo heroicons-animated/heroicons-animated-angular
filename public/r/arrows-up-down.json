@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrows-up-down",
+  "type": "registry:component",
+  "title": "arrows-up-down",
+  "description": "Animated arrows-up-down icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/arrows-up-down.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/arrows-up-down.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-arrows-up-down\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'arrows-up-down'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <g class=\"up-arrow-group\" [class.animate]=\"shouldAnimate()\">\n      <path d=\"M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5\" />\n    </g>\n    <g class=\"down-arrow-group\" [class.animate]=\"shouldAnimate()\">\n      <path d=\"M21 16.5L16.5 21m0 0L12 16.5m4.5 4.5V7.5\" />\n    </g>\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .up-arrow-group,\n      .down-arrow-group {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.5s ease-in-out;\n      }\n\n      .up-arrow-group.animate {\n        animation: up-arrow-translate 0.5s ease-in-out forwards;\n      }\n\n      .down-arrow-group.animate {\n        animation: down-arrow-translate 0.5s ease-in-out forwards;\n      }\n\n      @keyframes up-arrow-translate {\n        0% {\n          transform: translateY(0);\n        }\n        40% {\n          transform: translateY(-2px);\n        }\n        100% {\n          transform: translateY(0);\n        }\n      }\n\n      @keyframes down-arrow-translate {\n        0% {\n          transform: translateY(0);\n        }\n        40% {\n          transform: translateY(2px);\n        }\n        100% {\n          transform: translateY(0);\n        }\n      }\n    `,\n  ],\n})\nexport class ArrowsUpDownIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

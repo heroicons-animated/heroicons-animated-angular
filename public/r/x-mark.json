@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "x-mark",
+  "type": "registry:component",
+  "title": "x-mark",
+  "description": "Animated x-mark icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/x-mark.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/x-mark.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-x-mark\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'x-mark'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      class=\"xmark-line xmark-line-1\"\n      [class.xmark-draw]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      d=\"M6 6l12 12\"\n    />\n    <path\n      class=\"xmark-line xmark-line-2\"\n      [class.xmark-draw]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      d=\"M18 6l-12 12\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .xmark-line {\n        stroke-dasharray: 1;\n        stroke-dashoffset: 0;\n        opacity: 1;\n      }\n\n      .xmark-line.xmark-draw {\n        animation: xmark-draw 0.4s ease-out forwards;\n      }\n\n      .xmark-line-1.xmark-draw {\n        animation-delay: 0s;\n      }\n\n      .xmark-line-2.xmark-draw {\n        animation-delay: 0.2s;\n        animation-fill-mode: both;\n      }\n\n      @keyframes xmark-draw {\n        0% {\n          stroke-dashoffset: 1;\n          opacity: 0;\n        }\n        100% {\n          stroke-dashoffset: 0;\n          opacity: 1;\n        }\n      }\n    `,\n  ],\n})\nexport class XMarkIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

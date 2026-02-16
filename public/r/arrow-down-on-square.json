@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-down-on-square",
+  "type": "registry:component",
+  "title": "arrow-down-on-square",
+  "description": "Animated arrow-down-on-square icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/arrow-down-on-square.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/arrow-down-on-square.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-arrow-down-on-square\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'arrow-down-on-square'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15\"\n    />\n    <path class=\"arrow-path\" [class.animate]=\"shouldAnimate()\" d=\"M9 12l3 3m0 0 3-3m-3 3V2.25\" />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .arrow-path {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.4s ease-in-out;\n      }\n\n      .arrow-path.animate {\n        animation: arrow-translate 0.4s ease-in-out forwards;\n      }\n\n      @keyframes arrow-translate {\n        0% {\n          transform: translateY(0);\n        }\n        33% {\n          transform: translateY(-2px);\n        }\n        66% {\n          transform: translateY(2px);\n        }\n        100% {\n          transform: translateY(0);\n        }\n      }\n    `,\n  ],\n})\nexport class ArrowDownOnSquareIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

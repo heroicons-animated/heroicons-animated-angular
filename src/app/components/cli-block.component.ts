@@ -17,6 +17,7 @@ import {
 } from "@heroicons-animated/angular";
 import { toast } from "ngx-sonner";
 import { ICON_MANIFEST } from "../icon-manifest";
+import { SITE } from "../site.constants";
 
 type PackageManager = "pnpm" | "npm" | "yarn" | "bun";
 
@@ -37,37 +38,47 @@ type PackageManager = "pnpm" | "npm" | "yarn" | "bun";
         </div>
 
         <div class="mt-px overflow-hidden rounded-tr-[8px] rounded-br-[8px] rounded-bl-[8px]">
-          <div
-            class="relative isolate overflow-hidden rounded-tr-[8px] rounded-br-[8px] rounded-bl-[8px] bg-white whitespace-nowrap px-4 py-3 pr-20 font-mono text-sm tracking-tight dark:bg-white/10"
-            (mouseenter)="isHovered.set(true)"
-            (mouseleave)="isHovered.set(false)"
-          >
-            <span class="sr-only">{{ fullCommand() }}</span>
-            <span class="text-neutral-600 dark:text-neutral-400">{{ cliPrefix() }}</span>
-            <span class="text-black dark:text-white"> &#64;heroicons-animated/angular add </span>
-            <span
-              class="inline-flex w-[20ch] shrink-0 text-primary"
-            >
-              @if (animationName() === 'text-loop-a') {
-                <span class="text-loop text-loop-a">{{ currentIconName() }}</span>
-              } @else {
-                <span class="text-loop text-loop-b">{{ currentIconName() }}</span>
-              }
-            </span>
+          <div class="relative isolate overflow-hidden rounded-tr-[8px] rounded-br-[8px] rounded-bl-[8px]">
+            <div class="overflow-x-auto overflow-y-hidden touch-pan-x">
+              <div
+                class="min-w-max whitespace-nowrap rounded-tr-[8px] rounded-br-[8px] rounded-bl-[8px] bg-white px-4 py-3 pr-20 font-mono text-sm tracking-[-0.39px] dark:bg-white/10"
+              >
+                <span class="sr-only">{{ fullCommand() }}</span>
+                <span class="text-neutral-600 dark:text-neutral-400">{{ registryPrefix() }}</span>
+                @if (staticIconName()) {
+                  <span class="inline-block shrink-0 text-primary">{{ staticIconName() }}</span>
+                } @else if (animationName() === 'text-loop-a') {
+                  <span class="inline-block shrink-0 text-primary text-loop text-loop-a">
+                    {{ currentIconName() }}
+                  </span>
+                } @else {
+                  <span class="inline-block shrink-0 text-primary text-loop text-loop-b">
+                    {{ currentIconName() }}
+                  </span>
+                }
+              </div>
+            </div>
 
             <button
               [attr.aria-disabled]="copyStatus() !== 'idle'"
               aria-label="Copy to clipboard"
-              class="absolute top-1/2 right-1.5 z-20 -translate-y-1/2 cursor-pointer rounded-[5px] p-2 transition-colors duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 focus-visible:outline-primary dark:hover:bg-neutral-700"
+              class="absolute top-1/2 right-1.5 z-20 inline-flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-[6px] p-2 transition-colors duration-100 focus-within:outline-offset-1 hover:bg-neutral-100 focus-visible:outline-1 focus-visible:outline-primary dark:hover:bg-neutral-700"
               type="button"
+              (mouseenter)="isHovered.set(true)"
+              (mouseleave)="isHovered.set(false)"
               (click)="handleCopy()"
             >
               @if (copyStatus() === 'done') {
-                <hi-check aria-hidden="true" [size]="16" />
+                <hi-check aria-hidden="true" class="size-4" [size]="16" />
               } @else if (copyStatus() === 'error') {
-                <hi-x-mark aria-hidden="true" [size]="16" />
+                <hi-x-mark aria-hidden="true" class="size-4" [size]="16" />
               } @else {
-                <hi-clipboard-document aria-hidden="true" [size]="16" [animate]="isHovered()" />
+                <hi-clipboard-document
+                  aria-hidden="true"
+                  class="size-4"
+                  [size]="16"
+                  [animate]="isHovered()"
+                />
               }
             </button>
           </div>
@@ -144,24 +155,10 @@ export class CliBlockComponent implements OnInit, OnDestroy {
     return this.iconList[this.loopIndex()]?.name ?? "";
   });
 
-  readonly cliPrefix = computed(() => {
-    switch (this.selectedPm()) {
-      case "pnpm":
-        return "pnpm dlx";
-      case "npm":
-        return "npx";
-      case "yarn":
-        return "yarn dlx";
-      case "bun":
-        return "bunx";
-      default:
-        return "pnpm dlx";
-    }
-  });
+  readonly registryPrefix = computed(() => `${SITE.url}/r/`);
 
   readonly fullCommand = computed(
-    () =>
-      `${this.cliPrefix()} @heroicons-animated/angular add ${this.currentIconName()}`
+    () => `${this.registryPrefix()}${this.currentIconName()}`
   );
 
   readonly containerClasses = computed(() =>

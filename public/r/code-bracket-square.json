@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-bracket-square",
+  "type": "registry:component",
+  "title": "code-bracket-square",
+  "description": "Animated code-bracket-square icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/code-bracket-square.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/code-bracket-square.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-code-bracket-square\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'code-bracket-square'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z\"\n    />\n    <path\n      d=\"M9.75 9.75L7.5 12l2.25 2.25\"\n      class=\"left-bracket\"\n      [class.left-bracket-animate]=\"shouldAnimate()\"\n    />\n    <path\n      d=\"M14.25 9.75 16.5 12l-2.25 2.25\"\n      class=\"right-bracket\"\n      [class.right-bracket-animate]=\"shouldAnimate()\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .left-bracket,\n      .right-bracket {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .left-bracket.left-bracket-animate {\n        animation: codebracketsquare-left 0.5s ease-in-out;\n      }\n\n      .right-bracket.right-bracket-animate {\n        animation: codebracketsquare-right 0.5s ease-in-out;\n      }\n\n      @keyframes codebracketsquare-left {\n        0% {\n          transform: translateX(0) rotate(0deg);\n        }\n        50% {\n          transform: translateX(-1.5px) rotate(6deg);\n        }\n        100% {\n          transform: translateX(0) rotate(0deg);\n        }\n      }\n\n      @keyframes codebracketsquare-right {\n        0% {\n          transform: translateX(0) rotate(0deg);\n        }\n        50% {\n          transform: translateX(1.5px) rotate(-6deg);\n        }\n        100% {\n          transform: translateX(0) rotate(0deg);\n        }\n      }\n    `,\n  ],\n})\nexport class CodeBracketSquareIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

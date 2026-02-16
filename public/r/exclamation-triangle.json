@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "exclamation-triangle",
+  "type": "registry:component",
+  "title": "exclamation-triangle",
+  "description": "Animated exclamation-triangle icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/exclamation-triangle.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/exclamation-triangle.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-exclamation-triangle\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'exclamation-triangle'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M2.697 16.126c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126Z\"\n    />\n    <g class=\"exclamationtriangle-inner\" [class.exclamationtriangle-pulse]=\"shouldAnimate()\">\n      <path d=\"M12 9v3.75\" />\n      <path d=\"M12 15.75h.007v.008H12v-.008Z\" />\n    </g>\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .exclamationtriangle-inner {\n        transform-origin: 50% 50%;\n      }\n\n      .exclamationtriangle-inner.exclamationtriangle-pulse {\n        animation: exclamationtriangle-pulse 0.8s ease-in-out infinite;\n      }\n\n      @keyframes exclamationtriangle-pulse {\n        0%,\n        100% {\n          opacity: 1;\n          transform: scale(1);\n        }\n        50% {\n          opacity: 0.4;\n          transform: scale(1.1);\n        }\n      }\n    `,\n  ],\n})\nexport class ExclamationTriangleIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

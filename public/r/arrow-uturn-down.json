@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-uturn-down",
+  "type": "registry:component",
+  "title": "arrow-uturn-down",
+  "description": "Animated arrow-uturn-down icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/arrow-uturn-down.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/arrow-uturn-down.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-arrow-uturn-down\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'arrow-uturn-down'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path d=\"M9 21V9a6 6 0 0 1 12 0v3\" />\n    <g class=\"arrow-group\" [class.arrowuturndown-animate]=\"shouldAnimate()\">\n      <path d=\"m15 15-6 6m0 0-6-6m6 6\" />\n    </g>\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .arrow-group {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.45s ease-in-out;\n      }\n\n      .arrow-group.arrowuturndown-animate {\n        animation: arrowuturndown-animate 0.45s ease-in-out forwards;\n      }\n\n      @keyframes arrowuturndown-animate {\n        0% {\n          transform: scaleY(1) translateY(0);\n        }\n        50% {\n          transform: scaleY(1.15) translateY(1.5px);\n        }\n        100% {\n          transform: scaleY(1) translateY(0);\n        }\n      }\n    `,\n  ],\n})\nexport class ArrowUturnDownIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

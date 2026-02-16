@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bolt",
+  "type": "registry:component",
+  "title": "bolt",
+  "description": "Animated bolt icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/bolt.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/bolt.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  DestroyRef,\n  type ElementRef,\n  effect,\n  inject,\n  input,\n  signal,\n  viewChild,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-bolt\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'bolt'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path #pathElement d=\"m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z\" />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n    `,\n  ],\n})\nexport class BoltIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  protected readonly pathElement =\n    viewChild<ElementRef<SVGPathElement>>(\"pathElement\");\n\n  private pathAnimation: Animation | null = null;\n  private readonly destroyRef = inject(DestroyRef);\n\n  constructor() {\n    effect(() => {\n      if (this.shouldAnimate()) {\n        this.startAnimation();\n      } else {\n        this.stopAnimation();\n      }\n    });\n    this.destroyRef.onDestroy(() => this.stopAnimation());\n  }\n\n  private startAnimation() {\n    const el = this.pathElement()?.nativeElement;\n    if (el) {\n      const pathLength = el.getTotalLength();\n      el.style.strokeDasharray = `${pathLength}`;\n      el.style.strokeDashoffset = `${pathLength}`;\n      el.style.opacity = \"0\";\n\n      this.pathAnimation =\n        el.animate(\n          [\n            { strokeDashoffset: pathLength, opacity: 0 },\n            { strokeDashoffset: 0, opacity: 1 },\n          ],\n          { duration: 600, easing: \"linear\", fill: \"forwards\" }\n        ) ?? null;\n    }\n  }\n\n  private stopAnimation() {\n    if (this.pathAnimation) {\n      this.pathAnimation.cancel();\n      this.pathAnimation = null;\n    }\n\n    const el = this.pathElement()?.nativeElement;\n    if (el) {\n      el.style.strokeDasharray = \"\";\n      el.style.strokeDashoffset = \"\";\n      el.style.opacity = \"\";\n    }\n  }\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

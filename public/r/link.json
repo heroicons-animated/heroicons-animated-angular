@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "link",
+  "type": "registry:component",
+  "title": "link",
+  "description": "Animated link icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/link.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/link.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-link\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'link'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      class=\"link-path\"\n      [class.link-squeeze]=\"shouldAnimate()\"\n      pathLength=\"100\"\n      d=\"M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .link-path {\n        stroke-dasharray: 100 100;\n        stroke-dashoffset: 0;\n        transform-origin: center;\n      }\n\n      .link-path.link-squeeze {\n        animation: link-squeeze 1s ease-in-out forwards;\n      }\n\n      @keyframes link-squeeze {\n        0% {\n          stroke-dasharray: 100 100;\n          stroke-dashoffset: 0;\n          transform: rotate(0deg);\n        }\n        20% {\n          stroke-dasharray: 97 100;\n          stroke-dashoffset: -5;\n          transform: rotate(-2.5deg);\n        }\n        40% {\n          stroke-dasharray: 100 100;\n          stroke-dashoffset: 0;\n          transform: rotate(-5deg);\n        }\n        50% {\n          transform: rotate(0deg);\n        }\n        60% {\n          stroke-dasharray: 97 100;\n          stroke-dashoffset: -5;\n        }\n        100% {\n          stroke-dasharray: 100 100;\n          stroke-dashoffset: 0;\n        }\n      }\n    `,\n  ],\n})\nexport class LinkIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

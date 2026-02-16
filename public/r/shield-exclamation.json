@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shield-exclamation",
+  "type": "registry:component",
+  "title": "shield-exclamation",
+  "description": "Animated shield-exclamation icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/shield-exclamation.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/shield-exclamation.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-shield-exclamation\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'shield-exclamation'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M12 1.964A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.25-8.25-3.286Z\"\n    />\n    <g class=\"shieldexclamation-inner\" [class.shieldexclamation-pulse]=\"shouldAnimate()\">\n      <path d=\"M12 9v3.75\" />\n      <path d=\"M12 15.75h.008v.008H12v-.008Z\" />\n    </g>\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .shieldexclamation-inner {\n        transform-origin: 50% 50%;\n      }\n\n      .shieldexclamation-inner.shieldexclamation-pulse {\n        animation: shieldexclamation-pulse 0.8s ease-in-out infinite;\n      }\n\n      @keyframes shieldexclamation-pulse {\n        0%,\n        100% {\n          opacity: 1;\n          transform: scale(1);\n        }\n        50% {\n          opacity: 0.4;\n          transform: scale(1.1);\n        }\n      }\n    `,\n  ],\n})\nexport class ShieldExclamationIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

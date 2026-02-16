@@ -1,0 +1,5063 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "heroicons-animated-angular",
+  "homepage": "https://angular.heroicons-animated.com",
+  "items": [
+    {
+      "name": "academic-cap",
+      "type": "registry:component",
+      "title": "academic-cap",
+      "description": "Animated academic-cap icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/academic-cap.ts",
+          "path": "packages/angular/src/icons/academic-cap.ts"
+        }
+      ]
+    },
+    {
+      "name": "adjustments-horizontal",
+      "type": "registry:component",
+      "title": "adjustments-horizontal",
+      "description": "Animated adjustments-horizontal icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/adjustments-horizontal.ts",
+          "path": "packages/angular/src/icons/adjustments-horizontal.ts"
+        }
+      ]
+    },
+    {
+      "name": "adjustments-vertical",
+      "type": "registry:component",
+      "title": "adjustments-vertical",
+      "description": "Animated adjustments-vertical icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/adjustments-vertical.ts",
+          "path": "packages/angular/src/icons/adjustments-vertical.ts"
+        }
+      ]
+    },
+    {
+      "name": "archive-box-arrow-down",
+      "type": "registry:component",
+      "title": "archive-box-arrow-down",
+      "description": "Animated archive-box-arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/archive-box-arrow-down.ts",
+          "path": "packages/angular/src/icons/archive-box-arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "archive-box-x-mark",
+      "type": "registry:component",
+      "title": "archive-box-x-mark",
+      "description": "Animated archive-box-x-mark icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/archive-box-x-mark.ts",
+          "path": "packages/angular/src/icons/archive-box-x-mark.ts"
+        }
+      ]
+    },
+    {
+      "name": "archive-box",
+      "type": "registry:component",
+      "title": "archive-box",
+      "description": "Animated archive-box icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/archive-box.ts",
+          "path": "packages/angular/src/icons/archive-box.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-circle",
+      "type": "registry:component",
+      "title": "arrow-down-circle",
+      "description": "Animated arrow-down-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down-circle.ts",
+          "path": "packages/angular/src/icons/arrow-down-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-left",
+      "type": "registry:component",
+      "title": "arrow-down-left",
+      "description": "Animated arrow-down-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down-left.ts",
+          "path": "packages/angular/src/icons/arrow-down-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-on-square-stack",
+      "type": "registry:component",
+      "title": "arrow-down-on-square-stack",
+      "description": "Animated arrow-down-on-square-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down-on-square-stack.ts",
+          "path": "packages/angular/src/icons/arrow-down-on-square-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-on-square",
+      "type": "registry:component",
+      "title": "arrow-down-on-square",
+      "description": "Animated arrow-down-on-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down-on-square.ts",
+          "path": "packages/angular/src/icons/arrow-down-on-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-right",
+      "type": "registry:component",
+      "title": "arrow-down-right",
+      "description": "Animated arrow-down-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down-right.ts",
+          "path": "packages/angular/src/icons/arrow-down-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down-tray",
+      "type": "registry:component",
+      "title": "arrow-down-tray",
+      "description": "Animated arrow-down-tray icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down-tray.ts",
+          "path": "packages/angular/src/icons/arrow-down-tray.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-down",
+      "type": "registry:component",
+      "title": "arrow-down",
+      "description": "Animated arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-down.ts",
+          "path": "packages/angular/src/icons/arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-left-circle",
+      "type": "registry:component",
+      "title": "arrow-left-circle",
+      "description": "Animated arrow-left-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-left-circle.ts",
+          "path": "packages/angular/src/icons/arrow-left-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-left-end-on-rectangle",
+      "type": "registry:component",
+      "title": "arrow-left-end-on-rectangle",
+      "description": "Animated arrow-left-end-on-rectangle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-left-end-on-rectangle.ts",
+          "path": "packages/angular/src/icons/arrow-left-end-on-rectangle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-left-start-on-rectangle",
+      "type": "registry:component",
+      "title": "arrow-left-start-on-rectangle",
+      "description": "Animated arrow-left-start-on-rectangle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-left-start-on-rectangle.ts",
+          "path": "packages/angular/src/icons/arrow-left-start-on-rectangle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-left",
+      "type": "registry:component",
+      "title": "arrow-left",
+      "description": "Animated arrow-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-left.ts",
+          "path": "packages/angular/src/icons/arrow-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-long-down",
+      "type": "registry:component",
+      "title": "arrow-long-down",
+      "description": "Animated arrow-long-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-long-down.ts",
+          "path": "packages/angular/src/icons/arrow-long-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-long-left",
+      "type": "registry:component",
+      "title": "arrow-long-left",
+      "description": "Animated arrow-long-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-long-left.ts",
+          "path": "packages/angular/src/icons/arrow-long-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-long-right",
+      "type": "registry:component",
+      "title": "arrow-long-right",
+      "description": "Animated arrow-long-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-long-right.ts",
+          "path": "packages/angular/src/icons/arrow-long-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-long-up",
+      "type": "registry:component",
+      "title": "arrow-long-up",
+      "description": "Animated arrow-long-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-long-up.ts",
+          "path": "packages/angular/src/icons/arrow-long-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-path-rounded-square",
+      "type": "registry:component",
+      "title": "arrow-path-rounded-square",
+      "description": "Animated arrow-path-rounded-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-path-rounded-square.ts",
+          "path": "packages/angular/src/icons/arrow-path-rounded-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-path",
+      "type": "registry:component",
+      "title": "arrow-path",
+      "description": "Animated arrow-path icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-path.ts",
+          "path": "packages/angular/src/icons/arrow-path.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-right-circle",
+      "type": "registry:component",
+      "title": "arrow-right-circle",
+      "description": "Animated arrow-right-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-right-circle.ts",
+          "path": "packages/angular/src/icons/arrow-right-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-right-end-on-rectangle",
+      "type": "registry:component",
+      "title": "arrow-right-end-on-rectangle",
+      "description": "Animated arrow-right-end-on-rectangle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-right-end-on-rectangle.ts",
+          "path": "packages/angular/src/icons/arrow-right-end-on-rectangle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-right-start-on-rectangle",
+      "type": "registry:component",
+      "title": "arrow-right-start-on-rectangle",
+      "description": "Animated arrow-right-start-on-rectangle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-right-start-on-rectangle.ts",
+          "path": "packages/angular/src/icons/arrow-right-start-on-rectangle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-right",
+      "type": "registry:component",
+      "title": "arrow-right",
+      "description": "Animated arrow-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-right.ts",
+          "path": "packages/angular/src/icons/arrow-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-top-right-on-square",
+      "type": "registry:component",
+      "title": "arrow-top-right-on-square",
+      "description": "Animated arrow-top-right-on-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-top-right-on-square.ts",
+          "path": "packages/angular/src/icons/arrow-top-right-on-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-trending-down",
+      "type": "registry:component",
+      "title": "arrow-trending-down",
+      "description": "Animated arrow-trending-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-trending-down.ts",
+          "path": "packages/angular/src/icons/arrow-trending-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-trending-up",
+      "type": "registry:component",
+      "title": "arrow-trending-up",
+      "description": "Animated arrow-trending-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-trending-up.ts",
+          "path": "packages/angular/src/icons/arrow-trending-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-down-left",
+      "type": "registry:component",
+      "title": "arrow-turn-down-left",
+      "description": "Animated arrow-turn-down-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-down-left.ts",
+          "path": "packages/angular/src/icons/arrow-turn-down-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-down-right",
+      "type": "registry:component",
+      "title": "arrow-turn-down-right",
+      "description": "Animated arrow-turn-down-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-down-right.ts",
+          "path": "packages/angular/src/icons/arrow-turn-down-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-left-down",
+      "type": "registry:component",
+      "title": "arrow-turn-left-down",
+      "description": "Animated arrow-turn-left-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-left-down.ts",
+          "path": "packages/angular/src/icons/arrow-turn-left-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-left-up",
+      "type": "registry:component",
+      "title": "arrow-turn-left-up",
+      "description": "Animated arrow-turn-left-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-left-up.ts",
+          "path": "packages/angular/src/icons/arrow-turn-left-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-right-down",
+      "type": "registry:component",
+      "title": "arrow-turn-right-down",
+      "description": "Animated arrow-turn-right-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-right-down.ts",
+          "path": "packages/angular/src/icons/arrow-turn-right-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-right-up",
+      "type": "registry:component",
+      "title": "arrow-turn-right-up",
+      "description": "Animated arrow-turn-right-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-right-up.ts",
+          "path": "packages/angular/src/icons/arrow-turn-right-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-up-left",
+      "type": "registry:component",
+      "title": "arrow-turn-up-left",
+      "description": "Animated arrow-turn-up-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-up-left.ts",
+          "path": "packages/angular/src/icons/arrow-turn-up-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-turn-up-right",
+      "type": "registry:component",
+      "title": "arrow-turn-up-right",
+      "description": "Animated arrow-turn-up-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-turn-up-right.ts",
+          "path": "packages/angular/src/icons/arrow-turn-up-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-circle",
+      "type": "registry:component",
+      "title": "arrow-up-circle",
+      "description": "Animated arrow-up-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up-circle.ts",
+          "path": "packages/angular/src/icons/arrow-up-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-left",
+      "type": "registry:component",
+      "title": "arrow-up-left",
+      "description": "Animated arrow-up-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up-left.ts",
+          "path": "packages/angular/src/icons/arrow-up-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-on-square-stack",
+      "type": "registry:component",
+      "title": "arrow-up-on-square-stack",
+      "description": "Animated arrow-up-on-square-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up-on-square-stack.ts",
+          "path": "packages/angular/src/icons/arrow-up-on-square-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-on-square",
+      "type": "registry:component",
+      "title": "arrow-up-on-square",
+      "description": "Animated arrow-up-on-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up-on-square.ts",
+          "path": "packages/angular/src/icons/arrow-up-on-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-right",
+      "type": "registry:component",
+      "title": "arrow-up-right",
+      "description": "Animated arrow-up-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up-right.ts",
+          "path": "packages/angular/src/icons/arrow-up-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up-tray",
+      "type": "registry:component",
+      "title": "arrow-up-tray",
+      "description": "Animated arrow-up-tray icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up-tray.ts",
+          "path": "packages/angular/src/icons/arrow-up-tray.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-up",
+      "type": "registry:component",
+      "title": "arrow-up",
+      "description": "Animated arrow-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-up.ts",
+          "path": "packages/angular/src/icons/arrow-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-uturn-down",
+      "type": "registry:component",
+      "title": "arrow-uturn-down",
+      "description": "Animated arrow-uturn-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-uturn-down.ts",
+          "path": "packages/angular/src/icons/arrow-uturn-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-uturn-left",
+      "type": "registry:component",
+      "title": "arrow-uturn-left",
+      "description": "Animated arrow-uturn-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-uturn-left.ts",
+          "path": "packages/angular/src/icons/arrow-uturn-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-uturn-right",
+      "type": "registry:component",
+      "title": "arrow-uturn-right",
+      "description": "Animated arrow-uturn-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-uturn-right.ts",
+          "path": "packages/angular/src/icons/arrow-uturn-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrow-uturn-up",
+      "type": "registry:component",
+      "title": "arrow-uturn-up",
+      "description": "Animated arrow-uturn-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrow-uturn-up.ts",
+          "path": "packages/angular/src/icons/arrow-uturn-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrows-pointing-in",
+      "type": "registry:component",
+      "title": "arrows-pointing-in",
+      "description": "Animated arrows-pointing-in icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrows-pointing-in.ts",
+          "path": "packages/angular/src/icons/arrows-pointing-in.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrows-pointing-out",
+      "type": "registry:component",
+      "title": "arrows-pointing-out",
+      "description": "Animated arrows-pointing-out icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrows-pointing-out.ts",
+          "path": "packages/angular/src/icons/arrows-pointing-out.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrows-right-left",
+      "type": "registry:component",
+      "title": "arrows-right-left",
+      "description": "Animated arrows-right-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrows-right-left.ts",
+          "path": "packages/angular/src/icons/arrows-right-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "arrows-up-down",
+      "type": "registry:component",
+      "title": "arrows-up-down",
+      "description": "Animated arrows-up-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/arrows-up-down.ts",
+          "path": "packages/angular/src/icons/arrows-up-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "at-symbol",
+      "type": "registry:component",
+      "title": "at-symbol",
+      "description": "Animated at-symbol icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/at-symbol.ts",
+          "path": "packages/angular/src/icons/at-symbol.ts"
+        }
+      ]
+    },
+    {
+      "name": "backspace",
+      "type": "registry:component",
+      "title": "backspace",
+      "description": "Animated backspace icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/backspace.ts",
+          "path": "packages/angular/src/icons/backspace.ts"
+        }
+      ]
+    },
+    {
+      "name": "backward",
+      "type": "registry:component",
+      "title": "backward",
+      "description": "Animated backward icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/backward.ts",
+          "path": "packages/angular/src/icons/backward.ts"
+        }
+      ]
+    },
+    {
+      "name": "banknotes",
+      "type": "registry:component",
+      "title": "banknotes",
+      "description": "Animated banknotes icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/banknotes.ts",
+          "path": "packages/angular/src/icons/banknotes.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-2",
+      "type": "registry:component",
+      "title": "bars-2",
+      "description": "Animated bars-2 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-2.ts",
+          "path": "packages/angular/src/icons/bars-2.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-3-bottom-left",
+      "type": "registry:component",
+      "title": "bars-3-bottom-left",
+      "description": "Animated bars-3-bottom-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-3-bottom-left.ts",
+          "path": "packages/angular/src/icons/bars-3-bottom-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-3-bottom-right",
+      "type": "registry:component",
+      "title": "bars-3-bottom-right",
+      "description": "Animated bars-3-bottom-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-3-bottom-right.ts",
+          "path": "packages/angular/src/icons/bars-3-bottom-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-3-center-left",
+      "type": "registry:component",
+      "title": "bars-3-center-left",
+      "description": "Animated bars-3-center-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-3-center-left.ts",
+          "path": "packages/angular/src/icons/bars-3-center-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-3",
+      "type": "registry:component",
+      "title": "bars-3",
+      "description": "Animated bars-3 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-3.ts",
+          "path": "packages/angular/src/icons/bars-3.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-4",
+      "type": "registry:component",
+      "title": "bars-4",
+      "description": "Animated bars-4 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-4.ts",
+          "path": "packages/angular/src/icons/bars-4.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-arrow-down",
+      "type": "registry:component",
+      "title": "bars-arrow-down",
+      "description": "Animated bars-arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-arrow-down.ts",
+          "path": "packages/angular/src/icons/bars-arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "bars-arrow-up",
+      "type": "registry:component",
+      "title": "bars-arrow-up",
+      "description": "Animated bars-arrow-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bars-arrow-up.ts",
+          "path": "packages/angular/src/icons/bars-arrow-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "battery-0",
+      "type": "registry:component",
+      "title": "battery-0",
+      "description": "Animated battery-0 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/battery-0.ts",
+          "path": "packages/angular/src/icons/battery-0.ts"
+        }
+      ]
+    },
+    {
+      "name": "battery-100",
+      "type": "registry:component",
+      "title": "battery-100",
+      "description": "Animated battery-100 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/battery-100.ts",
+          "path": "packages/angular/src/icons/battery-100.ts"
+        }
+      ]
+    },
+    {
+      "name": "battery-50",
+      "type": "registry:component",
+      "title": "battery-50",
+      "description": "Animated battery-50 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/battery-50.ts",
+          "path": "packages/angular/src/icons/battery-50.ts"
+        }
+      ]
+    },
+    {
+      "name": "beaker",
+      "type": "registry:component",
+      "title": "beaker",
+      "description": "Animated beaker icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/beaker.ts",
+          "path": "packages/angular/src/icons/beaker.ts"
+        }
+      ]
+    },
+    {
+      "name": "bell-alert",
+      "type": "registry:component",
+      "title": "bell-alert",
+      "description": "Animated bell-alert icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bell-alert.ts",
+          "path": "packages/angular/src/icons/bell-alert.ts"
+        }
+      ]
+    },
+    {
+      "name": "bell-slash",
+      "type": "registry:component",
+      "title": "bell-slash",
+      "description": "Animated bell-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bell-slash.ts",
+          "path": "packages/angular/src/icons/bell-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "bell-snooze",
+      "type": "registry:component",
+      "title": "bell-snooze",
+      "description": "Animated bell-snooze icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bell-snooze.ts",
+          "path": "packages/angular/src/icons/bell-snooze.ts"
+        }
+      ]
+    },
+    {
+      "name": "bell",
+      "type": "registry:component",
+      "title": "bell",
+      "description": "Animated bell icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bell.ts",
+          "path": "packages/angular/src/icons/bell.ts"
+        }
+      ]
+    },
+    {
+      "name": "bold",
+      "type": "registry:component",
+      "title": "bold",
+      "description": "Animated bold icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bold.ts",
+          "path": "packages/angular/src/icons/bold.ts"
+        }
+      ]
+    },
+    {
+      "name": "bolt-slash",
+      "type": "registry:component",
+      "title": "bolt-slash",
+      "description": "Animated bolt-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bolt-slash.ts",
+          "path": "packages/angular/src/icons/bolt-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "bolt",
+      "type": "registry:component",
+      "title": "bolt",
+      "description": "Animated bolt icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bolt.ts",
+          "path": "packages/angular/src/icons/bolt.ts"
+        }
+      ]
+    },
+    {
+      "name": "book-open",
+      "type": "registry:component",
+      "title": "book-open",
+      "description": "Animated book-open icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/book-open.ts",
+          "path": "packages/angular/src/icons/book-open.ts"
+        }
+      ]
+    },
+    {
+      "name": "bookmark-slash",
+      "type": "registry:component",
+      "title": "bookmark-slash",
+      "description": "Animated bookmark-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bookmark-slash.ts",
+          "path": "packages/angular/src/icons/bookmark-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "bookmark-square",
+      "type": "registry:component",
+      "title": "bookmark-square",
+      "description": "Animated bookmark-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bookmark-square.ts",
+          "path": "packages/angular/src/icons/bookmark-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "bookmark",
+      "type": "registry:component",
+      "title": "bookmark",
+      "description": "Animated bookmark icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bookmark.ts",
+          "path": "packages/angular/src/icons/bookmark.ts"
+        }
+      ]
+    },
+    {
+      "name": "briefcase",
+      "type": "registry:component",
+      "title": "briefcase",
+      "description": "Animated briefcase icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/briefcase.ts",
+          "path": "packages/angular/src/icons/briefcase.ts"
+        }
+      ]
+    },
+    {
+      "name": "bug-ant",
+      "type": "registry:component",
+      "title": "bug-ant",
+      "description": "Animated bug-ant icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/bug-ant.ts",
+          "path": "packages/angular/src/icons/bug-ant.ts"
+        }
+      ]
+    },
+    {
+      "name": "building-library",
+      "type": "registry:component",
+      "title": "building-library",
+      "description": "Animated building-library icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/building-library.ts",
+          "path": "packages/angular/src/icons/building-library.ts"
+        }
+      ]
+    },
+    {
+      "name": "building-office-2",
+      "type": "registry:component",
+      "title": "building-office-2",
+      "description": "Animated building-office-2 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/building-office-2.ts",
+          "path": "packages/angular/src/icons/building-office-2.ts"
+        }
+      ]
+    },
+    {
+      "name": "building-office",
+      "type": "registry:component",
+      "title": "building-office",
+      "description": "Animated building-office icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/building-office.ts",
+          "path": "packages/angular/src/icons/building-office.ts"
+        }
+      ]
+    },
+    {
+      "name": "building-storefront",
+      "type": "registry:component",
+      "title": "building-storefront",
+      "description": "Animated building-storefront icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/building-storefront.ts",
+          "path": "packages/angular/src/icons/building-storefront.ts"
+        }
+      ]
+    },
+    {
+      "name": "cake",
+      "type": "registry:component",
+      "title": "cake",
+      "description": "Animated cake icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cake.ts",
+          "path": "packages/angular/src/icons/cake.ts"
+        }
+      ]
+    },
+    {
+      "name": "calculator",
+      "type": "registry:component",
+      "title": "calculator",
+      "description": "Animated calculator icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/calculator.ts",
+          "path": "packages/angular/src/icons/calculator.ts"
+        }
+      ]
+    },
+    {
+      "name": "calendar-date-range",
+      "type": "registry:component",
+      "title": "calendar-date-range",
+      "description": "Animated calendar-date-range icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/calendar-date-range.ts",
+          "path": "packages/angular/src/icons/calendar-date-range.ts"
+        }
+      ]
+    },
+    {
+      "name": "calendar-days",
+      "type": "registry:component",
+      "title": "calendar-days",
+      "description": "Animated calendar-days icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/calendar-days.ts",
+          "path": "packages/angular/src/icons/calendar-days.ts"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:component",
+      "title": "calendar",
+      "description": "Animated calendar icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/calendar.ts",
+          "path": "packages/angular/src/icons/calendar.ts"
+        }
+      ]
+    },
+    {
+      "name": "camera",
+      "type": "registry:component",
+      "title": "camera",
+      "description": "Animated camera icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/camera.ts",
+          "path": "packages/angular/src/icons/camera.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-square",
+      "type": "registry:component",
+      "title": "chart-bar-square",
+      "description": "Animated chart-bar-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chart-bar-square.ts",
+          "path": "packages/angular/src/icons/chart-bar-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar",
+      "type": "registry:component",
+      "title": "chart-bar",
+      "description": "Animated chart-bar icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chart-bar.ts",
+          "path": "packages/angular/src/icons/chart-bar.ts"
+        }
+      ]
+    },
+    {
+      "name": "chart-pie",
+      "type": "registry:component",
+      "title": "chart-pie",
+      "description": "Animated chart-pie icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chart-pie.ts",
+          "path": "packages/angular/src/icons/chart-pie.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-bottom-center-text",
+      "type": "registry:component",
+      "title": "chat-bubble-bottom-center-text",
+      "description": "Animated chat-bubble-bottom-center-text icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-bottom-center-text.ts",
+          "path": "packages/angular/src/icons/chat-bubble-bottom-center-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-bottom-center",
+      "type": "registry:component",
+      "title": "chat-bubble-bottom-center",
+      "description": "Animated chat-bubble-bottom-center icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-bottom-center.ts",
+          "path": "packages/angular/src/icons/chat-bubble-bottom-center.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-left-ellipsis",
+      "type": "registry:component",
+      "title": "chat-bubble-left-ellipsis",
+      "description": "Animated chat-bubble-left-ellipsis icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-left-ellipsis.ts",
+          "path": "packages/angular/src/icons/chat-bubble-left-ellipsis.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-left-right",
+      "type": "registry:component",
+      "title": "chat-bubble-left-right",
+      "description": "Animated chat-bubble-left-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-left-right.ts",
+          "path": "packages/angular/src/icons/chat-bubble-left-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-left",
+      "type": "registry:component",
+      "title": "chat-bubble-left",
+      "description": "Animated chat-bubble-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-left.ts",
+          "path": "packages/angular/src/icons/chat-bubble-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-oval-left-ellipsis",
+      "type": "registry:component",
+      "title": "chat-bubble-oval-left-ellipsis",
+      "description": "Animated chat-bubble-oval-left-ellipsis icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-oval-left-ellipsis.ts",
+          "path": "packages/angular/src/icons/chat-bubble-oval-left-ellipsis.ts"
+        }
+      ]
+    },
+    {
+      "name": "chat-bubble-oval-left",
+      "type": "registry:component",
+      "title": "chat-bubble-oval-left",
+      "description": "Animated chat-bubble-oval-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chat-bubble-oval-left.ts",
+          "path": "packages/angular/src/icons/chat-bubble-oval-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "check-badge",
+      "type": "registry:component",
+      "title": "check-badge",
+      "description": "Animated check-badge icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/check-badge.ts",
+          "path": "packages/angular/src/icons/check-badge.ts"
+        }
+      ]
+    },
+    {
+      "name": "check-circle",
+      "type": "registry:component",
+      "title": "check-circle",
+      "description": "Animated check-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/check-circle.ts",
+          "path": "packages/angular/src/icons/check-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "check",
+      "type": "registry:component",
+      "title": "check",
+      "description": "Animated check icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/check.ts",
+          "path": "packages/angular/src/icons/check.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-double-down",
+      "type": "registry:component",
+      "title": "chevron-double-down",
+      "description": "Animated chevron-double-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-double-down.ts",
+          "path": "packages/angular/src/icons/chevron-double-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-double-left",
+      "type": "registry:component",
+      "title": "chevron-double-left",
+      "description": "Animated chevron-double-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-double-left.ts",
+          "path": "packages/angular/src/icons/chevron-double-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-double-right",
+      "type": "registry:component",
+      "title": "chevron-double-right",
+      "description": "Animated chevron-double-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-double-right.ts",
+          "path": "packages/angular/src/icons/chevron-double-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-double-up",
+      "type": "registry:component",
+      "title": "chevron-double-up",
+      "description": "Animated chevron-double-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-double-up.ts",
+          "path": "packages/angular/src/icons/chevron-double-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-down",
+      "type": "registry:component",
+      "title": "chevron-down",
+      "description": "Animated chevron-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-down.ts",
+          "path": "packages/angular/src/icons/chevron-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-left",
+      "type": "registry:component",
+      "title": "chevron-left",
+      "description": "Animated chevron-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-left.ts",
+          "path": "packages/angular/src/icons/chevron-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-right",
+      "type": "registry:component",
+      "title": "chevron-right",
+      "description": "Animated chevron-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-right.ts",
+          "path": "packages/angular/src/icons/chevron-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-up-down",
+      "type": "registry:component",
+      "title": "chevron-up-down",
+      "description": "Animated chevron-up-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-up-down.ts",
+          "path": "packages/angular/src/icons/chevron-up-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "chevron-up",
+      "type": "registry:component",
+      "title": "chevron-up",
+      "description": "Animated chevron-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/chevron-up.ts",
+          "path": "packages/angular/src/icons/chevron-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "circle-stack",
+      "type": "registry:component",
+      "title": "circle-stack",
+      "description": "Animated circle-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/circle-stack.ts",
+          "path": "packages/angular/src/icons/circle-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "clipboard-document-check",
+      "type": "registry:component",
+      "title": "clipboard-document-check",
+      "description": "Animated clipboard-document-check icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/clipboard-document-check.ts",
+          "path": "packages/angular/src/icons/clipboard-document-check.ts"
+        }
+      ]
+    },
+    {
+      "name": "clipboard-document-list",
+      "type": "registry:component",
+      "title": "clipboard-document-list",
+      "description": "Animated clipboard-document-list icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/clipboard-document-list.ts",
+          "path": "packages/angular/src/icons/clipboard-document-list.ts"
+        }
+      ]
+    },
+    {
+      "name": "clipboard-document",
+      "type": "registry:component",
+      "title": "clipboard-document",
+      "description": "Animated clipboard-document icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/clipboard-document.ts",
+          "path": "packages/angular/src/icons/clipboard-document.ts"
+        }
+      ]
+    },
+    {
+      "name": "clipboard",
+      "type": "registry:component",
+      "title": "clipboard",
+      "description": "Animated clipboard icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/clipboard.ts",
+          "path": "packages/angular/src/icons/clipboard.ts"
+        }
+      ]
+    },
+    {
+      "name": "clock",
+      "type": "registry:component",
+      "title": "clock",
+      "description": "Animated clock icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/clock.ts",
+          "path": "packages/angular/src/icons/clock.ts"
+        }
+      ]
+    },
+    {
+      "name": "cloud-arrow-down",
+      "type": "registry:component",
+      "title": "cloud-arrow-down",
+      "description": "Animated cloud-arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cloud-arrow-down.ts",
+          "path": "packages/angular/src/icons/cloud-arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "cloud-arrow-up",
+      "type": "registry:component",
+      "title": "cloud-arrow-up",
+      "description": "Animated cloud-arrow-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cloud-arrow-up.ts",
+          "path": "packages/angular/src/icons/cloud-arrow-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "cloud",
+      "type": "registry:component",
+      "title": "cloud",
+      "description": "Animated cloud icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cloud.ts",
+          "path": "packages/angular/src/icons/cloud.ts"
+        }
+      ]
+    },
+    {
+      "name": "code-bracket-square",
+      "type": "registry:component",
+      "title": "code-bracket-square",
+      "description": "Animated code-bracket-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/code-bracket-square.ts",
+          "path": "packages/angular/src/icons/code-bracket-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "code-bracket",
+      "type": "registry:component",
+      "title": "code-bracket",
+      "description": "Animated code-bracket icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/code-bracket.ts",
+          "path": "packages/angular/src/icons/code-bracket.ts"
+        }
+      ]
+    },
+    {
+      "name": "cog-6-tooth",
+      "type": "registry:component",
+      "title": "cog-6-tooth",
+      "description": "Animated cog-6-tooth icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cog-6-tooth.ts",
+          "path": "packages/angular/src/icons/cog-6-tooth.ts"
+        }
+      ]
+    },
+    {
+      "name": "cog-8-tooth",
+      "type": "registry:component",
+      "title": "cog-8-tooth",
+      "description": "Animated cog-8-tooth icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cog-8-tooth.ts",
+          "path": "packages/angular/src/icons/cog-8-tooth.ts"
+        }
+      ]
+    },
+    {
+      "name": "cog",
+      "type": "registry:component",
+      "title": "cog",
+      "description": "Animated cog icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cog.ts",
+          "path": "packages/angular/src/icons/cog.ts"
+        }
+      ]
+    },
+    {
+      "name": "command-line",
+      "type": "registry:component",
+      "title": "command-line",
+      "description": "Animated command-line icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/command-line.ts",
+          "path": "packages/angular/src/icons/command-line.ts"
+        }
+      ]
+    },
+    {
+      "name": "computer-desktop",
+      "type": "registry:component",
+      "title": "computer-desktop",
+      "description": "Animated computer-desktop icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/computer-desktop.ts",
+          "path": "packages/angular/src/icons/computer-desktop.ts"
+        }
+      ]
+    },
+    {
+      "name": "cpu-chip",
+      "type": "registry:component",
+      "title": "cpu-chip",
+      "description": "Animated cpu-chip icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cpu-chip.ts",
+          "path": "packages/angular/src/icons/cpu-chip.ts"
+        }
+      ]
+    },
+    {
+      "name": "credit-card",
+      "type": "registry:component",
+      "title": "credit-card",
+      "description": "Animated credit-card icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/credit-card.ts",
+          "path": "packages/angular/src/icons/credit-card.ts"
+        }
+      ]
+    },
+    {
+      "name": "cube-transparent",
+      "type": "registry:component",
+      "title": "cube-transparent",
+      "description": "Animated cube-transparent icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cube-transparent.ts",
+          "path": "packages/angular/src/icons/cube-transparent.ts"
+        }
+      ]
+    },
+    {
+      "name": "cube",
+      "type": "registry:component",
+      "title": "cube",
+      "description": "Animated cube icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cube.ts",
+          "path": "packages/angular/src/icons/cube.ts"
+        }
+      ]
+    },
+    {
+      "name": "currency-bangladeshi",
+      "type": "registry:component",
+      "title": "currency-bangladeshi",
+      "description": "Animated currency-bangladeshi icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/currency-bangladeshi.ts",
+          "path": "packages/angular/src/icons/currency-bangladeshi.ts"
+        }
+      ]
+    },
+    {
+      "name": "currency-dollar",
+      "type": "registry:component",
+      "title": "currency-dollar",
+      "description": "Animated currency-dollar icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/currency-dollar.ts",
+          "path": "packages/angular/src/icons/currency-dollar.ts"
+        }
+      ]
+    },
+    {
+      "name": "currency-euro",
+      "type": "registry:component",
+      "title": "currency-euro",
+      "description": "Animated currency-euro icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/currency-euro.ts",
+          "path": "packages/angular/src/icons/currency-euro.ts"
+        }
+      ]
+    },
+    {
+      "name": "currency-pound",
+      "type": "registry:component",
+      "title": "currency-pound",
+      "description": "Animated currency-pound icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/currency-pound.ts",
+          "path": "packages/angular/src/icons/currency-pound.ts"
+        }
+      ]
+    },
+    {
+      "name": "currency-rupee",
+      "type": "registry:component",
+      "title": "currency-rupee",
+      "description": "Animated currency-rupee icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/currency-rupee.ts",
+          "path": "packages/angular/src/icons/currency-rupee.ts"
+        }
+      ]
+    },
+    {
+      "name": "currency-yen",
+      "type": "registry:component",
+      "title": "currency-yen",
+      "description": "Animated currency-yen icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/currency-yen.ts",
+          "path": "packages/angular/src/icons/currency-yen.ts"
+        }
+      ]
+    },
+    {
+      "name": "cursor-arrow-rays",
+      "type": "registry:component",
+      "title": "cursor-arrow-rays",
+      "description": "Animated cursor-arrow-rays icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cursor-arrow-rays.ts",
+          "path": "packages/angular/src/icons/cursor-arrow-rays.ts"
+        }
+      ]
+    },
+    {
+      "name": "cursor-arrow-ripple",
+      "type": "registry:component",
+      "title": "cursor-arrow-ripple",
+      "description": "Animated cursor-arrow-ripple icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/cursor-arrow-ripple.ts",
+          "path": "packages/angular/src/icons/cursor-arrow-ripple.ts"
+        }
+      ]
+    },
+    {
+      "name": "device-phone-mobile",
+      "type": "registry:component",
+      "title": "device-phone-mobile",
+      "description": "Animated device-phone-mobile icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/device-phone-mobile.ts",
+          "path": "packages/angular/src/icons/device-phone-mobile.ts"
+        }
+      ]
+    },
+    {
+      "name": "device-tablet",
+      "type": "registry:component",
+      "title": "device-tablet",
+      "description": "Animated device-tablet icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/device-tablet.ts",
+          "path": "packages/angular/src/icons/device-tablet.ts"
+        }
+      ]
+    },
+    {
+      "name": "divide",
+      "type": "registry:component",
+      "title": "divide",
+      "description": "Animated divide icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/divide.ts",
+          "path": "packages/angular/src/icons/divide.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-arrow-down",
+      "type": "registry:component",
+      "title": "document-arrow-down",
+      "description": "Animated document-arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-arrow-down.ts",
+          "path": "packages/angular/src/icons/document-arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-arrow-up",
+      "type": "registry:component",
+      "title": "document-arrow-up",
+      "description": "Animated document-arrow-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-arrow-up.ts",
+          "path": "packages/angular/src/icons/document-arrow-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-chart-bar",
+      "type": "registry:component",
+      "title": "document-chart-bar",
+      "description": "Animated document-chart-bar icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-chart-bar.ts",
+          "path": "packages/angular/src/icons/document-chart-bar.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-check",
+      "type": "registry:component",
+      "title": "document-check",
+      "description": "Animated document-check icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-check.ts",
+          "path": "packages/angular/src/icons/document-check.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-currency-bangladeshi",
+      "type": "registry:component",
+      "title": "document-currency-bangladeshi",
+      "description": "Animated document-currency-bangladeshi icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-currency-bangladeshi.ts",
+          "path": "packages/angular/src/icons/document-currency-bangladeshi.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-currency-dollar",
+      "type": "registry:component",
+      "title": "document-currency-dollar",
+      "description": "Animated document-currency-dollar icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-currency-dollar.ts",
+          "path": "packages/angular/src/icons/document-currency-dollar.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-currency-euro",
+      "type": "registry:component",
+      "title": "document-currency-euro",
+      "description": "Animated document-currency-euro icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-currency-euro.ts",
+          "path": "packages/angular/src/icons/document-currency-euro.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-currency-pound",
+      "type": "registry:component",
+      "title": "document-currency-pound",
+      "description": "Animated document-currency-pound icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-currency-pound.ts",
+          "path": "packages/angular/src/icons/document-currency-pound.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-currency-rupee",
+      "type": "registry:component",
+      "title": "document-currency-rupee",
+      "description": "Animated document-currency-rupee icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-currency-rupee.ts",
+          "path": "packages/angular/src/icons/document-currency-rupee.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-currency-yen",
+      "type": "registry:component",
+      "title": "document-currency-yen",
+      "description": "Animated document-currency-yen icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-currency-yen.ts",
+          "path": "packages/angular/src/icons/document-currency-yen.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-duplicate",
+      "type": "registry:component",
+      "title": "document-duplicate",
+      "description": "Animated document-duplicate icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-duplicate.ts",
+          "path": "packages/angular/src/icons/document-duplicate.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-magnifying-glass",
+      "type": "registry:component",
+      "title": "document-magnifying-glass",
+      "description": "Animated document-magnifying-glass icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-magnifying-glass.ts",
+          "path": "packages/angular/src/icons/document-magnifying-glass.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-minus",
+      "type": "registry:component",
+      "title": "document-minus",
+      "description": "Animated document-minus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-minus.ts",
+          "path": "packages/angular/src/icons/document-minus.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-plus",
+      "type": "registry:component",
+      "title": "document-plus",
+      "description": "Animated document-plus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-plus.ts",
+          "path": "packages/angular/src/icons/document-plus.ts"
+        }
+      ]
+    },
+    {
+      "name": "document-text",
+      "type": "registry:component",
+      "title": "document-text",
+      "description": "Animated document-text icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document-text.ts",
+          "path": "packages/angular/src/icons/document-text.ts"
+        }
+      ]
+    },
+    {
+      "name": "document",
+      "type": "registry:component",
+      "title": "document",
+      "description": "Animated document icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/document.ts",
+          "path": "packages/angular/src/icons/document.ts"
+        }
+      ]
+    },
+    {
+      "name": "ellipsis-horizontal-circle",
+      "type": "registry:component",
+      "title": "ellipsis-horizontal-circle",
+      "description": "Animated ellipsis-horizontal-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/ellipsis-horizontal-circle.ts",
+          "path": "packages/angular/src/icons/ellipsis-horizontal-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "ellipsis-horizontal",
+      "type": "registry:component",
+      "title": "ellipsis-horizontal",
+      "description": "Animated ellipsis-horizontal icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/ellipsis-horizontal.ts",
+          "path": "packages/angular/src/icons/ellipsis-horizontal.ts"
+        }
+      ]
+    },
+    {
+      "name": "ellipsis-vertical",
+      "type": "registry:component",
+      "title": "ellipsis-vertical",
+      "description": "Animated ellipsis-vertical icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/ellipsis-vertical.ts",
+          "path": "packages/angular/src/icons/ellipsis-vertical.ts"
+        }
+      ]
+    },
+    {
+      "name": "envelope-open",
+      "type": "registry:component",
+      "title": "envelope-open",
+      "description": "Animated envelope-open icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/envelope-open.ts",
+          "path": "packages/angular/src/icons/envelope-open.ts"
+        }
+      ]
+    },
+    {
+      "name": "envelope",
+      "type": "registry:component",
+      "title": "envelope",
+      "description": "Animated envelope icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/envelope.ts",
+          "path": "packages/angular/src/icons/envelope.ts"
+        }
+      ]
+    },
+    {
+      "name": "equals",
+      "type": "registry:component",
+      "title": "equals",
+      "description": "Animated equals icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/equals.ts",
+          "path": "packages/angular/src/icons/equals.ts"
+        }
+      ]
+    },
+    {
+      "name": "exclamation-circle",
+      "type": "registry:component",
+      "title": "exclamation-circle",
+      "description": "Animated exclamation-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/exclamation-circle.ts",
+          "path": "packages/angular/src/icons/exclamation-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "exclamation-triangle",
+      "type": "registry:component",
+      "title": "exclamation-triangle",
+      "description": "Animated exclamation-triangle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/exclamation-triangle.ts",
+          "path": "packages/angular/src/icons/exclamation-triangle.ts"
+        }
+      ]
+    },
+    {
+      "name": "eye-dropper",
+      "type": "registry:component",
+      "title": "eye-dropper",
+      "description": "Animated eye-dropper icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/eye-dropper.ts",
+          "path": "packages/angular/src/icons/eye-dropper.ts"
+        }
+      ]
+    },
+    {
+      "name": "eye-slash",
+      "type": "registry:component",
+      "title": "eye-slash",
+      "description": "Animated eye-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/eye-slash.ts",
+          "path": "packages/angular/src/icons/eye-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "type": "registry:component",
+      "title": "eye",
+      "description": "Animated eye icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/eye.ts",
+          "path": "packages/angular/src/icons/eye.ts"
+        }
+      ]
+    },
+    {
+      "name": "face-frown",
+      "type": "registry:component",
+      "title": "face-frown",
+      "description": "Animated face-frown icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/face-frown.ts",
+          "path": "packages/angular/src/icons/face-frown.ts"
+        }
+      ]
+    },
+    {
+      "name": "face-smile",
+      "type": "registry:component",
+      "title": "face-smile",
+      "description": "Animated face-smile icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/face-smile.ts",
+          "path": "packages/angular/src/icons/face-smile.ts"
+        }
+      ]
+    },
+    {
+      "name": "film",
+      "type": "registry:component",
+      "title": "film",
+      "description": "Animated film icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/film.ts",
+          "path": "packages/angular/src/icons/film.ts"
+        }
+      ]
+    },
+    {
+      "name": "finger-print",
+      "type": "registry:component",
+      "title": "finger-print",
+      "description": "Animated finger-print icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/finger-print.ts",
+          "path": "packages/angular/src/icons/finger-print.ts"
+        }
+      ]
+    },
+    {
+      "name": "fire",
+      "type": "registry:component",
+      "title": "fire",
+      "description": "Animated fire icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/fire.ts",
+          "path": "packages/angular/src/icons/fire.ts"
+        }
+      ]
+    },
+    {
+      "name": "flag",
+      "type": "registry:component",
+      "title": "flag",
+      "description": "Animated flag icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/flag.ts",
+          "path": "packages/angular/src/icons/flag.ts"
+        }
+      ]
+    },
+    {
+      "name": "folder-arrow-down",
+      "type": "registry:component",
+      "title": "folder-arrow-down",
+      "description": "Animated folder-arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/folder-arrow-down.ts",
+          "path": "packages/angular/src/icons/folder-arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "folder-minus",
+      "type": "registry:component",
+      "title": "folder-minus",
+      "description": "Animated folder-minus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/folder-minus.ts",
+          "path": "packages/angular/src/icons/folder-minus.ts"
+        }
+      ]
+    },
+    {
+      "name": "folder-open",
+      "type": "registry:component",
+      "title": "folder-open",
+      "description": "Animated folder-open icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/folder-open.ts",
+          "path": "packages/angular/src/icons/folder-open.ts"
+        }
+      ]
+    },
+    {
+      "name": "folder-plus",
+      "type": "registry:component",
+      "title": "folder-plus",
+      "description": "Animated folder-plus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/folder-plus.ts",
+          "path": "packages/angular/src/icons/folder-plus.ts"
+        }
+      ]
+    },
+    {
+      "name": "folder",
+      "type": "registry:component",
+      "title": "folder",
+      "description": "Animated folder icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/folder.ts",
+          "path": "packages/angular/src/icons/folder.ts"
+        }
+      ]
+    },
+    {
+      "name": "forward",
+      "type": "registry:component",
+      "title": "forward",
+      "description": "Animated forward icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/forward.ts",
+          "path": "packages/angular/src/icons/forward.ts"
+        }
+      ]
+    },
+    {
+      "name": "funnel",
+      "type": "registry:component",
+      "title": "funnel",
+      "description": "Animated funnel icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/funnel.ts",
+          "path": "packages/angular/src/icons/funnel.ts"
+        }
+      ]
+    },
+    {
+      "name": "gif",
+      "type": "registry:component",
+      "title": "gif",
+      "description": "Animated gif icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/gif.ts",
+          "path": "packages/angular/src/icons/gif.ts"
+        }
+      ]
+    },
+    {
+      "name": "gift-top",
+      "type": "registry:component",
+      "title": "gift-top",
+      "description": "Animated gift-top icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/gift-top.ts",
+          "path": "packages/angular/src/icons/gift-top.ts"
+        }
+      ]
+    },
+    {
+      "name": "gift",
+      "type": "registry:component",
+      "title": "gift",
+      "description": "Animated gift icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/gift.ts",
+          "path": "packages/angular/src/icons/gift.ts"
+        }
+      ]
+    },
+    {
+      "name": "globe-alt",
+      "type": "registry:component",
+      "title": "globe-alt",
+      "description": "Animated globe-alt icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/globe-alt.ts",
+          "path": "packages/angular/src/icons/globe-alt.ts"
+        }
+      ]
+    },
+    {
+      "name": "globe-americas",
+      "type": "registry:component",
+      "title": "globe-americas",
+      "description": "Animated globe-americas icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/globe-americas.ts",
+          "path": "packages/angular/src/icons/globe-americas.ts"
+        }
+      ]
+    },
+    {
+      "name": "globe-asia-australia",
+      "type": "registry:component",
+      "title": "globe-asia-australia",
+      "description": "Animated globe-asia-australia icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/globe-asia-australia.ts",
+          "path": "packages/angular/src/icons/globe-asia-australia.ts"
+        }
+      ]
+    },
+    {
+      "name": "globe-europe-africa",
+      "type": "registry:component",
+      "title": "globe-europe-africa",
+      "description": "Animated globe-europe-africa icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/globe-europe-africa.ts",
+          "path": "packages/angular/src/icons/globe-europe-africa.ts"
+        }
+      ]
+    },
+    {
+      "name": "h1",
+      "type": "registry:component",
+      "title": "h1",
+      "description": "Animated h1 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/h1.ts",
+          "path": "packages/angular/src/icons/h1.ts"
+        }
+      ]
+    },
+    {
+      "name": "h2",
+      "type": "registry:component",
+      "title": "h2",
+      "description": "Animated h2 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/h2.ts",
+          "path": "packages/angular/src/icons/h2.ts"
+        }
+      ]
+    },
+    {
+      "name": "h3",
+      "type": "registry:component",
+      "title": "h3",
+      "description": "Animated h3 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/h3.ts",
+          "path": "packages/angular/src/icons/h3.ts"
+        }
+      ]
+    },
+    {
+      "name": "hand-raised",
+      "type": "registry:component",
+      "title": "hand-raised",
+      "description": "Animated hand-raised icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/hand-raised.ts",
+          "path": "packages/angular/src/icons/hand-raised.ts"
+        }
+      ]
+    },
+    {
+      "name": "hand-thumb-down",
+      "type": "registry:component",
+      "title": "hand-thumb-down",
+      "description": "Animated hand-thumb-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/hand-thumb-down.ts",
+          "path": "packages/angular/src/icons/hand-thumb-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "hand-thumb-up",
+      "type": "registry:component",
+      "title": "hand-thumb-up",
+      "description": "Animated hand-thumb-up icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/hand-thumb-up.ts",
+          "path": "packages/angular/src/icons/hand-thumb-up.ts"
+        }
+      ]
+    },
+    {
+      "name": "hashtag",
+      "type": "registry:component",
+      "title": "hashtag",
+      "description": "Animated hashtag icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/hashtag.ts",
+          "path": "packages/angular/src/icons/hashtag.ts"
+        }
+      ]
+    },
+    {
+      "name": "heart",
+      "type": "registry:component",
+      "title": "heart",
+      "description": "Animated heart icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/heart.ts",
+          "path": "packages/angular/src/icons/heart.ts"
+        }
+      ]
+    },
+    {
+      "name": "home-modern",
+      "type": "registry:component",
+      "title": "home-modern",
+      "description": "Animated home-modern icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/home-modern.ts",
+          "path": "packages/angular/src/icons/home-modern.ts"
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "type": "registry:component",
+      "title": "home",
+      "description": "Animated home icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/home.ts",
+          "path": "packages/angular/src/icons/home.ts"
+        }
+      ]
+    },
+    {
+      "name": "identification",
+      "type": "registry:component",
+      "title": "identification",
+      "description": "Animated identification icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/identification.ts",
+          "path": "packages/angular/src/icons/identification.ts"
+        }
+      ]
+    },
+    {
+      "name": "inbox-arrow-down",
+      "type": "registry:component",
+      "title": "inbox-arrow-down",
+      "description": "Animated inbox-arrow-down icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/inbox-arrow-down.ts",
+          "path": "packages/angular/src/icons/inbox-arrow-down.ts"
+        }
+      ]
+    },
+    {
+      "name": "inbox-stack",
+      "type": "registry:component",
+      "title": "inbox-stack",
+      "description": "Animated inbox-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/inbox-stack.ts",
+          "path": "packages/angular/src/icons/inbox-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "inbox",
+      "type": "registry:component",
+      "title": "inbox",
+      "description": "Animated inbox icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/inbox.ts",
+          "path": "packages/angular/src/icons/inbox.ts"
+        }
+      ]
+    },
+    {
+      "name": "information-circle",
+      "type": "registry:component",
+      "title": "information-circle",
+      "description": "Animated information-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/information-circle.ts",
+          "path": "packages/angular/src/icons/information-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "italic",
+      "type": "registry:component",
+      "title": "italic",
+      "description": "Animated italic icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/italic.ts",
+          "path": "packages/angular/src/icons/italic.ts"
+        }
+      ]
+    },
+    {
+      "name": "key",
+      "type": "registry:component",
+      "title": "key",
+      "description": "Animated key icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/key.ts",
+          "path": "packages/angular/src/icons/key.ts"
+        }
+      ]
+    },
+    {
+      "name": "language",
+      "type": "registry:component",
+      "title": "language",
+      "description": "Animated language icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/language.ts",
+          "path": "packages/angular/src/icons/language.ts"
+        }
+      ]
+    },
+    {
+      "name": "lifebuoy",
+      "type": "registry:component",
+      "title": "lifebuoy",
+      "description": "Animated lifebuoy icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/lifebuoy.ts",
+          "path": "packages/angular/src/icons/lifebuoy.ts"
+        }
+      ]
+    },
+    {
+      "name": "light-bulb",
+      "type": "registry:component",
+      "title": "light-bulb",
+      "description": "Animated light-bulb icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/light-bulb.ts",
+          "path": "packages/angular/src/icons/light-bulb.ts"
+        }
+      ]
+    },
+    {
+      "name": "link-slash",
+      "type": "registry:component",
+      "title": "link-slash",
+      "description": "Animated link-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/link-slash.ts",
+          "path": "packages/angular/src/icons/link-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "type": "registry:component",
+      "title": "link",
+      "description": "Animated link icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/link.ts",
+          "path": "packages/angular/src/icons/link.ts"
+        }
+      ]
+    },
+    {
+      "name": "list-bullet",
+      "type": "registry:component",
+      "title": "list-bullet",
+      "description": "Animated list-bullet icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/list-bullet.ts",
+          "path": "packages/angular/src/icons/list-bullet.ts"
+        }
+      ]
+    },
+    {
+      "name": "lock-closed",
+      "type": "registry:component",
+      "title": "lock-closed",
+      "description": "Animated lock-closed icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/lock-closed.ts",
+          "path": "packages/angular/src/icons/lock-closed.ts"
+        }
+      ]
+    },
+    {
+      "name": "lock-open",
+      "type": "registry:component",
+      "title": "lock-open",
+      "description": "Animated lock-open icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/lock-open.ts",
+          "path": "packages/angular/src/icons/lock-open.ts"
+        }
+      ]
+    },
+    {
+      "name": "magnifying-glass-circle",
+      "type": "registry:component",
+      "title": "magnifying-glass-circle",
+      "description": "Animated magnifying-glass-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/magnifying-glass-circle.ts",
+          "path": "packages/angular/src/icons/magnifying-glass-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "magnifying-glass-minus",
+      "type": "registry:component",
+      "title": "magnifying-glass-minus",
+      "description": "Animated magnifying-glass-minus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/magnifying-glass-minus.ts",
+          "path": "packages/angular/src/icons/magnifying-glass-minus.ts"
+        }
+      ]
+    },
+    {
+      "name": "magnifying-glass-plus",
+      "type": "registry:component",
+      "title": "magnifying-glass-plus",
+      "description": "Animated magnifying-glass-plus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/magnifying-glass-plus.ts",
+          "path": "packages/angular/src/icons/magnifying-glass-plus.ts"
+        }
+      ]
+    },
+    {
+      "name": "magnifying-glass",
+      "type": "registry:component",
+      "title": "magnifying-glass",
+      "description": "Animated magnifying-glass icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/magnifying-glass.ts",
+          "path": "packages/angular/src/icons/magnifying-glass.ts"
+        }
+      ]
+    },
+    {
+      "name": "map-pin",
+      "type": "registry:component",
+      "title": "map-pin",
+      "description": "Animated map-pin icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/map-pin.ts",
+          "path": "packages/angular/src/icons/map-pin.ts"
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "type": "registry:component",
+      "title": "map",
+      "description": "Animated map icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/map.ts",
+          "path": "packages/angular/src/icons/map.ts"
+        }
+      ]
+    },
+    {
+      "name": "megaphone",
+      "type": "registry:component",
+      "title": "megaphone",
+      "description": "Animated megaphone icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/megaphone.ts",
+          "path": "packages/angular/src/icons/megaphone.ts"
+        }
+      ]
+    },
+    {
+      "name": "microphone",
+      "type": "registry:component",
+      "title": "microphone",
+      "description": "Animated microphone icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/microphone.ts",
+          "path": "packages/angular/src/icons/microphone.ts"
+        }
+      ]
+    },
+    {
+      "name": "minus-circle",
+      "type": "registry:component",
+      "title": "minus-circle",
+      "description": "Animated minus-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/minus-circle.ts",
+          "path": "packages/angular/src/icons/minus-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "minus",
+      "type": "registry:component",
+      "title": "minus",
+      "description": "Animated minus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/minus.ts",
+          "path": "packages/angular/src/icons/minus.ts"
+        }
+      ]
+    },
+    {
+      "name": "moon",
+      "type": "registry:component",
+      "title": "moon",
+      "description": "Animated moon icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/moon.ts",
+          "path": "packages/angular/src/icons/moon.ts"
+        }
+      ]
+    },
+    {
+      "name": "musical-note",
+      "type": "registry:component",
+      "title": "musical-note",
+      "description": "Animated musical-note icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/musical-note.ts",
+          "path": "packages/angular/src/icons/musical-note.ts"
+        }
+      ]
+    },
+    {
+      "name": "newspaper",
+      "type": "registry:component",
+      "title": "newspaper",
+      "description": "Animated newspaper icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/newspaper.ts",
+          "path": "packages/angular/src/icons/newspaper.ts"
+        }
+      ]
+    },
+    {
+      "name": "no-symbol",
+      "type": "registry:component",
+      "title": "no-symbol",
+      "description": "Animated no-symbol icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/no-symbol.ts",
+          "path": "packages/angular/src/icons/no-symbol.ts"
+        }
+      ]
+    },
+    {
+      "name": "numbered-list",
+      "type": "registry:component",
+      "title": "numbered-list",
+      "description": "Animated numbered-list icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/numbered-list.ts",
+          "path": "packages/angular/src/icons/numbered-list.ts"
+        }
+      ]
+    },
+    {
+      "name": "paint-brush",
+      "type": "registry:component",
+      "title": "paint-brush",
+      "description": "Animated paint-brush icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/paint-brush.ts",
+          "path": "packages/angular/src/icons/paint-brush.ts"
+        }
+      ]
+    },
+    {
+      "name": "paper-airplane",
+      "type": "registry:component",
+      "title": "paper-airplane",
+      "description": "Animated paper-airplane icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/paper-airplane.ts",
+          "path": "packages/angular/src/icons/paper-airplane.ts"
+        }
+      ]
+    },
+    {
+      "name": "paper-clip",
+      "type": "registry:component",
+      "title": "paper-clip",
+      "description": "Animated paper-clip icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/paper-clip.ts",
+          "path": "packages/angular/src/icons/paper-clip.ts"
+        }
+      ]
+    },
+    {
+      "name": "pause-circle",
+      "type": "registry:component",
+      "title": "pause-circle",
+      "description": "Animated pause-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/pause-circle.ts",
+          "path": "packages/angular/src/icons/pause-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "pause",
+      "type": "registry:component",
+      "title": "pause",
+      "description": "Animated pause icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/pause.ts",
+          "path": "packages/angular/src/icons/pause.ts"
+        }
+      ]
+    },
+    {
+      "name": "pencil-square",
+      "type": "registry:component",
+      "title": "pencil-square",
+      "description": "Animated pencil-square icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/pencil-square.ts",
+          "path": "packages/angular/src/icons/pencil-square.ts"
+        }
+      ]
+    },
+    {
+      "name": "pencil",
+      "type": "registry:component",
+      "title": "pencil",
+      "description": "Animated pencil icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/pencil.ts",
+          "path": "packages/angular/src/icons/pencil.ts"
+        }
+      ]
+    },
+    {
+      "name": "percent-badge",
+      "type": "registry:component",
+      "title": "percent-badge",
+      "description": "Animated percent-badge icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/percent-badge.ts",
+          "path": "packages/angular/src/icons/percent-badge.ts"
+        }
+      ]
+    },
+    {
+      "name": "phone-arrow-down-left",
+      "type": "registry:component",
+      "title": "phone-arrow-down-left",
+      "description": "Animated phone-arrow-down-left icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/phone-arrow-down-left.ts",
+          "path": "packages/angular/src/icons/phone-arrow-down-left.ts"
+        }
+      ]
+    },
+    {
+      "name": "phone-arrow-up-right",
+      "type": "registry:component",
+      "title": "phone-arrow-up-right",
+      "description": "Animated phone-arrow-up-right icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/phone-arrow-up-right.ts",
+          "path": "packages/angular/src/icons/phone-arrow-up-right.ts"
+        }
+      ]
+    },
+    {
+      "name": "phone-x-mark",
+      "type": "registry:component",
+      "title": "phone-x-mark",
+      "description": "Animated phone-x-mark icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/phone-x-mark.ts",
+          "path": "packages/angular/src/icons/phone-x-mark.ts"
+        }
+      ]
+    },
+    {
+      "name": "phone",
+      "type": "registry:component",
+      "title": "phone",
+      "description": "Animated phone icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/phone.ts",
+          "path": "packages/angular/src/icons/phone.ts"
+        }
+      ]
+    },
+    {
+      "name": "photo",
+      "type": "registry:component",
+      "title": "photo",
+      "description": "Animated photo icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/photo.ts",
+          "path": "packages/angular/src/icons/photo.ts"
+        }
+      ]
+    },
+    {
+      "name": "play-circle",
+      "type": "registry:component",
+      "title": "play-circle",
+      "description": "Animated play-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/play-circle.ts",
+          "path": "packages/angular/src/icons/play-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "play-pause",
+      "type": "registry:component",
+      "title": "play-pause",
+      "description": "Animated play-pause icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/play-pause.ts",
+          "path": "packages/angular/src/icons/play-pause.ts"
+        }
+      ]
+    },
+    {
+      "name": "play",
+      "type": "registry:component",
+      "title": "play",
+      "description": "Animated play icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/play.ts",
+          "path": "packages/angular/src/icons/play.ts"
+        }
+      ]
+    },
+    {
+      "name": "plus-circle",
+      "type": "registry:component",
+      "title": "plus-circle",
+      "description": "Animated plus-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/plus-circle.ts",
+          "path": "packages/angular/src/icons/plus-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "plus",
+      "type": "registry:component",
+      "title": "plus",
+      "description": "Animated plus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/plus.ts",
+          "path": "packages/angular/src/icons/plus.ts"
+        }
+      ]
+    },
+    {
+      "name": "power",
+      "type": "registry:component",
+      "title": "power",
+      "description": "Animated power icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/power.ts",
+          "path": "packages/angular/src/icons/power.ts"
+        }
+      ]
+    },
+    {
+      "name": "presentation-chart-bar",
+      "type": "registry:component",
+      "title": "presentation-chart-bar",
+      "description": "Animated presentation-chart-bar icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/presentation-chart-bar.ts",
+          "path": "packages/angular/src/icons/presentation-chart-bar.ts"
+        }
+      ]
+    },
+    {
+      "name": "presentation-chart-line",
+      "type": "registry:component",
+      "title": "presentation-chart-line",
+      "description": "Animated presentation-chart-line icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/presentation-chart-line.ts",
+          "path": "packages/angular/src/icons/presentation-chart-line.ts"
+        }
+      ]
+    },
+    {
+      "name": "printer",
+      "type": "registry:component",
+      "title": "printer",
+      "description": "Animated printer icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/printer.ts",
+          "path": "packages/angular/src/icons/printer.ts"
+        }
+      ]
+    },
+    {
+      "name": "puzzle-piece",
+      "type": "registry:component",
+      "title": "puzzle-piece",
+      "description": "Animated puzzle-piece icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/puzzle-piece.ts",
+          "path": "packages/angular/src/icons/puzzle-piece.ts"
+        }
+      ]
+    },
+    {
+      "name": "qr-code",
+      "type": "registry:component",
+      "title": "qr-code",
+      "description": "Animated qr-code icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/qr-code.ts",
+          "path": "packages/angular/src/icons/qr-code.ts"
+        }
+      ]
+    },
+    {
+      "name": "question-mark-circle",
+      "type": "registry:component",
+      "title": "question-mark-circle",
+      "description": "Animated question-mark-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/question-mark-circle.ts",
+          "path": "packages/angular/src/icons/question-mark-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "queue-list",
+      "type": "registry:component",
+      "title": "queue-list",
+      "description": "Animated queue-list icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/queue-list.ts",
+          "path": "packages/angular/src/icons/queue-list.ts"
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:component",
+      "title": "radio",
+      "description": "Animated radio icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/radio.ts",
+          "path": "packages/angular/src/icons/radio.ts"
+        }
+      ]
+    },
+    {
+      "name": "receipt-percent",
+      "type": "registry:component",
+      "title": "receipt-percent",
+      "description": "Animated receipt-percent icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/receipt-percent.ts",
+          "path": "packages/angular/src/icons/receipt-percent.ts"
+        }
+      ]
+    },
+    {
+      "name": "receipt-refund",
+      "type": "registry:component",
+      "title": "receipt-refund",
+      "description": "Animated receipt-refund icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/receipt-refund.ts",
+          "path": "packages/angular/src/icons/receipt-refund.ts"
+        }
+      ]
+    },
+    {
+      "name": "rectangle-group",
+      "type": "registry:component",
+      "title": "rectangle-group",
+      "description": "Animated rectangle-group icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/rectangle-group.ts",
+          "path": "packages/angular/src/icons/rectangle-group.ts"
+        }
+      ]
+    },
+    {
+      "name": "rectangle-stack",
+      "type": "registry:component",
+      "title": "rectangle-stack",
+      "description": "Animated rectangle-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/rectangle-stack.ts",
+          "path": "packages/angular/src/icons/rectangle-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "rocket-launch",
+      "type": "registry:component",
+      "title": "rocket-launch",
+      "description": "Animated rocket-launch icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/rocket-launch.ts",
+          "path": "packages/angular/src/icons/rocket-launch.ts"
+        }
+      ]
+    },
+    {
+      "name": "rss",
+      "type": "registry:component",
+      "title": "rss",
+      "description": "Animated rss icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/rss.ts",
+          "path": "packages/angular/src/icons/rss.ts"
+        }
+      ]
+    },
+    {
+      "name": "scale",
+      "type": "registry:component",
+      "title": "scale",
+      "description": "Animated scale icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/scale.ts",
+          "path": "packages/angular/src/icons/scale.ts"
+        }
+      ]
+    },
+    {
+      "name": "scissors",
+      "type": "registry:component",
+      "title": "scissors",
+      "description": "Animated scissors icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/scissors.ts",
+          "path": "packages/angular/src/icons/scissors.ts"
+        }
+      ]
+    },
+    {
+      "name": "server-stack",
+      "type": "registry:component",
+      "title": "server-stack",
+      "description": "Animated server-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/server-stack.ts",
+          "path": "packages/angular/src/icons/server-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "server",
+      "type": "registry:component",
+      "title": "server",
+      "description": "Animated server icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/server.ts",
+          "path": "packages/angular/src/icons/server.ts"
+        }
+      ]
+    },
+    {
+      "name": "share",
+      "type": "registry:component",
+      "title": "share",
+      "description": "Animated share icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/share.ts",
+          "path": "packages/angular/src/icons/share.ts"
+        }
+      ]
+    },
+    {
+      "name": "shield-check",
+      "type": "registry:component",
+      "title": "shield-check",
+      "description": "Animated shield-check icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/shield-check.ts",
+          "path": "packages/angular/src/icons/shield-check.ts"
+        }
+      ]
+    },
+    {
+      "name": "shield-exclamation",
+      "type": "registry:component",
+      "title": "shield-exclamation",
+      "description": "Animated shield-exclamation icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/shield-exclamation.ts",
+          "path": "packages/angular/src/icons/shield-exclamation.ts"
+        }
+      ]
+    },
+    {
+      "name": "shopping-bag",
+      "type": "registry:component",
+      "title": "shopping-bag",
+      "description": "Animated shopping-bag icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/shopping-bag.ts",
+          "path": "packages/angular/src/icons/shopping-bag.ts"
+        }
+      ]
+    },
+    {
+      "name": "shopping-cart",
+      "type": "registry:component",
+      "title": "shopping-cart",
+      "description": "Animated shopping-cart icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/shopping-cart.ts",
+          "path": "packages/angular/src/icons/shopping-cart.ts"
+        }
+      ]
+    },
+    {
+      "name": "signal-slash",
+      "type": "registry:component",
+      "title": "signal-slash",
+      "description": "Animated signal-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/signal-slash.ts",
+          "path": "packages/angular/src/icons/signal-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "signal",
+      "type": "registry:component",
+      "title": "signal",
+      "description": "Animated signal icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/signal.ts",
+          "path": "packages/angular/src/icons/signal.ts"
+        }
+      ]
+    },
+    {
+      "name": "slash",
+      "type": "registry:component",
+      "title": "slash",
+      "description": "Animated slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/slash.ts",
+          "path": "packages/angular/src/icons/slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "sparkles",
+      "type": "registry:component",
+      "title": "sparkles",
+      "description": "Animated sparkles icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/sparkles.ts",
+          "path": "packages/angular/src/icons/sparkles.ts"
+        }
+      ]
+    },
+    {
+      "name": "speaker-wave",
+      "type": "registry:component",
+      "title": "speaker-wave",
+      "description": "Animated speaker-wave icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/speaker-wave.ts",
+          "path": "packages/angular/src/icons/speaker-wave.ts"
+        }
+      ]
+    },
+    {
+      "name": "speaker-x-mark",
+      "type": "registry:component",
+      "title": "speaker-x-mark",
+      "description": "Animated speaker-x-mark icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/speaker-x-mark.ts",
+          "path": "packages/angular/src/icons/speaker-x-mark.ts"
+        }
+      ]
+    },
+    {
+      "name": "square-2-stack",
+      "type": "registry:component",
+      "title": "square-2-stack",
+      "description": "Animated square-2-stack icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/square-2-stack.ts",
+          "path": "packages/angular/src/icons/square-2-stack.ts"
+        }
+      ]
+    },
+    {
+      "name": "square-3-stack-3d",
+      "type": "registry:component",
+      "title": "square-3-stack-3d",
+      "description": "Animated square-3-stack-3d icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/square-3-stack-3d.ts",
+          "path": "packages/angular/src/icons/square-3-stack-3d.ts"
+        }
+      ]
+    },
+    {
+      "name": "squares-2x2",
+      "type": "registry:component",
+      "title": "squares-2x2",
+      "description": "Animated squares-2x2 icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/squares-2x2.ts",
+          "path": "packages/angular/src/icons/squares-2x2.ts"
+        }
+      ]
+    },
+    {
+      "name": "squares-plus",
+      "type": "registry:component",
+      "title": "squares-plus",
+      "description": "Animated squares-plus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/squares-plus.ts",
+          "path": "packages/angular/src/icons/squares-plus.ts"
+        }
+      ]
+    },
+    {
+      "name": "star",
+      "type": "registry:component",
+      "title": "star",
+      "description": "Animated star icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/star.ts",
+          "path": "packages/angular/src/icons/star.ts"
+        }
+      ]
+    },
+    {
+      "name": "stop-circle",
+      "type": "registry:component",
+      "title": "stop-circle",
+      "description": "Animated stop-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/stop-circle.ts",
+          "path": "packages/angular/src/icons/stop-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "stop",
+      "type": "registry:component",
+      "title": "stop",
+      "description": "Animated stop icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/stop.ts",
+          "path": "packages/angular/src/icons/stop.ts"
+        }
+      ]
+    },
+    {
+      "name": "strikethrough",
+      "type": "registry:component",
+      "title": "strikethrough",
+      "description": "Animated strikethrough icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/strikethrough.ts",
+          "path": "packages/angular/src/icons/strikethrough.ts"
+        }
+      ]
+    },
+    {
+      "name": "sun",
+      "type": "registry:component",
+      "title": "sun",
+      "description": "Animated sun icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/sun.ts",
+          "path": "packages/angular/src/icons/sun.ts"
+        }
+      ]
+    },
+    {
+      "name": "swatch",
+      "type": "registry:component",
+      "title": "swatch",
+      "description": "Animated swatch icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/swatch.ts",
+          "path": "packages/angular/src/icons/swatch.ts"
+        }
+      ]
+    },
+    {
+      "name": "table-cells",
+      "type": "registry:component",
+      "title": "table-cells",
+      "description": "Animated table-cells icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/table-cells.ts",
+          "path": "packages/angular/src/icons/table-cells.ts"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "type": "registry:component",
+      "title": "tag",
+      "description": "Animated tag icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/tag.ts",
+          "path": "packages/angular/src/icons/tag.ts"
+        }
+      ]
+    },
+    {
+      "name": "ticket",
+      "type": "registry:component",
+      "title": "ticket",
+      "description": "Animated ticket icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/ticket.ts",
+          "path": "packages/angular/src/icons/ticket.ts"
+        }
+      ]
+    },
+    {
+      "name": "trash",
+      "type": "registry:component",
+      "title": "trash",
+      "description": "Animated trash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/trash.ts",
+          "path": "packages/angular/src/icons/trash.ts"
+        }
+      ]
+    },
+    {
+      "name": "trophy",
+      "type": "registry:component",
+      "title": "trophy",
+      "description": "Animated trophy icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/trophy.ts",
+          "path": "packages/angular/src/icons/trophy.ts"
+        }
+      ]
+    },
+    {
+      "name": "truck",
+      "type": "registry:component",
+      "title": "truck",
+      "description": "Animated truck icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/truck.ts",
+          "path": "packages/angular/src/icons/truck.ts"
+        }
+      ]
+    },
+    {
+      "name": "tv",
+      "type": "registry:component",
+      "title": "tv",
+      "description": "Animated tv icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/tv.ts",
+          "path": "packages/angular/src/icons/tv.ts"
+        }
+      ]
+    },
+    {
+      "name": "underline",
+      "type": "registry:component",
+      "title": "underline",
+      "description": "Animated underline icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/underline.ts",
+          "path": "packages/angular/src/icons/underline.ts"
+        }
+      ]
+    },
+    {
+      "name": "user-circle",
+      "type": "registry:component",
+      "title": "user-circle",
+      "description": "Animated user-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/user-circle.ts",
+          "path": "packages/angular/src/icons/user-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "user-group",
+      "type": "registry:component",
+      "title": "user-group",
+      "description": "Animated user-group icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/user-group.ts",
+          "path": "packages/angular/src/icons/user-group.ts"
+        }
+      ]
+    },
+    {
+      "name": "user-minus",
+      "type": "registry:component",
+      "title": "user-minus",
+      "description": "Animated user-minus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/user-minus.ts",
+          "path": "packages/angular/src/icons/user-minus.ts"
+        }
+      ]
+    },
+    {
+      "name": "user-plus",
+      "type": "registry:component",
+      "title": "user-plus",
+      "description": "Animated user-plus icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/user-plus.ts",
+          "path": "packages/angular/src/icons/user-plus.ts"
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "type": "registry:component",
+      "title": "user",
+      "description": "Animated user icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/user.ts",
+          "path": "packages/angular/src/icons/user.ts"
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "type": "registry:component",
+      "title": "users",
+      "description": "Animated users icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/users.ts",
+          "path": "packages/angular/src/icons/users.ts"
+        }
+      ]
+    },
+    {
+      "name": "variable",
+      "type": "registry:component",
+      "title": "variable",
+      "description": "Animated variable icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/variable.ts",
+          "path": "packages/angular/src/icons/variable.ts"
+        }
+      ]
+    },
+    {
+      "name": "video-camera-slash",
+      "type": "registry:component",
+      "title": "video-camera-slash",
+      "description": "Animated video-camera-slash icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/video-camera-slash.ts",
+          "path": "packages/angular/src/icons/video-camera-slash.ts"
+        }
+      ]
+    },
+    {
+      "name": "video-camera",
+      "type": "registry:component",
+      "title": "video-camera",
+      "description": "Animated video-camera icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/video-camera.ts",
+          "path": "packages/angular/src/icons/video-camera.ts"
+        }
+      ]
+    },
+    {
+      "name": "view-columns",
+      "type": "registry:component",
+      "title": "view-columns",
+      "description": "Animated view-columns icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/view-columns.ts",
+          "path": "packages/angular/src/icons/view-columns.ts"
+        }
+      ]
+    },
+    {
+      "name": "viewfinder-circle",
+      "type": "registry:component",
+      "title": "viewfinder-circle",
+      "description": "Animated viewfinder-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/viewfinder-circle.ts",
+          "path": "packages/angular/src/icons/viewfinder-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "wallet",
+      "type": "registry:component",
+      "title": "wallet",
+      "description": "Animated wallet icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/wallet.ts",
+          "path": "packages/angular/src/icons/wallet.ts"
+        }
+      ]
+    },
+    {
+      "name": "wifi",
+      "type": "registry:component",
+      "title": "wifi",
+      "description": "Animated wifi icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/wifi.ts",
+          "path": "packages/angular/src/icons/wifi.ts"
+        }
+      ]
+    },
+    {
+      "name": "window",
+      "type": "registry:component",
+      "title": "window",
+      "description": "Animated window icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/window.ts",
+          "path": "packages/angular/src/icons/window.ts"
+        }
+      ]
+    },
+    {
+      "name": "wrench-screwdriver",
+      "type": "registry:component",
+      "title": "wrench-screwdriver",
+      "description": "Animated wrench-screwdriver icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/wrench-screwdriver.ts",
+          "path": "packages/angular/src/icons/wrench-screwdriver.ts"
+        }
+      ]
+    },
+    {
+      "name": "wrench",
+      "type": "registry:component",
+      "title": "wrench",
+      "description": "Animated wrench icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/wrench.ts",
+          "path": "packages/angular/src/icons/wrench.ts"
+        }
+      ]
+    },
+    {
+      "name": "x-circle",
+      "type": "registry:component",
+      "title": "x-circle",
+      "description": "Animated x-circle icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/x-circle.ts",
+          "path": "packages/angular/src/icons/x-circle.ts"
+        }
+      ]
+    },
+    {
+      "name": "x-mark",
+      "type": "registry:component",
+      "title": "x-mark",
+      "description": "Animated x-mark icon for Angular",
+      "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+      "registryDependencies": [],
+      "dependencies": [],
+      "files": [
+        {
+          "type": "registry:component",
+          "target": "~/src/app/components/heroicons-animated/x-mark.ts",
+          "path": "packages/angular/src/icons/x-mark.ts"
+        }
+      ]
+    }
+  ]
+}

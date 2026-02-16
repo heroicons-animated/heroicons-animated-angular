@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bars-3",
+  "type": "registry:component",
+  "title": "bars-3",
+  "description": "Animated bars-3 icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/bars-3.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/bars-3.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-bars-3\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'bars-3'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path #bar1Path class=\"bar-path\" [class.animate]=\"shouldAnimate()\" d=\"M3.75 6.75h16.5\" />\n    <path #bar2Path class=\"bar-path\" [class.animate]=\"shouldAnimate()\" d=\"M3.75 12h16.5\" />\n    <path #bar3Path class=\"bar-path\" [class.animate]=\"shouldAnimate()\" d=\"M3.75 17.25h16.5\" />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .bar-path {\n        transform-box: fill-box;\n        transform-origin: center;\n        transition: transform 0.3s ease-in-out;\n      }\n\n      .bar-path.animate {\n        animation: bar-scale-x 0.3s ease-in-out forwards;\n      }\n\n      .bar-path:nth-child(2).animate {\n        animation-delay: 0.1s;\n      }\n\n      .bar-path:nth-child(3).animate {\n        animation-delay: 0.2s;\n      }\n\n      @keyframes bar-scale-x {\n        0% {\n          transform: scaleX(1);\n        }\n        50% {\n          transform: scaleX(0.6);\n        }\n        100% {\n          transform: scaleX(1);\n        }\n      }\n    `,\n  ],\n})\nexport class Bars3Icon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

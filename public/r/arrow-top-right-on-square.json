@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "arrow-top-right-on-square",
+  "type": "registry:component",
+  "title": "arrow-top-right-on-square",
+  "description": "Animated arrow-top-right-on-square icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/arrow-top-right-on-square.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/arrow-top-right-on-square.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-arrow-top-right-on-square\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'arrow-top-right-on-square'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5\"\n    />\n    <path\n      #arrowPath\n      class=\"arrow-path\"\n      [class.animate]=\"shouldAnimate()\"\n      d=\"M7.5 16.5L21 3m0 0h-5.25M21 3v5.25\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      .arrow-path {\n        transform-box: fill-box;\n        transform-origin: 100% 0%;\n        transition: transform 0.5s ease-in-out;\n      }\n\n      .arrow-path.animate {\n        animation: arrow-move 0.5s ease-in-out forwards;\n      }\n\n      @keyframes arrow-move {\n        0% {\n          transform: translate(0, 0);\n        }\n        50% {\n          transform: translate(2px, -2px);\n        }\n        100% {\n          transform: translate(0, 0);\n        }\n      }\n    `,\n  ],\n})\nexport class ArrowTopRightOnSquareIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}

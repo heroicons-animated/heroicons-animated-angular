@@ -2,6 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <script>
+    "use strict";
+    (() => {
+      try {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const isDark = storedTheme ? storedTheme === "dark" : prefersDark;
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+      } catch {
+        // Ignore blocked storage access.
+      }
+    })();
+    </script>
+    <style>
+    html {
+      background: #f5f5f5;
+    }
+
+    html.dark {
+      background: #171717;
+    }
+    </style>
     <title>
       heroicons-animated-angular | Free Animated Heroicons for Angular
     </title>

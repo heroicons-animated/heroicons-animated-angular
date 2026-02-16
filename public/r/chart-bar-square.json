@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-bar-square",
+  "type": "registry:component",
+  "title": "chart-bar-square",
+  "description": "Animated chart-bar-square icon for Angular",
+  "author": "Aniket Pawar <pawaraniket508@gmail.com>",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "packages/angular/src/icons/chart-bar-square.ts",
+      "type": "registry:component",
+      "target": "~/src/app/components/heroicons-animated/chart-bar-square.ts",
+      "content": "import {\n  ChangeDetectionStrategy,\n  Component,\n  computed,\n  input,\n  signal,\n} from \"@angular/core\";\n\n@Component({\n  selector: \"hi-chart-bar-square\",\n  standalone: true,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  host: {\n    \"[attr.aria-label]\": \"'chart-bar-square'\",\n    role: \"img\",\n    \"(mouseenter)\": \"onMouseEnter()\",\n    \"(mouseleave)\": \"onMouseLeave()\",\n  },\n  template: `<svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    [attr.width]=\"size()\"\n    [attr.height]=\"size()\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    [attr.stroke]=\"color()\"\n    [attr.stroke-width]=\"strokeWidth()\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    class=\"icon-svg\"\n  >\n    <path\n      d=\"M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z\"\n    />\n    <path\n      class=\"chart-bar\"\n      [class.chart-bar-animate]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      style=\"animation-delay: 0s\"\n      d=\"M7.5 16.5v-2.25\"\n    />\n    <path\n      class=\"chart-bar\"\n      [class.chart-bar-animate]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      style=\"animation-delay: 0.15s\"\n      d=\"M10.5 16.5v-4.5\"\n    />\n    <path\n      class=\"chart-bar\"\n      [class.chart-bar-animate]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      style=\"animation-delay: 0.3s\"\n      d=\"M13.5 16.5v-6.75\"\n    />\n    <path\n      class=\"chart-bar\"\n      [class.chart-bar-animate]=\"shouldAnimate()\"\n      pathLength=\"1\"\n      style=\"animation-delay: 0.45s\"\n      d=\"M16.5 16.5v-9\"\n    />\n  </svg>`,\n  styles: [\n    `\n      :host {\n        display: inline-block;\n      }\n\n      .icon-svg {\n        transform-box: fill-box;\n        transform-origin: center;\n      }\n\n      /* pathLength [0,1] pathOffset [1,0], opacity [0,1], 0.4s easeOut, staggered delay (matches React CREATE_BAR_VARIANTS) */\n      .chart-bar {\n        stroke-dasharray: 1;\n        stroke-dashoffset: 0;\n        opacity: 1;\n      }\n\n      .chart-bar.chart-bar-animate {\n        animation: chart-bar-draw 0.4s ease-out forwards;\n      }\n\n      @keyframes chart-bar-draw {\n        0% {\n          stroke-dashoffset: 1;\n          opacity: 0;\n        }\n        25% {\n          opacity: 1;\n        }\n        100% {\n          stroke-dashoffset: 0;\n          opacity: 1;\n        }\n      }\n    `,\n  ],\n})\nexport class ChartBarSquareIcon {\n  readonly color = input(\"currentColor\");\n  readonly size = input(28);\n  readonly strokeWidth = input(1.5);\n  readonly animate = input(false);\n\n  protected isHovered = signal(false);\n  protected shouldAnimate = computed(() => this.animate() || this.isHovered());\n\n  onMouseEnter() {\n    this.isHovered.set(true);\n  }\n\n  onMouseLeave() {\n    this.isHovered.set(false);\n  }\n}\n"
+    }
+  ]
+}
