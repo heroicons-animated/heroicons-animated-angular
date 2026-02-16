@@ -26,8 +26,7 @@ export default defineConfig({
     },
   },
   ssr: {
-    noExternal: ["@analogjs/**", "@angular/**"],
-    external: ["zone.js", "zone.js/node"],
+    noExternal: ["@analogjs/**", "@angular/**", "zone.js"],
   },
   build: {
     target: ["es2020"],
