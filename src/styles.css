@@ -3,7 +3,6 @@
 @source "./src/app";
 @source "./index.html";
 @source "./packages/angular/src";
-@source "./src/tw-classes.txt";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -68,7 +67,7 @@
     background-color: var(--background);
     color: var(--foreground);
     overscroll-behavior: none;
-    font-family: var(--font-geist-sans);
+    font-family: var(--font-sans);
     margin: 0;
   }
 

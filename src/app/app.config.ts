@@ -12,19 +12,17 @@ import {
   withComponentInputBinding,
   withEnabledBlockingInitialNavigation,
 } from "@angular/router";
-import { provideHeroiconsAnimated } from "@heroicons-animated/angular";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideHeroiconsAnimated({}),
     provideFileRouter(
       withComponentInputBinding(),
-      withEnabledBlockingInitialNavigation()
+      withEnabledBlockingInitialNavigation(),
     ),
     provideHttpClient(
       withFetch(),
-      withInterceptors([requestContextInterceptor])
+      withInterceptors([requestContextInterceptor]),
     ),
   ],
 };

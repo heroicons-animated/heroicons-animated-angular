@@ -897,9 +897,3 @@ export {
 } from "./icons/wrench-screwdriver";
 export { XCircleIcon, XCircleIcon as XCircle } from "./icons/x-circle";
 export { XMarkIcon, XMarkIcon as XMark } from "./icons/x-mark";
-// Tokens & Provider
-export {
-  HEROICONS_ANIMATED_CONFIG,
-  type HeroiconsAnimatedOptions,
-  provideHeroiconsAnimated,
-} from "./tokens/provider";
